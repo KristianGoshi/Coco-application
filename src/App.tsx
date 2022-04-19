@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
+  AsyncStorage,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -10,6 +11,12 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import {Provider} from 'react-redux';
 import store from './redux/store';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import CocoLoadProvider from './providers/CocoLoadProvider';
+import {NavigationContainer} from '@react-navigation/native';
+import AuthStack from './navigation/stacks/AuthStack';
+import MainTab from './navigation/tabs/MainTab';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const App = () => {
@@ -19,13 +26,49 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const Stack = createNativeStackNavigator();
+
+  const [user, setUser] = useState('');
+  const fetchUserName = useCallback(async () => {
+    const userName = await AsyncStorage.getItem('userName');
+    userName == null ? setUser('') : setUser(userName);
+  }, []);
+
+  useEffect(() => {
+    fetchUserName();
+  }, []);
+
   return (
-    <Provider store={store}>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        //ketu do vihen stacket
-      </SafeAreaView>
-    </Provider>
+    <SafeAreaProvider>
+      <Provider store={store}>
+        <CocoLoadProvider />
+        <SafeAreaView style={backgroundStyle}>
+          <NavigationContainer>
+            <StatusBar
+              barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+            />
+            <Stack.Navigator>
+              {!user ? (
+                // No token found, user isn't signed in
+                <Stack.Screen
+                  name="Auth"
+                  component={AuthStack}
+                  options={{
+                    title: 'Authentication',
+                    // When logging out, a pop animation feels intuitive
+                    // You can remove this if you want the default 'push' animation
+                    //animationTypeForReplace: state.isSignout ? 'pop' : 'push',
+                  }}
+                />
+              ) : (
+                // User is signed in
+                <Stack.Screen name="Main" component={MainTab} />
+              )}
+            </Stack.Navigator>
+          </NavigationContainer>
+        </SafeAreaView>
+      </Provider>
+    </SafeAreaProvider>
   );
 };
 

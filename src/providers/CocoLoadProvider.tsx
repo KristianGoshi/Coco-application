@@ -13,14 +13,19 @@ const CocoLoadProvider: React.FC = React.memo(() => {
     await i18n.changeLanguage(lang);
   }, []);
 
-  const fetchUser = useCallback(async () => {
-    const userName = await AsyncStorage.getItem('userName');
+  const fetchUserInfo = useCallback(async () => {
+    const userInfo = await AsyncStorage.getItem('userInfo');
+  }, []);
+
+  const fetchFavorites = useCallback(async () => {
+    const favorites = await AsyncStorage.getItem('favorites');
   }, []);
 
   useEffect(() => {
     fetchLanguage();
-    fetchUser();
-  }, [fetchLanguage, fetchUser]);
+    fetchUserInfo();
+    fetchFavorites();
+  }, [fetchLanguage, fetchUserInfo, fetchFavorites]);
   return <></>;
 });
 
