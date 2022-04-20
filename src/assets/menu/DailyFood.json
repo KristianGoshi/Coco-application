@@ -1,3 +1,50 @@
-{
-
-}
+[
+  {
+    "id": 1,
+    "foto": "",
+    "emri": "Perime ne avull",
+    "cmimi": 200
+  },
+  {
+    "id": 2,
+    "foto": "",
+    "emri": "Perime furre",
+    "cmimi": 200
+  },
+  {
+    "id": 3,
+    "foto": "",
+    "emri": "Lazanja",
+    "cmimi": 260
+  },
+  {
+    "id": 4,
+    "foto": "",
+    "emri": "Kanelloni",
+    "cmimi": 280
+  },
+  {
+    "id": 5,
+    "foto": "",
+    "emri": "Musaka",
+    "cmimi": 300
+  },
+  {
+    "id": 6,
+    "foto": "",
+    "emri": "Supe kerpudhe",
+    "cmimi": 170
+  },
+  {
+    "id": 7,
+    "foto": "",
+    "emri": "Karkaleca deti",
+    "cmimi": 350
+  },
+  {
+    "id": 8,
+    "foto": "",
+    "emri": "Rizoto 4 djathrat",
+    "cmimi": 150
+  }
+]

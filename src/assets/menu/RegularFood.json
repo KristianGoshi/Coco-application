@@ -1,3 +1,374 @@
-{
-
-}
+[
+  {
+    "Pasta": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Spageti gjalp",
+        "cmimi": 200
+      },
+      {
+        "id": 2,
+        "foto": "",
+        "emri": "Pasta napoli",
+        "cmimi": 200
+      },
+      {
+        "id": 3,
+        "foto": "",
+        "emri": "Spageti pana-kerpudhe",
+        "cmimi": 250
+      },
+      {
+        "id": 4,
+        "foto": "",
+        "emri": "Spageti pana-proshute",
+        "cmimi": 260
+      },
+      {
+        "id": 5,
+        "foto": "",
+        "emri": "Spageti pesto spinaq-borzilok",
+        "cmimi": 250
+      },
+      {
+        "id": 6,
+        "foto": "",
+        "emri": "Spageti me ton",
+        "cmimi": 320
+      },
+      {
+        "id": 7,
+        "foto": "",
+        "emri": "Spageti karbunara",
+        "cmimi": 350
+      },
+      {
+        "id": 8,
+        "foto": "",
+        "emri": "Spageti 4 djathrat",
+        "cmimi": 350
+      },
+      {
+        "id": 9,
+        "foto": "",
+        "emri": "Spageti bolonjeze",
+        "cmimi": 350
+      },
+      {
+        "id": 10,
+        "foto": "",
+        "emri": "Spageti fruta deti",
+        "cmimi": 450
+      },
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Spageti me karkaleca",
+        "cmimi": 550
+      }
+    ],
+    "Rizoto": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Pilaf",
+        "cmimi": 90
+      },
+      {
+        "id": 2,
+        "foto": "",
+        "emri": "Rizoto me perime",
+        "cmimi": 200
+      },
+      {
+        "id": 3,
+        "foto": "",
+        "emri": "Rizoto me perime & pule",
+        "cmimi": 250
+      },
+      {
+        "id": 4,
+        "foto": "",
+        "emri": "Rizoto pule teriyaki",
+        "cmimi": 250
+      },
+      {
+        "id": 5,
+        "foto": "",
+        "emri": "Rizoto me mish",
+        "cmimi": 300
+      },
+      {
+        "id": 6,
+        "foto": "",
+        "emri": "Rizoto me fruta deti",
+        "cmimi": 350
+      },
+      {
+        "id": 7,
+        "foto": "",
+        "emri": "Rizoto vici",
+        "cmimi": 200
+      }
+    ],
+    "Sanduic": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Sanduic sallam-proshut",
+        "cmimi": 120
+      },
+      {
+        "id": 2,
+        "foto": "",
+        "emri": "Sanduic omlet",
+        "cmimi": 150
+      },
+      {
+        "id": 3,
+        "foto": "",
+        "emri": "Sanduic normal",
+        "cmimi": 150
+      },
+      {
+        "id": 4,
+        "foto": "",
+        "emri": "Sanduic pikant",
+        "cmimi": 150
+      },
+      {
+        "id": 5,
+        "foto": "",
+        "emri": "Sanduic ton-kerpudhe",
+        "cmimi": 170
+      },
+      {
+        "id": 6,
+        "foto": "",
+        "emri": "Sanduic chicken",
+        "cmimi": 150
+      },
+      {
+        "id": 7,
+        "foto": "",
+        "emri": "Sanduic special coco",
+        "cmimi": 200
+      },
+      {
+        "id": 8,
+        "foto": "",
+        "emri": "Sanduic milanez",
+        "cmimi": 200
+      },
+      {
+        "id": 9,
+        "foto": "",
+        "emri": "Sanduic integral",
+        "cmimi": 150
+      }
+    ],
+    "pizza": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Pizza margarita",
+        "cmimi": 250
+      },
+      {
+        "id": 2,
+        "foto": "",
+        "emri": "Pizza sallam",
+        "cmimi": 300
+      },
+      {
+        "id": 3,
+        "foto": "",
+        "emri": "Pizza proshut",
+        "cmimi": 350
+      },
+      {
+        "id": 4,
+        "foto": "",
+        "emri": "Pizza ton",
+        "cmimi": 400
+      },
+      {
+        "id": 5,
+        "foto": "",
+        "emri": "Pizza vegjetariane",
+        "cmimi": 400
+      },
+      {
+        "id": 6,
+        "foto": "",
+        "emri": "Pizza kapricoza",
+        "cmimi": 400
+      },
+      {
+        "id": 7,
+        "foto": "",
+        "emri": "Pizza 4 stinet",
+        "cmimi": 400
+      },
+      {
+        "id": 8,
+        "foto": "",
+        "emri": "Pizza diavola",
+        "cmimi": 400
+      },
+      {
+        "id": 9,
+        "foto": "",
+        "emri": "Pizza 4 djathrat",
+        "cmimi": 400
+      },
+      {
+        "id": 10,
+        "foto": "",
+        "emri": "Pizza speciale",
+        "cmimi": 500
+      }
+    ],
+    "Sallat": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Sallate fshati",
+        "cmimi": 150
+      },
+      {
+        "id": 2,
+        "foto": "",
+        "emri": "Sallate greke",
+        "cmimi": 150
+      },
+      {
+        "id": 3,
+        "foto": "",
+        "emri": "Sallate caprese",
+        "cmimi": 190
+      },
+      {
+        "id": 4,
+        "foto": "",
+        "emri": "Sallate stine",
+        "cmimi": 220
+      },
+      {
+        "id": 5,
+        "foto": "",
+        "emri": "Sallate me avokado",
+        "cmimi": 220
+      },
+      {
+        "id": 6,
+        "foto": "",
+        "emri": "Sallate cezar",
+        "cmimi": 280
+      },
+      {
+        "id": 7,
+        "foto": "",
+        "emri": "Sallate rukola",
+        "cmimi": 250
+      },
+      {
+        "id": 8,
+        "foto": "",
+        "emri": "Sallate coco",
+        "cmimi": 300
+      }
+    ],
+    "Tave baze": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "Supe pule",
+        "cmimi": 150
+      },
+      {
+        "id": 2,
+        "foto": "",
+        "emri": "Supe perime",
+        "cmimi": 140
+      },
+      {
+        "id": 3,
+        "foto": "",
+        "emri": "Fileto pule zgare",
+        "cmimi": 250
+      },
+      {
+        "id": 4,
+        "foto": "",
+        "emri": "Eskallop pule",
+        "cmimi": 300
+      },
+      {
+        "id": 5,
+        "foto": "",
+        "emri": "Fileto pule e mbushur",
+        "cmimi": 330
+      },
+      {
+        "id": 6,
+        "foto": "",
+        "emri": "Eskallop vici",
+        "cmimi": 380
+      },
+      {
+        "id": 7,
+        "foto": "",
+        "emri": "Biftek vici",
+        "cmimi": 400
+      },
+      {
+        "id": 8,
+        "foto": "",
+        "emri": "Berxolle vici",
+        "cmimi": 400
+      },
+      {
+        "id": 9,
+        "foto": "",
+        "emri": "Perime te mbushura",
+        "cmimi": 250
+      },
+      {
+        "id": 10,
+        "foto": "",
+        "emri": "Patate furre",
+        "cmimi": 120
+      },
+      {
+        "id": 11,
+        "foto": "",
+        "emri": "Patate te skuqura",
+        "cmimi": 120
+      },
+      {
+        "id": 13,
+        "foto": "",
+        "emri": "Perime zgare",
+        "cmimi": 200
+      }
+    ],
+    "Krepa": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "",
+        "cmimi": 1
+      }
+    ],
+    "Pije": [
+      {
+        "id": 1,
+        "foto": "",
+        "emri": "",
+        "cmimi": 1
+      }
+    ]
+  }
+]
