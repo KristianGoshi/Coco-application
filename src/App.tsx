@@ -6,6 +6,8 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
+import * as eva from '@eva-design/eva';
+import {ApplicationProvider} from '@ui-kitten/components';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
@@ -17,56 +19,18 @@ import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './navigation/stacks/AuthStack';
 import MainTab from './navigation/tabs/MainTab';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppContainer from './providers/AppContainer';
 
 
-const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  const Stack = createNativeStackNavigator();
-
-  const [user, setUser] = useState('');
-  const fetchUserName = useCallback(async () => {
-    const userName = await AsyncStorage.getItem('userName');
-    userName == null ? setUser('') : setUser(userName);
-  }, []);
-
-  useEffect(() => {
-    fetchUserName();
-  }, []);
+export default function App() {
 
   return (
     <SafeAreaProvider>
       <Provider store={store}>
         <CocoLoadProvider />
-        <SafeAreaView style={backgroundStyle}>
-          <NavigationContainer>
-            <StatusBar
-              barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-            />
-            <Stack.Navigator>
-              {!user ? (
-                // No token found, user isn't signed in
-                <Stack.Screen
-                  name="Auth"
-                  component={AuthStack}
-                  options={{
-                    title: 'Authentication',
-                    // When logging out, a pop animation feels intuitive
-                    // You can remove this if you want the default 'push' animation
-                    //animationTypeForReplace: state.isSignout ? 'pop' : 'push',
-                  }}
-                />
-              ) : (
-                // User is signed in
-                <Stack.Screen name="Main" component={MainTab} />
-              )}
-            </Stack.Navigator>
-          </NavigationContainer>
-        </SafeAreaView>
+        <ApplicationProvider {...eva} theme={eva.light}>
+          <AppContainer />
+        </ApplicationProvider>
       </Provider>
     </SafeAreaProvider>
   );
@@ -91,4 +55,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;

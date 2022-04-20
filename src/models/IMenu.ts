@@ -1,7 +1,7 @@
 export interface IMenu {
+  id?: number;
   foto?: string;
   emri?: string;
   cmimi?: number;
-  pershkrim?: string;
   fotot?: Array<String>
 }

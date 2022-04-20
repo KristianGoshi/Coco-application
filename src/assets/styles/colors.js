@@ -21,12 +21,15 @@ export const APP_COLORS = {
     inactive: ''
   },
   background: {
-    main_background: '',
-    container_background: '',
-    elements_background: ''
+    main_background: '#292929',
+    container_background: '#3D3D3D',
+    elements_background: '#6A6A6A'
   },
   typography: {
     body_text: '#F9F9F9',
     light_text: '#EDF2F4',
+    error: '#ED2E5C',
+    success: '#00BA88',
+    warning: '#F4B740',
   },
 };

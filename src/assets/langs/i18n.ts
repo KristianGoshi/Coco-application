@@ -38,9 +38,8 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  debug: process.env.NODE_ENV === 'development',
-  lng: 'alb',
-  fallbackLng: 'eng',
+  lng: 'en',
+  fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
   },
@@ -48,7 +47,7 @@ i18n.use(initReactI18next).init({
 });
 
 i18n
-  .changeLanguage('alb', (err, t) => {
+  .changeLanguage('eng', (err, t) => {
     console.log('error', err);
     console.log(t);
   })
