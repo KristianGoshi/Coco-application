@@ -1,10 +1,9 @@
 import { IMenu } from "./IMenu";
 
 export interface IProfile {
-  emri?: string;
-  mbiemri?: string;
   userName?: string;
   email?: string;
   nrTel?: string;
+  password?: string;
   preferuarat?: Array<IMenu>;
 }

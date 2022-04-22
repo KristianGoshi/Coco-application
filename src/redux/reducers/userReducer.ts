@@ -1,12 +1,15 @@
+import { IProfile } from "./../../models/IProfile";
 import {Reducer} from 'redux';
 import {UserActions, UserActionTypes} from '../actions/userActions';
 
 export interface IUserState {
-  example: any;
+  userDetails: IProfile;
+  userLogged: string;
 }
 
 const initialUserState: IUserState = {
-  example: '',
+  userDetails: {},
+  userLogged: 'false'
 };
 
 export const userReducer: Reducer<IUserState, UserActions> = (
@@ -14,10 +17,15 @@ export const userReducer: Reducer<IUserState, UserActions> = (
   action,
 ) => {
   switch (action.type) {
-    case UserActionTypes.EXAMPLE_TYPE:
+    case UserActionTypes.GET_USER:
       return {
         ...state,
-        allCars: action.example,
+        userDetails: action.userProfile,
+      };
+    case UserActionTypes.CHECK_LOGGED:
+      return {
+        ...state,
+        userLogged: action.userLogged,
       };
     default:
       return state;

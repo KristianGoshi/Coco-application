@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useCallback, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -8,10 +8,11 @@ import StyledButton, {EButtonType} from '../../components/Button';
 import KeyboardAwareContainer from '../../components/Keyboard';
 import { IProfile } from '../../models/IProfile';
 import { EAuthStack } from '../../navigation/stacks/AuthStack';
-import {useDispatch} from 'react-redux';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useDispatch } from 'react-redux';
+import { getUserDetails, loginUser } from '../../redux/actions/userActions';
 
 export interface LoginProps {
   navigation: any;
@@ -21,10 +22,44 @@ export interface LoginProps {
 const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
   const dispatch = useDispatch();
   const {t} = useTranslation('auth');
-  const [apiError, setApiError] = useState<string>();
-  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [enableButton, setEnableButton] = useState(false);
 
-  const shouldDisableSaveButton = false;
+  const changeText = (text: string, type: string) => {
+    setApiError('')
+    if (type == 'username') {
+      setUsername(text);
+    } else {
+      setPassword(text);
+    }
+  }
+
+  useEffect(() => {
+    if (username != '' && password != '') {
+      setEnableButton(true);
+    } else {
+      setEnableButton(false);
+    }
+  }, [username, password]);
+
+  const onSubmit = useCallback(() => {
+    if (username.length < 3) {
+      setApiError(t('login.usernameError'));
+      return;
+    } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setApiError(t('login.passwordError'));
+      return;
+    }
+    console.log('LOGIN', username, password);
+    fetchInfo();
+  }, [username, password]);
+
+  const fetchInfo = useCallback(async () => {
+    await dispatch(getUserDetails());
+    await dispatch(loginUser());
+  }, []);
 
   return (
     <KeyboardAwareContainer>
@@ -37,21 +72,19 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
         </View>
         <View style={[styles.textInput, {marginTop: 30}]}>
           <TextInput
-            placeholder={t('login.email')}
+            placeholder={t('login.username')}
             autoCapitalize="none"
-            label={t('login.email')}
-            type={undefined}
-            errorText={undefined}
+            label={t('login.username')}
+            onChangeText={text => changeText(text, 'username')}
           />
         </View>
-        <View style={[styles.textInput, {marginTop: 5}]}>
+        <View style={[styles.textInput, {marginTop: -5}]}>
           <TextInput
             placeholder={t('login.password')}
             autoCapitalize="none"
             label={t('login.password')}
-            type={undefined}
             password
-            errorText={undefined}
+            onChangeText={text => changeText(text, 'password')}
           />
         </View>
         <View style={{alignSelf: 'center', marginTop: 5, width: '90%'}}>
@@ -60,31 +93,27 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
         <View style={styles.buttonWrapper}>
           <StyledButton
             type={
-              shouldDisableSaveButton || apiError
+              !enableButton || apiError != ''
                 ? EButtonType.DISABLED
                 : EButtonType.PRIMARY
             }
-            loading={loading}
             spinner={APP_COLORS.typography.body_text}
-            //onPress={() => ()}
-            disabled={!!(shouldDisableSaveButton || apiError)}
+            onPress={() => onSubmit()}
+            disabled={!enableButton || apiError != ''}
             children={() => (
-              <Text
-                style={{color: 'gray'}}>
-                {t('login.title')}
-              </Text>
+              <Text style={{color: 'gray'}}>{t('login.title')}</Text>
             )}
           />
         </View>
-        <View style={{flexDirection: 'column'}}>
-          <View style={{alignSelf: 'center'}}>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{ marginRight: 20 }}>
             <TouchableText
               touchableText={t('login.doNotHaveAccount')}
-              onPress={() => navigation.navigate(EAuthStack.SIGNUP)}
+              onPress={() => navigation.replace(EAuthStack.SIGNUP)}
               fontSize={12}
             />
           </View>
-          <View style={{alignSelf: 'center'}}>
+          <View style={{ marginLeft: 20}}>
             <TouchableText
               touchableText={t('login.forgotPassword')}
               onPress={() => navigation.navigate(EAuthStack.RESET_PASSWORD)}
@@ -119,7 +148,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_background,
+    color: APP_COLORS.background.container_primary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',

@@ -1,14 +1,18 @@
+import { IProfile } from "./../../models/IProfile";
 // Import redux types
+import { AsyncStorage } from 'react-native';
 import {Dispatch} from 'redux';
 
 // Create Action Constants
 export enum UserActionTypes {
-  EXAMPLE_TYPE = 'EXAMPLE_TYPE',
+  GET_USER = 'GET_USER',
+  CHECK_LOGGED = 'CHECK_LOGGED'
 }
 // Interface to Get All Action Type
 export interface IUserGetAllUsersAction {
   type: UserActionTypes;
-  example: any;
+  userProfile: IProfile;
+  userLogged: string;
 }
 
 /*
@@ -20,8 +24,52 @@ export type UserActions = IUserGetAllUsersAction;
 /* Get All Action
 <Promise<Return Type>, State Interface, Type of Param, Type of Action> */
 
-export const setExample = (isFiltered: boolean) => (dispatch: Dispatch) =>
+export const getUserDetails = () => async (dispatch: Dispatch) => {
+  const userProfile = await AsyncStorage.getItem('userProfile');
+
+  if (userProfile != null) {
+    dispatch({
+      userProfile: JSON.parse(userProfile),
+      type: UserActionTypes.GET_USER,
+    });
+  }
+}
+
+export const registerUser = (userData: IProfile) => async (dispatch: Dispatch) => {
+  await AsyncStorage.setItem('userProfile', JSON.stringify(userData))
+
   dispatch({
-    isFiltered: isFiltered,
-    type: UserActionTypes.EXAMPLE_TYPE,
+    userProfile: userData,
+    type: UserActionTypes.GET_USER,
   });
+};
+
+export const checkLoggedUser = () => async (dispatch: Dispatch) => {
+  let userLogged = await AsyncStorage.getItem('userLogged');
+  if (userLogged == null) {
+    userLogged = 'false';
+  }
+
+  dispatch({
+    userLogged: userLogged,
+    type: UserActionTypes.CHECK_LOGGED,
+  });
+};
+
+export const loginUser = () => async (dispatch: Dispatch) => {
+  await AsyncStorage.setItem('userLogged', 'true');
+
+  dispatch({
+    userLogged: 'true',
+    type: UserActionTypes.CHECK_LOGGED,
+  });
+};
+
+export const logoutUser = () => async (dispatch: Dispatch) => {
+  await AsyncStorage.setItem('userLogged', 'false');
+
+  dispatch({
+    userLogged: 'false',
+    type: UserActionTypes.CHECK_LOGGED,
+  });
+};

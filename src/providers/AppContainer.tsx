@@ -1,39 +1,36 @@
 import * as React from 'react';
-import {NavigationContainer, DarkTheme} from '@react-navigation/native';
-import {AsyncStorage, StatusBar, useColorScheme} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
+import {AsyncStorage, StatusBar} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 import {useCallback, useEffect, useState} from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import AuthStack from '../navigation/stacks/AuthStack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { checkLoggedUser } from '../redux/actions/userActions';
+import { userLoggedSelector } from '../redux/selectors/userSelectors';
 
 const Stack = createNativeStackNavigator();
 
 const App: React.FC = React.memo(() => {
 
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const [user, setUser] = useState('');
-  const fetchUserName = useCallback(async () => {
-    const userName = await AsyncStorage.getItem('userName');
-    userName == null ? setUser('') : setUser(userName);
-  }, []);
+  const userLogged = useSelector(userLoggedSelector);
 
   useEffect(() => {
-    fetchUserName();
+    checkLoggedUser();
   }, []);
 
   return (
     <NavigationContainer>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={'dark-content'} />
       <Stack.Navigator>
-        {!user ? (
+        {!userLogged ? (
           // No token found, user isn't signed in
           <Stack.Screen
             name="Auth"
             component={AuthStack}
             options={{
-              title: 'Authentication',
+              headerShown: false,
+              //title: '',
               // When logging out, a pop animation feels intuitive
               // You can remove this if you want the default 'push' animation
               //animationTypeForReplace: state.isSignout ? 'pop' : 'push',
@@ -41,7 +38,13 @@ const App: React.FC = React.memo(() => {
           />
         ) : (
           // User is signed in
-          <Stack.Screen name="Main" component={AuthStack} />
+          <Stack.Screen
+            name="Main"
+            component={AuthStack}
+            options={{
+              headerShown: false,
+            }}
+          />
         )}
       </Stack.Navigator>
     </NavigationContainer>

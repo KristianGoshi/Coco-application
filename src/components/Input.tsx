@@ -2,15 +2,13 @@ import * as React from 'react';
 import {View, StyleSheet, Text, Animated} from 'react-native';
 import {Input, InputProps} from '@ui-kitten/components';
 import {useRef, useState} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { APP_COLORS } from '../assets/styles/colors';
 
 export enum EInputType {
   INITIAL = 'initial',
   TYPING = 'typing',
   DISABLED = 'disabled',
-  SUCCESS = 'success',
-  ERROR = 'error',
 }
 
 export interface TextInputProps extends InputProps {
@@ -88,54 +86,16 @@ const TextInput: React.FC<TextInputProps> = React.memo(
               //fontFamily: 'DMSans-Regular',
               marginRight: inputRight,
               height: multiline ? 160 : undefined,
-              color:
-                type === EInputType.ERROR
-                  ? APP_COLORS.typography.error
-                  : APP_COLORS.typography.body_text,
+              color: APP_COLORS.background.main_background,
             }}
           />
-          {type !== EInputType.INITIAL && (
+          {password === true && (
             <View style={styles.iconStyle}>
               <Icon
-                name={
-                  type === EInputType.SUCCESS
-                    ? 'book'
-                    : 'book'
-                }
-                size={25}
-                style={
-                  type === EInputType.SUCCESS
-                    ? styles.iconCheckStyle
-                    : styles.iconErrorStyle
-                }
-              />
-            </View>
-          )}
-          {password === true && (
-            <View
-              style={
-                type === EInputType.ERROR || type === EInputType.SUCCESS
-                  ? styles.iconEyeStyle
-                  : styles.iconStyle
-              }>
-              <Icon
-                name={!isVisible ? 'book' : 'book'}
-                size={25}
+                name={!isVisible ? 'eye' : 'eye-slash'}
+                size={20}
                 style={styles.iconPasswordStyle}
                 onPress={() => setVisible(!isVisible)}
-              />
-            </View>
-          )}
-          {closing != '' && (
-            <View style={styles.iconStyle}>
-              <Icon
-                name={'book'}
-                size={25}
-                style={styles.iconPasswordStyle}
-                onPress={() => {
-                  close();
-                  fadeOut();
-                }}
               />
             </View>
           )}
@@ -186,34 +146,21 @@ const styles = StyleSheet.create({
     color: APP_COLORS.typography.body_text,
   },
   [EInputType.INITIAL]: {
-    backgroundColor: APP_COLORS.background.container_background,
-    borderColor: APP_COLORS.background.container_background,
+    backgroundColor: APP_COLORS.background.container_triary,
+    borderColor: APP_COLORS.background.container_primary,
     borderRadius: 8,
     flex: 1,
   },
   [EInputType.TYPING]: {
-    backgroundColor: APP_COLORS.background.elements_background,
-    borderColor: APP_COLORS.background.elements_background,
+    backgroundColor: APP_COLORS.background.elements_primary,
+    borderColor: APP_COLORS.background.elements_primary,
     borderRadius: 8,
     flex: 1,
   },
   [EInputType.DISABLED]: {
-    backgroundColor: APP_COLORS.background.elements_background,
-    borderColor: APP_COLORS.background.elements_background,
+    backgroundColor: APP_COLORS.background.elements_primary,
+    borderColor: APP_COLORS.background.elements_primary,
     opacity: 0.2,
-    borderRadius: 8,
-    flex: 1,
-  },
-  [EInputType.SUCCESS]: {
-    backgroundColor: APP_COLORS.background.container_background,
-    borderColor: APP_COLORS.background.container_background,
-    borderRadius: 8,
-    flex: 1,
-  },
-  [EInputType.ERROR]: {
-    backgroundColor: APP_COLORS.typography.error,
-    borderColor: APP_COLORS.typography.error,
-    borderWidth: 2,
     borderRadius: 8,
     flex: 1,
   },

@@ -29,7 +29,7 @@ export interface StyledButtonProps extends ButtonProps {
 const StyledButton: React.FC<StyledButtonProps> = React.memo(
   ({
     appearance = 'ghost',
-    spinner = APP_COLORS.background.container_background,
+    spinner = APP_COLORS.background.container_primary,
     loading,
     type = EButtonType.TEXT,
     size = EButtonSize.MEDIUM,
@@ -76,43 +76,31 @@ const styles = StyleSheet.create({
     color: APP_COLORS.typography.body_text,
   },
   [EButtonType.PRIMARY]: {
-    backgroundColor: APP_COLORS.background.container_background,
+    backgroundColor: APP_COLORS.buttons.primary,
     width: '90%',
     borderRadius: 40,
     height: 56,
   },
   [EButtonType.DISABLED]: {
-    backgroundColor: APP_COLORS.background.container_background,
-    width: '90%',
-    borderRadius: 40,
-    height: 56,
-  },
-  [EButtonType.DISABLED_SEARCH]: {
-    backgroundColor: APP_COLORS.background.container_background,
+    backgroundColor: APP_COLORS.buttons.inactive,
     width: '90%',
     borderRadius: 40,
     height: 56,
   },
   [EButtonType.SECONDARY]: {
-    backgroundColor: APP_COLORS.background.container_background,
+    backgroundColor: APP_COLORS.buttons.secondary,
     width: '90%',
     borderRadius: 40,
     height: 56,
   },
   [EButtonType.TRINARY]: {
-    backgroundColor: APP_COLORS.background.elements_background,
+    backgroundColor: APP_COLORS.buttons.triary,
     width: '90%',
     borderRadius: 40,
     height: 56,
   },
   [EButtonType.TEXT]: {
     // backgroundColor: theme.colors.secondary,
-  },
-  [EButtonType.REQUESTS]: {
-    backgroundColor: '#4f4f4f',
-    width: '100%',
-    borderRadius: 40,
-    height: 32,
   },
 });
 

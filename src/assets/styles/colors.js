@@ -1,29 +1,23 @@
 export const APP_COLORS = {
-  main: {
-    primary: '',
-    primary_light: '',
-    primary_dark: '',
-    secondary: '',
-    secondary_light: '',
-    secondary_dark: '',
-    triary: '',
-    triary_light: '',
-    triary_dark: '',
-    extra: '',
-    extra_light: '',
-    extra_dark: ''
-  },
-  logos: {
-    active: '',
-    inactive: ''
+  tabs_logos: {
+    active: '#C6C9CE',
+    inactive: '#A5AAB1'
   },
   buttons: {
-    inactive: ''
+    primary: '#C6C9CE',
+    secondary: '#33465F',
+    triary: '#566277',
+    inactive: '#A5AAB1'
   },
   background: {
-    main_background: '#292929',
-    container_background: '#3D3D3D',
-    elements_background: '#6A6A6A'
+    main_background: '#1D2021',
+    container_primary: '#33465F',
+    container_secondary: '#3D3D3D',
+    container_triary: '#566277',
+    elements_primary: '#C6C9CE',
+    elements_secondary: '#33465F',
+    elements_triary: '#566277',
+    extra: '#A6BFCA'
   },
   typography: {
     body_text: '#F9F9F9',
@@ -32,4 +26,13 @@ export const APP_COLORS = {
     success: '#00BA88',
     warning: '#F4B740',
   },
+  icons: {
+    primary: '#C6C9CE',
+    secondary: '#1D2021'
+  },
+  input: {
+    initial: '',
+    typing: '',
+    disabled: ''
+  }
 };
