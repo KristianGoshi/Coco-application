@@ -2,7 +2,6 @@ import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {APP_COLORS} from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
 import KeyboardAwareContainer from '../../components/Keyboard';
@@ -12,7 +11,7 @@ import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch} from 'react-redux';
-import {getUserDetails, loginUser, registerUser} from '../../redux/actions/userActions';
+import {registerUser} from '../../redux/actions/userActions';
 
 export interface SignUpProps {
   navigation: any;
@@ -29,6 +28,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [password, setPassword] = useState('');
   const [enableButton, setEnableButton] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const changeText = (text: string, type: string) => {
     setApiError('');
@@ -77,7 +77,6 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
       setApiError(t('signup.repeatPasswordError'));
       return;
     }
-    console.log('signup', username, password);
     signUp();
   }, [username, email, phone, password, repeatPassword]);
 
@@ -90,94 +89,114 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
         password: password,
       }),
     );
-    await dispatch(loginUser());
+    setSubmitted(true);
   }, [username, email, phone, password]);
 
   return (
     <KeyboardAwareContainer>
       <View style={styles.container}>
-        <View style={styles.signupLogoWrapper}>
-          <Icon name="user-plus" size={100} style={styles.iconStyle} />
-        </View>
-        <View style={{marginTop: 20}}>
-          <Text style={styles.textStyle}>{t('signup.text')}</Text>
-        </View>
-        <View style={[styles.textInput, {marginTop: 20}]}>
-          <TextInput
-            placeholder={t('signup.username')}
-            autoCapitalize="none"
-            label={t('signup.username')}
-            onChangeText={text => changeText(text, 'username')}
-          />
-        </View>
-        <View style={[styles.textInput, {marginTop: -5}]}>
-          <TextInput
-            placeholder={t('signup.email')}
-            autoCapitalize="none"
-            label={t('signup.email')}
-            onChangeText={text => changeText(text, 'email')}
-          />
-        </View>
-        <View style={[styles.textInput, {marginTop: -5}]}>
-          <TextInput
-            placeholder={t('signup.phone')}
-            autoCapitalize="none"
-            label={t('signup.phone')}
-            onChangeText={text => changeText(text, 'phone')}
-          />
-        </View>
-        <View style={[styles.textInput, {marginTop: -5}]}>
-          <TextInput
-            placeholder={t('signup.password')}
-            autoCapitalize="none"
-            label={t('signup.password')}
-            password
-            onChangeText={text => changeText(text, 'password')}
-          />
-        </View>
-        <View style={[styles.textInput, {marginTop: -5}]}>
-          <TextInput
-            placeholder={t('signup.repeatPassword')}
-            autoCapitalize="none"
-            label={t('signup.repeatPassword')}
-            password
-            onChangeText={text => changeText(text, 'repeatPassword')}
-          />
-        </View>
-        <View style={{alignSelf: 'center', marginTop: 5, width: '90%'}}>
-          <Text style={styles.signupError}>{apiError}</Text>
-        </View>
-        <View style={styles.buttonWrapper}>
-          <StyledButton
-            type={
-              !enableButton || apiError != ''
-                ? EButtonType.DISABLED
-                : EButtonType.PRIMARY
-            }
-            spinner={APP_COLORS.typography.body_text}
-            onPress={() => onSubmit()}
-            disabled={!enableButton || apiError != ''}
-            children={() => (
-              <Text style={{color: 'gray'}}>{t('signup.title')}</Text>
-            )}
-          />
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{marginRight: 20}}>
-            <TouchableText
-              touchableText={t('signup.doNotHaveAccount')}
-              onPress={() => navigation.replace(EAuthStack.LOGIN)}
-              fontSize={12}
-            />
-          </View>
-          <View style={{marginLeft: 20}}>
-            <TouchableText
-              touchableText={t('signup.forgotPassword')}
-              onPress={() => navigation.navigate(EAuthStack.RESET_PASSWORD)}
-              fontSize={12}
-            />
-          </View>
-        </View>
+        {!submitted ? (
+          <>
+            <View style={styles.signupLogoWrapper}>
+              <Icon name="user-plus" size={100} style={styles.iconStyle} />
+            </View>
+            <View style={{marginTop: 20}}>
+              <Text style={styles.textStyle}>{t('signup.text')}</Text>
+            </View>
+            <View style={[styles.textInput, {marginTop: 20}]}>
+              <TextInput
+                placeholder={t('signup.username')}
+                autoCapitalize="none"
+                label={t('signup.username')}
+                onChangeText={text => changeText(text, 'username')}
+              />
+            </View>
+            <View style={[styles.textInput, {marginTop: -5}]}>
+              <TextInput
+                placeholder={t('signup.email')}
+                autoCapitalize="none"
+                label={t('signup.email')}
+                onChangeText={text => changeText(text, 'email')}
+              />
+            </View>
+            <View style={[styles.textInput, {marginTop: -5}]}>
+              <TextInput
+                placeholder={t('signup.phone')}
+                autoCapitalize="none"
+                label={t('signup.phone')}
+                onChangeText={text => changeText(text, 'phone')}
+              />
+            </View>
+            <View style={[styles.textInput, {marginTop: -5}]}>
+              <TextInput
+                placeholder={t('signup.password')}
+                autoCapitalize="none"
+                label={t('signup.password')}
+                password
+                onChangeText={text => changeText(text, 'password')}
+              />
+            </View>
+            <View style={[styles.textInput, {marginTop: -5}]}>
+              <TextInput
+                placeholder={t('signup.repeatPassword')}
+                autoCapitalize="none"
+                label={t('signup.repeatPassword')}
+                password
+                onChangeText={text => changeText(text, 'repeatPassword')}
+              />
+            </View>
+            <View style={{alignSelf: 'center', marginTop: 5, width: '90%'}}>
+              <Text style={styles.signupError}>{apiError}</Text>
+            </View>
+            <View style={styles.buttonWrapper}>
+              <StyledButton
+                type={
+                  !enableButton || apiError != ''
+                    ? EButtonType.DISABLED
+                    : EButtonType.PRIMARY
+                }
+                spinner={APP_COLORS.typography.body_text}
+                onPress={() => onSubmit()}
+                disabled={!enableButton || apiError != ''}
+                children={() => (
+                  <Text style={{color: 'gray'}}>{t('signup.title')}</Text>
+                )}
+              />
+            </View>
+            <View style={{flexDirection: 'row'}}>
+              <View style={{marginRight: 20}}>
+                <TouchableText
+                  touchableText={t('signup.doNotHaveAccount')}
+                  onPress={() => navigation.replace(EAuthStack.LOGIN)}
+                  fontSize={12}
+                />
+              </View>
+              <View style={{marginLeft: 20}}>
+                <TouchableText
+                  touchableText={t('signup.forgotPassword')}
+                  onPress={() => navigation.navigate(EAuthStack.RESET_PASSWORD)}
+                  fontSize={12}
+                />
+              </View>
+            </View>
+          </>
+        ) : (
+          <>
+            <View style={[styles.signupLogoWrapper, {marginTop: 80}]}>
+              <Icon name="check-circle" size={200} style={styles.iconStyle} />
+            </View>
+            <View style={{marginTop: 20}}>
+              <Text style={styles.textStyle}>{t('signup.text')}</Text>
+            </View>
+            <View style={{marginTop: 20}}>
+              <TouchableText
+                touchableText={t('signup.clicktologin')}
+                onPress={() => navigation.replace(EAuthStack.LOGIN)}
+                fontSize={12}
+              />
+            </View>
+          </>
+        )}
       </View>
     </KeyboardAwareContainer>
   );

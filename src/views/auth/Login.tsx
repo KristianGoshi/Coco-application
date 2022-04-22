@@ -2,7 +2,6 @@ import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { APP_COLORS } from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
 import KeyboardAwareContainer from '../../components/Keyboard';
@@ -52,7 +51,6 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
       setApiError(t('login.passwordError'));
       return;
     }
-    console.log('LOGIN', username, password);
     fetchInfo();
   }, [username, password]);
 
