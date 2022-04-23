@@ -5,7 +5,6 @@ import {useTranslation} from 'react-i18next';
 import { APP_COLORS } from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
 import KeyboardAwareContainer from '../../components/Keyboard';
-import { IProfile } from '../../models/IProfile';
 import { EAuthStack } from '../../navigation/stacks/AuthStack';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
@@ -99,7 +98,7 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
             onPress={() => onSubmit()}
             disabled={!enableButton || apiError != ''}
             children={() => (
-              <Text style={{color: 'gray'}}>{t('login.title')}</Text>
+              <Text style={{color: 'gray'}}>{t('login.button')}</Text>
             )}
           />
         </View>

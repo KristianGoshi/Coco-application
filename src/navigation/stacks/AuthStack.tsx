@@ -4,11 +4,12 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
 import Login from '../../views/auth/Login';
 import SignUp from '../../views/auth/SignUp';
+import ResetPassword from '../../views/auth/ResetPassword';
 
 export enum EAuthStack {
   LOGIN = 'Login',
   SIGNUP = 'SignUp',
-  RESET_PASSWORD = 'ResetPassword'
+  RESET_PASSWORD = 'Reset Password'
 }
 export interface AuthStackProps {
   navigation: NativeStackHeaderProps;
@@ -38,6 +39,7 @@ const AuthStack: React.FC<AuthStackProps> = ({navigation}) => {
         }}>
         <Stack.Screen name={EAuthStack.LOGIN} component={Login} />
         <Stack.Screen name={EAuthStack.SIGNUP} component={SignUp} />
+        <Stack.Screen name={EAuthStack.RESET_PASSWORD} component={ResetPassword} />
       </Stack.Navigator>
     </SafeAreaView>
   );

@@ -4,5 +4,5 @@ import {IAppState} from '../store';
 const selectSelf = (state: IAppState) => state;
 export const exampleSelector = createSelector(
   selectSelf,
-  state => state?.userState?.example,
+  state => state?.userState?.userDetails,
 );

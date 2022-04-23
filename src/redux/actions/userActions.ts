@@ -73,3 +73,7 @@ export const logoutUser = () => async (dispatch: Dispatch) => {
     type: UserActionTypes.CHECK_LOGGED,
   });
 };
+
+export const resetUserPassword = (userData: IProfile) => async (dispatch: Dispatch) => {
+  //ketu do te behet vendosja e nje passwordi te ri nepermjet nje linku
+};

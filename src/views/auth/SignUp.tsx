@@ -5,7 +5,6 @@ import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
 import KeyboardAwareContainer from '../../components/Keyboard';
-import {IProfile} from '../../models/IProfile';
 import {EAuthStack} from '../../navigation/stacks/AuthStack';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
@@ -100,9 +99,6 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
             <View style={styles.signupLogoWrapper}>
               <Icon name="user-plus" size={100} style={styles.iconStyle} />
             </View>
-            <View style={{marginTop: 20}}>
-              <Text style={styles.textStyle}>{t('signup.text')}</Text>
-            </View>
             <View style={[styles.textInput, {marginTop: 20}]}>
               <TextInput
                 placeholder={t('signup.username')}
@@ -159,25 +155,16 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
                 onPress={() => onSubmit()}
                 disabled={!enableButton || apiError != ''}
                 children={() => (
-                  <Text style={{color: 'gray'}}>{t('signup.title')}</Text>
+                  <Text style={{color: 'gray'}}>{t('signup.button')}</Text>
                 )}
               />
             </View>
             <View style={{flexDirection: 'row'}}>
-              <View style={{marginRight: 20}}>
-                <TouchableText
-                  touchableText={t('signup.doNotHaveAccount')}
-                  onPress={() => navigation.replace(EAuthStack.LOGIN)}
-                  fontSize={12}
-                />
-              </View>
-              <View style={{marginLeft: 20}}>
-                <TouchableText
-                  touchableText={t('signup.forgotPassword')}
-                  onPress={() => navigation.navigate(EAuthStack.RESET_PASSWORD)}
-                  fontSize={12}
-                />
-              </View>
+              <TouchableText
+                touchableText={t('signup.haveAccount')}
+                onPress={() => navigation.replace(EAuthStack.LOGIN)}
+                fontSize={12}
+              />
             </View>
           </>
         ) : (
@@ -186,11 +173,11 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
               <Icon name="check-circle" size={200} style={styles.iconStyle} />
             </View>
             <View style={{marginTop: 20}}>
-              <Text style={styles.textStyle}>{t('signup.text')}</Text>
+              <Text style={styles.textStyle}>{t('signup.successSignUp')}</Text>
             </View>
             <View style={{marginTop: 20}}>
               <TouchableText
-                touchableText={t('signup.clicktologin')}
+                touchableText={t('signup.clickToLogin')}
                 onPress={() => navigation.replace(EAuthStack.LOGIN)}
                 fontSize={12}
               />
