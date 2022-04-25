@@ -86,7 +86,7 @@ const TextInput: React.FC<TextInputProps> = React.memo(
               //fontFamily: 'DMSans-Regular',
               marginRight: inputRight,
               height: multiline ? 160 : undefined,
-              color: APP_COLORS.background.main_background,
+              color: APP_COLORS.background.container_primary,
             }}
           />
           {password === true && (

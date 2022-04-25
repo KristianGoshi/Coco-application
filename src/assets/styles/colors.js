@@ -10,14 +10,13 @@ export const APP_COLORS = {
     inactive: '#A5AAB1'
   },
   background: {
-    main_background: '#1D2021',
-    container_primary: '#33465F',
-    container_secondary: '#3D3D3D',
+    container_primary: '#C6C9CE',
+    container_secondary: '#33465F',
     container_triary: '#566277',
     elements_primary: '#C6C9CE',
     elements_secondary: '#33465F',
     elements_triary: '#566277',
-    extra: '#A6BFCA'
+    extra: '#1D2021'
   },
   typography: {
     body_text: '#F9F9F9',

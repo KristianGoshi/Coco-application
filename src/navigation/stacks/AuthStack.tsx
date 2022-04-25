@@ -26,7 +26,7 @@ const AuthStack: React.FC<AuthStackProps> = ({navigation}) => {
         screenOptions={{
           headerShown: true,
           headerStyle: {
-            backgroundColor: APP_COLORS.background.main_background,
+            backgroundColor: APP_COLORS.background.container_primary,
           },
           headerTintColor: APP_COLORS.typography.body_text,
           headerTitleStyle: {
@@ -34,7 +34,7 @@ const AuthStack: React.FC<AuthStackProps> = ({navigation}) => {
           },
           headerTitleAlign: 'center',
           contentStyle: {
-            backgroundColor: APP_COLORS.background.main_background,
+            backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
         <Stack.Screen name={EAuthStack.LOGIN} component={Login} />
