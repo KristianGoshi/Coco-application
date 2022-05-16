@@ -24,6 +24,8 @@ export interface StyledButtonProps extends ButtonProps {
   size?: EButtonSize;
   appearance?: string;
   loading?: boolean;
+  height?: number;
+  width?: any;
 }
 
 const StyledButton: React.FC<StyledButtonProps> = React.memo(
@@ -34,6 +36,8 @@ const StyledButton: React.FC<StyledButtonProps> = React.memo(
     type = EButtonType.TEXT,
     size = EButtonSize.MEDIUM,
     disabled,
+    height = 56,
+    width = '90%',
     ...props
   }) => {
     return (
@@ -46,13 +50,13 @@ const StyledButton: React.FC<StyledButtonProps> = React.memo(
           <Button
             {...props}
             appearance={appearance}
-            style={(styles as any)[type]}
+            style={[(styles as any)[type], {height: height, width: width}]}
           />
         ) : (
           <Button
             {...props}
             appearance={appearance}
-            style={(styles as any)[type]}
+            style={[(styles as any)[type], {height: height, width: width}]}
           />
         )}
       </View>
@@ -70,34 +74,25 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: 'center',
-    minHeight: 50,
   },
   spinnerStyle: {
     color: APP_COLORS.typography.body_text,
   },
   [EButtonType.PRIMARY]: {
     backgroundColor: APP_COLORS.buttons.primary,
-    width: '90%',
     borderRadius: 40,
-    height: 56,
   },
   [EButtonType.DISABLED]: {
     backgroundColor: APP_COLORS.buttons.inactive,
-    width: '90%',
     borderRadius: 40,
-    height: 56,
   },
   [EButtonType.SECONDARY]: {
     backgroundColor: APP_COLORS.buttons.secondary,
-    width: '90%',
     borderRadius: 40,
-    height: 56,
   },
   [EButtonType.TRINARY]: {
     backgroundColor: APP_COLORS.buttons.triary,
-    width: '90%',
     borderRadius: 40,
-    height: 56,
   },
   [EButtonType.TEXT]: {
     // backgroundColor: theme.colors.secondary,

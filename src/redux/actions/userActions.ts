@@ -1,6 +1,6 @@
 import { IProfile } from "./../../models/IProfile";
 // Import redux types
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Dispatch} from 'redux';
 
 // Create Action Constants
@@ -58,6 +58,7 @@ export const checkLoggedUser = () => async (dispatch: Dispatch) => {
 
 export const loginUser = () => async (dispatch: Dispatch) => {
   await AsyncStorage.setItem('userLogged', 'true');
+  console.log('TQRRRRRR');
 
   dispatch({
     userLogged: 'true',

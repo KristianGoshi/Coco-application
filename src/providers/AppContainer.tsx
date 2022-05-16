@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {AsyncStorage, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useDispatch, useSelector} from 'react-redux';
 import {useCallback, useEffect, useState} from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -15,9 +16,10 @@ const Stack = createNativeStackNavigator();
 const App: React.FC = React.memo(() => {
 
   const userLogged = useSelector(userLoggedSelector);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    checkLoggedUser();
+    dispatch(checkLoggedUser());
   }, []);
 
   return (

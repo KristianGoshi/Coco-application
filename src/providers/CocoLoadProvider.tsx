@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useCallback, useEffect} from 'react';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useTranslation} from 'react-i18next';
 
 const CocoLoadProvider: React.FC = React.memo(() => {

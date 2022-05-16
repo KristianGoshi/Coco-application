@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
@@ -9,8 +9,12 @@ import {EAuthStack} from '../../navigation/stacks/AuthStack';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getUserDetails, loginUser} from '../../redux/actions/userActions';
+import { userProfileSelector } from '../../redux/selectors/userSelectors';
+import Categories from '../../components/Categories';
+import FoodView from '../../components/FoodView';
+import DailyFood from '../../assets/menu/DailyFood.json'
 
 export interface MainMenuProps {
   navigation: any;
@@ -19,99 +23,111 @@ export interface MainMenuProps {
 
 const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
   const dispatch = useDispatch();
-  const {t} = useTranslation('auth');
-  const [apiError, setApiError] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [enableButton, setEnableButton] = useState(false);
+  const {t} = useTranslation('menu');
 
-  const changeText = (text: string, type: string) => {
-    setApiError('');
-    if (type == 'username') {
-      setUsername(text);
-    } else {
-      setPassword(text);
-    }
-  };
+  const userName = useSelector(userProfileSelector).userName;
+
+  const foodCategories = [
+    {
+      id: 0,
+      icon: 'pasta',
+      name: 'Pasta',
+    },
+    {
+      id: 1,
+      icon: 'rice',
+      name: 'Rizoto',
+    },
+    {
+      id: 2,
+      icon: 'baguette',
+      name: 'Sanduic',
+    },
+    {
+      id: 3,
+      icon: 'pizza',
+      name: 'Pica',
+    },
+    {
+      id: 4,
+      icon: 'leaf',
+      name: 'Sallat',
+    },
+    {
+      id: 5,
+      icon: 'food-steak',
+      name: 'Tave',
+    },
+    {
+      id: 6,
+      icon: 'cupcake',
+      name: 'Krepa',
+    },
+    {
+      id: 7,
+      icon: 'beer',
+      name: 'Pije',
+    },
+  ];
 
   useEffect(() => {
-    if (username != '' && password != '') {
-      setEnableButton(true);
-    } else {
-      setEnableButton(false);
-    }
-  }, [username, password]);
 
-  const onSubmit = useCallback(() => {
-    if (username.length < 3) {
-      setApiError(t('login.usernameError'));
-      return;
-    } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-      setApiError(t('login.passwordError'));
-      return;
-    }
-    fetchInfo();
-  }, [username, password]);
-
-  const fetchInfo = useCallback(async () => {
-    await dispatch(getUserDetails());
-    await dispatch(loginUser());
   }, []);
 
+
   return (
-    <KeyboardAwareContainer>
+    <ScrollView>
       <View style={styles.container}>
-        <View style={styles.loginLogoWrapper}>
-          <Icon name="book" size={100} style={styles.iconStyle} />
-        </View>
-        <View style={{marginTop: 50}}>
-          <Text style={styles.textStyle}>{t('login.text')}</Text>
-        </View>
-        <View style={[styles.textInput, {marginTop: -5}]}>
-          <TextInput
-            placeholder={t('login.password')}
-            autoCapitalize="none"
-            label={t('login.password')}
-            password
-            onChangeText={text => changeText(text, 'password')}
-          />
-        </View>
-        <View style={{alignSelf: 'center', marginTop: 5, width: '90%'}}>
-          <Text style={styles.loginError}>{apiError}</Text>
-        </View>
-        <View style={styles.buttonWrapper}>
-          <StyledButton
-            type={
-              !enableButton || apiError != ''
-                ? EButtonType.DISABLED
-                : EButtonType.PRIMARY
-            }
-            spinner={APP_COLORS.typography.body_text}
-            onPress={() => onSubmit()}
-            disabled={!enableButton || apiError != ''}
-            children={() => (
-              <Text style={{color: 'gray'}}>{t('login.button')}</Text>
-            )}
-          />
-        </View>
         <View style={{flexDirection: 'row'}}>
-          <View style={{marginRight: 20}}>
-            <TouchableText
-              touchableText={t('login.doNotHaveAccount')}
-              onPress={() => navigation.replace(EAuthStack.SIGNUP)}
-              fontSize={12}
+          <View style={{alignSelf: 'flex-start', width: '30%'}}>
+            <Image
+              source={require('../../assets/images/logo.png')}
+              style={{width: 100, height: 100}}
             />
           </View>
-          <View style={{marginLeft: 20}}>
-            <TouchableText
-              touchableText={t('login.forgotPassword')}
-              onPress={() => navigation.navigate(EAuthStack.RESET_PASSWORD)}
-              fontSize={12}
+          <View style={{paddingTop: 30, width: '70%'}}>
+            <Text style={styles.motoStyle}>
+              {'Tradicionalja me arome moderne'}
+            </Text>
+          </View>
+        </View>
+        <View style={{marginTop: 10, alignSelf: 'flex-start'}}>
+          <Text style={styles.helloStyle}>
+            {t('user.hello') + ' ' + userName}
+          </Text>
+        </View>
+        <View>
+          <View style={{marginTop: 40, alignSelf: 'flex-start'}}>
+            <Text style={styles.subTitleStyle}>{t('user.categories')}</Text>
+          </View>
+          <View style={{marginTop: 20, alignSelf: 'flex-start', height: 80}}>
+            <FlatList
+              data={foodCategories}
+              horizontal
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({item, index}) => (
+                <Categories icon={item.icon} name={item.name} id={item.id} />
+              )}
+            />
+          </View>
+        </View>
+        <View>
+          <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
+            <Text style={styles.subTitleStyle}>{t('user.ditore')}</Text>
+          </View>
+          <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
+            <FlatList
+              data={DailyFood}
+              horizontal
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({item, index}) => (
+                <FoodView icon={item.foto} name={item.emri} id={item.id} price={item.cmimi} regular={false} />
+              )}
             />
           </View>
         </View>
       </View>
-    </KeyboardAwareContainer>
+    </ScrollView>
   );
 });
 
@@ -119,33 +135,41 @@ MainMenu.displayName = 'Coco';
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  loginError: {
-    color: APP_COLORS.typography.error,
-    textAlign: 'center',
-  },
-  buttonWrapper: {
-    paddingBottom: 30,
-    paddingTop: 15,
-    width: '100%',
-  },
-  loginLogoWrapper: {
-    paddingTop: 50,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flex: 1,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    marginHorizontal: 30,
   },
   iconStyle: {
     color: APP_COLORS.background.container_primary,
   },
-  textStyle: {
+  helloStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
     color: APP_COLORS.typography.body_text,
     textAlign: 'center',
-    marginHorizontal: 50,
+  },
+  motoStyle: {
+    //fontFamily: 'DMSans-Regular',
+    fontSize: 19,
+    fontWeight: 'bold',
+    color: APP_COLORS.typography.body_text,
+    textAlign: 'center',
+  },
+  subTitleStyle: {
+    //fontFamily: 'DMSans-Regular',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: APP_COLORS.typography.body_text,
+    textAlign: 'center',
+  },
+  textStyle: {
+    //fontFamily: 'DMSans-Regular',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: APP_COLORS.typography.body_text,
+    textAlign: 'center',
   },
   textInput: {
     alignSelf: 'center',
