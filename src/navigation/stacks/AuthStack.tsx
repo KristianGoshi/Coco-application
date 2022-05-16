@@ -24,22 +24,17 @@ const AuthStack: React.FC<AuthStackProps> = ({navigation}) => {
       <Stack.Navigator
         initialRouteName={EAuthStack.LOGIN}
         screenOptions={{
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: APP_COLORS.background.container_primary,
-          },
-          headerTintColor: APP_COLORS.typography.body_text,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
+          headerShown: false,
           contentStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
         <Stack.Screen name={EAuthStack.LOGIN} component={Login} />
         <Stack.Screen name={EAuthStack.SIGNUP} component={SignUp} />
-        <Stack.Screen name={EAuthStack.RESET_PASSWORD} component={ResetPassword} />
+        <Stack.Screen
+          name={EAuthStack.RESET_PASSWORD}
+          component={ResetPassword}
+        />
       </Stack.Navigator>
     </SafeAreaView>
   );

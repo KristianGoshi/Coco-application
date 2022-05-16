@@ -9,6 +9,7 @@ import MainMenu from '../../views/menu/MainMenu';
 
 export enum EMenuStack {
   MAIN_MENU = 'Coco',
+  CATEGORIE = 'Categorie'
 }
 export interface MenuStackProps {
   navigation: NativeStackHeaderProps;
@@ -23,15 +24,7 @@ const MenuStack: React.FC<MenuStackProps> = ({navigation}) => {
       <Stack.Navigator
         initialRouteName={EMenuStack.MAIN_MENU}
         screenOptions={{
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: APP_COLORS.background.container_primary,
-          },
-          headerTintColor: APP_COLORS.typography.body_text,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
+          headerShown: false,
           contentStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },

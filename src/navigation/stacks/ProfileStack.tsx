@@ -4,6 +4,7 @@ import {
   NativeStackHeaderProps,
 } from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
+import { APP_COLORS } from '../../assets/styles/colors';
 
 export enum EProfileStack {
   EXAMPLE = 'Example',
@@ -21,17 +22,12 @@ const ProfileStack: React.FC<ProfileStackProps> = ({navigation}) => {
       <Stack.Navigator
         initialRouteName={EProfileStack.EXAMPLE}
         screenOptions={{
-          headerShown: true,
-          headerStyle: {
-            //backgroundColor: theme.backgroundsColor.offBlack,
+          headerShown: false,
+          contentStyle: {
+            backgroundColor: APP_COLORS.background.container_primary,
           },
-          //headerTintColor: theme.typographyColor.bodyText,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTitleAlign: 'center',
-          title: 'Example',
         }}>
+
       </Stack.Navigator>
     </SafeAreaView>
   );
