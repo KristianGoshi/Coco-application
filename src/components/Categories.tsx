@@ -2,6 +2,8 @@ import * as React from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {APP_COLORS} from '../assets/styles/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useNavigation} from '@react-navigation/native';
+import { EMenuStack } from '../navigation/stacks/MenuStack';
 
 export interface CategoriesProps {
   icon: string,
@@ -17,8 +19,12 @@ const Categories: React.FC<CategoriesProps> = React.memo(
     ...props
   }) => {
 
-    const onCategorie = () => {
+    const navigation = useNavigation();
 
+    const onCategorie = () => {
+      navigation.navigate(EMenuStack.SELECTED_CATEGORIE, {
+        title: name
+      });
     }
 
     return (
@@ -35,11 +41,6 @@ const Categories: React.FC<CategoriesProps> = React.memo(
 Categories.displayName = 'Categories';
 
 const styles = StyleSheet.create({
-  label: {
-    //fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   container: {
     alignItems: 'center',
     borderRadius: 20,

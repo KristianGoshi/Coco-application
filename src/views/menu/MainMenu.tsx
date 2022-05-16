@@ -121,7 +121,15 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
               horizontal
               keyExtractor={(item, index) => index.toString()}
               renderItem={({item, index}) => (
-                <FoodView icon={item.foto} name={item.emri} id={item.id} price={item.cmimi} regular={false} />
+                <FoodView
+                  icon={item.foto}
+                  name={item.emri}
+                  id={item.id}
+                  price={item.cmimi}
+                  regular={false}
+                  width={180}
+                  height={250}
+                />
               )}
             />
           </View>
@@ -136,8 +144,6 @@ MainMenu.displayName = 'Coco';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
     marginHorizontal: 30,
   },
   iconStyle: {

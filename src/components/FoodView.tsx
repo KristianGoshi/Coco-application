@@ -10,24 +10,26 @@ export interface FoodViewProps {
   price: number;
   id: number;
   regular: boolean;
+  width: any;
+  height: number;
 }
 
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({icon, name, id, regular, price}) => {
+  ({icon, name, id, regular, price, width, height}) => {
     const {t} = useTranslation('menu');
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, {width: width, height: height}]}>
         <Image
           source={require('../assets/images/krepa/krepa_coko.jpeg')}
           style={{
-            width: 180,
-            height: 150,
+            width: '100%',
+            height: height-110,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
           }}
         />
-        <View style={{marginTop: 15, alignSelf: 'flex-start', marginLeft: 20}}>
+        <View style={{marginTop: 15, alignSelf: 'flex-start', marginHorizontal: 15}}>
           <Text style={styles.textStyle}>{name}</Text>
         </View>
         <View
@@ -35,7 +37,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
             marginTop: 10,
             flexDirection: 'row',
             alignSelf: 'flex-start',
-            marginLeft: 20,
+            marginLeft: 15,
           }}>
           <Text style={[styles.textStyle, {paddingTop: 10}]}>
             {price + 'L'}
@@ -67,10 +69,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     borderRadius: 16,
-    height: 250,
-    width: 180,
+    // height: 250,
+    // width: 180,
     backgroundColor: APP_COLORS.background.elements_secondary,
     marginRight: 20,
+    marginBottom: 20,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
