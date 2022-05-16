@@ -1,7 +1,7 @@
 export const APP_COLORS = {
   tabs_logos: {
-    active: '#C6C9CE',
-    inactive: '#A5AAB1'
+    active: '#33465F',
+    inactive: '#5D7FAF'
   },
   buttons: {
     primary: '#C6C9CE',

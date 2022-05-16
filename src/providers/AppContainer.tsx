@@ -8,6 +8,7 @@ import AuthStack from '../navigation/stacks/AuthStack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { checkLoggedUser } from '../redux/actions/userActions';
 import { userLoggedSelector } from '../redux/selectors/userSelectors';
+import MainTab from '../navigation/tabs/MainTab';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ const App: React.FC = React.memo(() => {
     <NavigationContainer>
       <StatusBar barStyle={'dark-content'} />
       <Stack.Navigator>
-        {!userLogged ? (
+        {userLogged == 'false' ? (
           // No token found, user isn't signed in
           <Stack.Screen
             name="Auth"
@@ -40,7 +41,7 @@ const App: React.FC = React.memo(() => {
           // User is signed in
           <Stack.Screen
             name="Main"
-            component={AuthStack}
+            component={MainTab}
             options={{
               headerShown: false,
             }}
