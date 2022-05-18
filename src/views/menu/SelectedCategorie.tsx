@@ -11,7 +11,7 @@ import {
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import {useDispatch, useSelector} from 'react-redux';
-import FoodView from '../../components/FoodView';
+import FoodView from './FoodView';
 import RegularFood from '../../assets/menu/RegularFood.json';
 import { useRoute } from '@react-navigation/native';
 
@@ -46,9 +46,10 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(({navigat
                   name={item.emri}
                   id={item.id}
                   price={item.cmimi}
-                  regular={false}
+                  regular={true}
                   width={'46%'}
                   height={230}
+                  categorie={params.title}
                 />
               )}
             />

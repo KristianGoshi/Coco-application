@@ -1,8 +1,10 @@
+import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import {View, StyleSheet, Text, Image} from 'react-native';
-import {APP_COLORS} from '../assets/styles/colors';
-import StyledButton, { EButtonType } from './Button';
+import {APP_COLORS} from '../../assets/styles/colors';
+import { EMenuStack } from '../../navigation/stacks/MenuStack';
+import StyledButton, { EButtonType } from '../../components/Button';
 
 export interface FoodViewProps {
   icon: string;
@@ -12,33 +14,38 @@ export interface FoodViewProps {
   regular: boolean;
   width: any;
   height: number;
+  categorie?: string;
 }
 
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({icon, name, id, regular, price, width, height}) => {
+  ({icon, name, id, regular, price, width, height, categorie = 'Ditore'}) => {
     const {t} = useTranslation('menu');
+    const navigation = useNavigation();
+
+    const onSubmit = () => {
+      navigation.navigate(EMenuStack.SELECTED_FOOD, {
+        title: name,
+        foto: icon,
+        price: price,
+        id: id,
+        regular: regular,
+        categorie: categorie,
+        width: width,
+        height: height
+      });
+    }
 
     return (
       <View style={[styles.container, {width: width, height: height}]}>
         <Image
-          source={require('../assets/images/krepa/krepa_coko.jpeg')}
-          style={{
-            width: '100%',
-            height: height-110,
-            borderTopLeftRadius: 16,
-            borderTopRightRadius: 16,
-          }}
+          source={require('../../assets/images/krepa/krepa_coko.jpeg')}
+          style={[styles.imageStyle, {height: height - 110}]}
         />
-        <View style={{marginTop: 15, alignSelf: 'flex-start', marginHorizontal: 15}}>
+        <View style={styles.nameStyle}>
           <Text style={styles.textStyle}>{name}</Text>
         </View>
         <View
-          style={{
-            marginTop: 10,
-            flexDirection: 'row',
-            alignSelf: 'flex-start',
-            marginLeft: 15,
-          }}>
+          style={styles.priceView}>
           <Text style={[styles.textStyle, {paddingTop: 10}]}>
             {price + 'L'}
           </Text>
@@ -47,7 +54,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
             spinner={APP_COLORS.typography.body_text}
             height={20}
             width={'80%'}
-            //onPress={() => onSubmit()}
+            onPress={() => onSubmit()}
             children={() => (
               <Text style={{color: 'gray'}}>{t('food.order')}</Text>
             )}
@@ -80,6 +87,22 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
     color: APP_COLORS.typography.body_text,
+  },
+  nameStyle: {
+    marginTop: 15,
+    alignSelf: 'flex-start',
+    marginHorizontal: 15,
+  },
+  imageStyle: {
+    width: '100%',
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+  },
+  priceView: {
+    marginTop: 10,
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    marginLeft: 15,
   },
 });
 

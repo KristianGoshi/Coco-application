@@ -13,7 +13,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getUserDetails, loginUser} from '../../redux/actions/userActions';
 import { userProfileSelector } from '../../redux/selectors/userSelectors';
 import Categories from '../../components/Categories';
-import FoodView from '../../components/FoodView';
+import FoodView from './FoodView';
 import DailyFood from '../../assets/menu/DailyFood.json'
 
 export interface MainMenuProps {
@@ -100,7 +100,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
           <View style={{marginTop: 40, alignSelf: 'flex-start'}}>
             <Text style={styles.subTitleStyle}>{t('user.categories')}</Text>
           </View>
-          <View style={{marginTop: 20, alignSelf: 'flex-start', height: 80}}>
+          <View style={styles.list}>
             <FlatList
               data={foodCategories}
               horizontal
@@ -180,6 +180,11 @@ const styles = StyleSheet.create({
   textInput: {
     alignSelf: 'center',
     width: '90%',
+  },
+  list: {
+    marginTop: 20,
+    alignSelf: 'flex-start',
+    height: 80,
   },
 });
 

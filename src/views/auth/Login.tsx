@@ -84,7 +84,7 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
             onChangeText={text => changeText(text, 'password')}
           />
         </View>
-        <View style={{alignSelf: 'center', marginTop: 5, width: '90%'}}>
+        <View style={styles.errorView}>
           <Text style={styles.loginError}>{apiError}</Text>
         </View>
         <View style={styles.buttonWrapper}>
@@ -157,6 +157,11 @@ const styles = StyleSheet.create({
   },
   textInput: {
     alignSelf: 'center',
+    width: '90%',
+  },
+  errorView: {
+    alignSelf: 'center',
+    marginTop: 5,
     width: '90%',
   },
 });
