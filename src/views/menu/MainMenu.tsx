@@ -74,6 +74,10 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
 
   }, []);
 
+  // const slides = {
+  //   foto: require(icon),
+  // };
+
 
   return (
     <ScrollView>
@@ -120,17 +124,22 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
               data={DailyFood}
               horizontal
               keyExtractor={(item, index) => index.toString()}
-              renderItem={({item, index}) => (
-                <FoodView
-                  icon={item.foto}
-                  name={item.emri}
-                  id={item.id}
-                  price={item.cmimi}
-                  regular={false}
-                  width={180}
-                  height={250}
-                />
-              )}
+              renderItem={({item, index}) => {
+                const slides = {
+                  foto: require('../../assets/images/krepa/krepa_coko.jpeg'),
+                };
+                return (
+                  <FoodView
+                    icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
+                    name={item.emri}
+                    id={item.id}
+                    price={item.cmimi}
+                    regular={false}
+                    width={180}
+                    height={250}
+                  />
+                );
+              }}
             />
           </View>
         </View>

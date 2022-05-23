@@ -1,49 +1,49 @@
 [
   {
     "id": 1,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Perime ne avull",
     "cmimi": 200
   },
   {
     "id": 2,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Perime furre",
     "cmimi": 200
   },
   {
     "id": 3,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Lazanja",
     "cmimi": 260
   },
   {
     "id": 4,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Kanelloni",
     "cmimi": 280
   },
   {
     "id": 5,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Musaka",
     "cmimi": 300
   },
   {
     "id": 6,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Supe kerpudhe",
     "cmimi": 170
   },
   {
     "id": 7,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Karkaleca deti",
     "cmimi": 350
   },
   {
     "id": 8,
-    "foto": "../assets/images/krepa/krepa_coko.jpeg",
+    "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Rizoto 4 djathrat",
     "cmimi": 150
   }

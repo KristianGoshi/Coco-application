@@ -3,67 +3,67 @@
     "Pasta": [
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta gjalp",
         "cmimi": 200
       },
       {
         "id": 2,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta napoli",
         "cmimi": 200
       },
       {
         "id": 3,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta pana-kerpudhe",
         "cmimi": 250
       },
       {
         "id": 4,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta pana-proshute",
         "cmimi": 260
       },
       {
         "id": 5,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta pesto spinaq-borzilok",
         "cmimi": 250
       },
       {
         "id": 6,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta me ton",
         "cmimi": 320
       },
       {
         "id": 7,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta karbunara",
         "cmimi": 350
       },
       {
         "id": 8,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta 4 djathrat",
         "cmimi": 350
       },
       {
         "id": 9,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta bolonjeze",
         "cmimi": 350
       },
       {
         "id": 10,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta fruta deti",
         "cmimi": 450
       },
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta me karkaleca",
         "cmimi": 550
       }
@@ -71,43 +71,43 @@
     "Rizoto": [
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pilaf",
         "cmimi": 90
       },
       {
         "id": 2,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me perime",
         "cmimi": 200
       },
       {
         "id": 3,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me perime & pule",
         "cmimi": 250
       },
       {
         "id": 4,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto pule teriyaki",
         "cmimi": 250
       },
       {
         "id": 5,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me mish",
         "cmimi": 300
       },
       {
         "id": 6,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me fruta deti",
         "cmimi": 350
       },
       {
         "id": 7,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto vici",
         "cmimi": 200
       }
@@ -115,55 +115,55 @@
     "Sanduic": [
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic sallam-proshut",
         "cmimi": 120
       },
       {
         "id": 2,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic omlet",
         "cmimi": 150
       },
       {
         "id": 3,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic normal",
         "cmimi": 150
       },
       {
         "id": 4,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic pikant",
         "cmimi": 150
       },
       {
         "id": 5,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic ton-kerpudhe",
         "cmimi": 170
       },
       {
         "id": 6,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic chicken",
         "cmimi": 150
       },
       {
         "id": 7,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic special coco",
         "cmimi": 200
       },
       {
         "id": 8,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic milanez",
         "cmimi": 200
       },
       {
         "id": 9,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic integral",
         "cmimi": 150
       }
@@ -171,61 +171,61 @@
     "Pica": [
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza margarita",
         "cmimi": 250
       },
       {
         "id": 2,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza sallam",
         "cmimi": 300
       },
       {
         "id": 3,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza proshut",
         "cmimi": 350
       },
       {
         "id": 4,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza ton",
         "cmimi": 400
       },
       {
         "id": 5,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza vegjetariane",
         "cmimi": 400
       },
       {
         "id": 6,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza kapricoza",
         "cmimi": 400
       },
       {
         "id": 7,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza 4 stinet",
         "cmimi": 400
       },
       {
         "id": 8,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza diavola",
         "cmimi": 400
       },
       {
         "id": 9,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza 4 djathrat",
         "cmimi": 400
       },
       {
         "id": 10,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza speciale",
         "cmimi": 500
       }
@@ -233,49 +233,49 @@
     "Sallat": [
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate fshati",
         "cmimi": 150
       },
       {
         "id": 2,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate greke",
         "cmimi": 150
       },
       {
         "id": 3,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate caprese",
         "cmimi": 190
       },
       {
         "id": 4,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate stine",
         "cmimi": 220
       },
       {
         "id": 5,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate me avokado",
         "cmimi": 220
       },
       {
         "id": 6,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate cezar",
         "cmimi": 280
       },
       {
         "id": 7,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate rukola",
         "cmimi": 250
       },
       {
         "id": 8,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate coco",
         "cmimi": 300
       }
@@ -283,73 +283,73 @@
     "Tave": [
       {
         "id": 1,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Supe pule",
         "cmimi": 150
       },
       {
         "id": 2,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Supe perime",
         "cmimi": 140
       },
       {
         "id": 3,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fileto pule zgare",
         "cmimi": 250
       },
       {
         "id": 4,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Eskallop pule",
         "cmimi": 300
       },
       {
         "id": 5,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fileto pule e mbushur",
         "cmimi": 330
       },
       {
         "id": 6,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Eskallop vici",
         "cmimi": 380
       },
       {
         "id": 7,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Biftek vici",
         "cmimi": 400
       },
       {
         "id": 8,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Berxolle vici",
         "cmimi": 400
       },
       {
         "id": 9,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Perime te mbushura",
         "cmimi": 250
       },
       {
         "id": 10,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Patate furre",
         "cmimi": 120
       },
       {
         "id": 11,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Patate te skuqura",
         "cmimi": 120
       },
       {
         "id": 13,
-        "foto": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Perime zgare",
         "cmimi": 200
       }
@@ -357,16 +357,16 @@
     "Krepa": [
       {
         "id": 1,
-        "foto": "",
-        "emri": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Krep me cokollat",
         "cmimi": 1
       }
     ],
     "Pije": [
       {
         "id": 1,
-        "foto": "",
-        "emri": "",
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Fanta",
         "cmimi": 1
       }
     ]

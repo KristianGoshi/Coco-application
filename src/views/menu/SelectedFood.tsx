@@ -33,7 +33,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     return (
       <ScrollView style={{marginTop: 10}}>
         <Image
-          source={require('../../assets/images/krepa/krepa_coko.jpeg')}
+          source={params.foto}
           style={{
             width: '100%',
             height: 400,

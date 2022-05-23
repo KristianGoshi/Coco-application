@@ -7,7 +7,7 @@ import { EMenuStack } from '../../navigation/stacks/MenuStack';
 import StyledButton, { EButtonType } from '../../components/Button';
 
 export interface FoodViewProps {
-  icon: string;
+  icon: any;
   name: string;
   price: number;
   id: number;
@@ -38,7 +38,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
     return (
       <View style={[styles.container, {width: width, height: height}]}>
         <Image
-          source={require('../../assets/images/krepa/krepa_coko.jpeg')}
+          source={icon}
           style={[styles.imageStyle, {height: height - 110}]}
         />
         <View style={styles.nameStyle}>

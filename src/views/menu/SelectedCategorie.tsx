@@ -42,7 +42,7 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(({navigat
               numColumns={2}
               renderItem={({item, index}) => (
                 <FoodView
-                  icon={item.foto}
+                  icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                   name={item.emri}
                   id={item.id}
                   price={item.cmimi}
