@@ -129,7 +129,7 @@ const MainTab: React.FC = () => {
       />
       <Tab.Screen
         name={ETabs.PROFILE}
-        component={MenuStack}
+        component={ProfileStack}
         options={{
           tabBarIcon: profileIcon,
           tabBarShowLabel: false,

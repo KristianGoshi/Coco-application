@@ -5,9 +5,10 @@ import {
 } from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
+import MyProfile from '../../views/profile/MyProfile';
 
 export enum EProfileStack {
-  EXAMPLE = 'Example',
+  MY_PROFILE = 'My Profile',
 }
 export interface ProfileStackProps {
   navigation: NativeStackHeaderProps;
@@ -20,14 +21,14 @@ const ProfileStack: React.FC<ProfileStackProps> = ({navigation}) => {
       forceInset={{top: 'never', bottom: 'never'}}
       style={{flex: 1}}>
       <Stack.Navigator
-        initialRouteName={EProfileStack.EXAMPLE}
+        initialRouteName={EProfileStack.MY_PROFILE}
         screenOptions={{
           headerShown: false,
           contentStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
-
+        <Stack.Screen name={EProfileStack.MY_PROFILE} component={MyProfile} />
       </Stack.Navigator>
     </SafeAreaView>
   );
