@@ -51,7 +51,8 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
         </View>
         <View style={{flexDirection: 'row', marginTop: 20}}>
           <TouchableOpacity
-            style={[styles.containerSettings, {marginRight: 20}]}>
+            style={[styles.containerSettings, {marginRight: 20}]}
+            onPress={() => navigation.navigate(EProfileStack.CHANGE_LANGUAGE)}>
             <Icon name="language" size={50} style={styles.settingsIconStyle} />
             <Text style={styles.settingsName}>{t('settings.language')}</Text>
           </TouchableOpacity>

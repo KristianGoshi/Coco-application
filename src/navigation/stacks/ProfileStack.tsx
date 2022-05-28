@@ -8,11 +8,13 @@ import { APP_COLORS } from '../../assets/styles/colors';
 import MyProfile from '../../views/profile/MyProfile';
 import ChangeProfile from '../../views/profile/ChangeProfile';
 import ChangePassword from '../../views/profile/ChangePassword';
+import ChangeLanguage from '../../views/profile/ChangeLanguage';
 
 export enum EProfileStack {
   MY_PROFILE = 'My Profile',
   EDIT_PROFILE = 'Edit Profile',
-  CHANGE_PASSWORD = 'Change Password'
+  CHANGE_PASSWORD = 'Change Password',
+  CHANGE_LANGUAGE = 'Change Language'
 }
 export interface ProfileStackProps {
   navigation: NativeStackHeaderProps;
@@ -40,6 +42,10 @@ const ProfileStack: React.FC<ProfileStackProps> = ({navigation}) => {
         <Stack.Screen
           name={EProfileStack.CHANGE_PASSWORD}
           component={ChangePassword}
+        />
+        <Stack.Screen
+          name={EProfileStack.CHANGE_LANGUAGE}
+          component={ChangeLanguage}
         />
       </Stack.Navigator>
     </SafeAreaView>
