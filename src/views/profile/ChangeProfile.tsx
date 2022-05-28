@@ -8,141 +8,111 @@ import KeyboardAwareContainer from '../../components/Keyboard';
 import {EAuthStack} from '../../navigation/stacks/AuthStack';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {useDispatch} from 'react-redux';
-import {registerUser} from '../../redux/actions/userActions';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import {useDispatch, useSelector} from 'react-redux';
+import {editUser} from '../../redux/actions/userActions';
+import { userProfileSelector } from '../../redux/selectors/userSelectors';
 
-export interface SignUpProps {
+export interface ChangeProfileProps {
   navigation: any;
   onPress(): () => void;
 }
 
-const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
+const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) => {
   const dispatch = useDispatch();
-  const {t} = useTranslation('auth');
+  const profile = useSelector(userProfileSelector);
+
+  const {t} = useTranslation('user');
   const [apiError, setApiError] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
-  const [password, setPassword] = useState('');
   const [enableButton, setEnableButton] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const changeText = (text: string, type: string) => {
-    setApiError('');
     if (type == 'username') {
       setUsername(text);
     } else if (type == 'email') {
       setEmail(text);
-    } else if (type == 'phone') {
-      setPhone(text);
-    } else if (type == 'password') {
-      setPassword(text);
     } else {
-      setRepeatPassword(text);
+      setPhone(text);
     }
   };
 
   useEffect(() => {
     if (
-      username != '' &&
-      email != '' &&
-      phone != '' &&
-      password != '' &&
-      repeatPassword != ''
+      username != '' ||
+      email != '' ||
+      phone != ''
     ) {
       setEnableButton(true);
     } else {
       setEnableButton(false);
     }
-  }, [username, email, phone, password, repeatPassword]);
+  }, [username, email, phone]);
 
   const onSubmit = useCallback(() => {
-    if (username.length < 3) {
-      setApiError(t('signup.usernameError'));
+    if (username && username.length < 3) {
+      setApiError(t('editprofile.usernameError'));
       return;
-    } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
-      setApiError(t('signup.emailError'));
+    } else if (email && !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+      setApiError(t('editprofile.emailError'));
       return;
-    } else if (!/^\+[1-9]{1}[0-9]{3,14}$/.test(phone)) {
+    } else if (phone && !/^\+[1-9]{1}[0-9]{3,14}$/.test(phone)) {
       //rregullo regexin per nr e telefonit
-      setApiError(t('signup.phoneError'));
-      return;
-    } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-      setApiError(t('signup.passwordError'));
-      return;
-    } else if (password != repeatPassword) {
-      setApiError(t('signup.repeatPasswordError'));
+      setApiError(t('editprofile.phoneError'));
       return;
     }
-    signUp();
-  }, [username, email, phone, password, repeatPassword]);
+    editprofile();
+  }, [username, email, phone]);
 
-  const signUp = useCallback(async () => {
+  const editprofile = useCallback(async () => {
     await dispatch(
-      registerUser({
-        userName: username,
-        email: email,
-        nrTel: phone,
-        password: password,
+      editUser({
+        userName: username || profile.userName,
+        email: email || profile.email,
+        nrTel: phone || profile.nrTel,
+        password: profile.password
       }),
     );
     setSubmitted(true);
-  }, [username, email, phone, password]);
+  }, [username, email, phone]);
 
   return (
     <KeyboardAwareContainer>
       <View style={styles.container}>
         {!submitted ? (
           <>
-            <View style={styles.signupLogoWrapper}>
-              <Icon name="user-plus" size={100} style={styles.iconStyle} />
+            <View style={styles.editprofileLogoWrapper}>
+              <Icon name="pen-square" size={130} style={styles.iconStyle} />
             </View>
-            <View style={[styles.textInput, {marginTop: 20}]}>
+            <View style={[styles.textInput, {marginTop: 40}]}>
               <TextInput
-                placeholder={t('signup.username')}
+                placeholder={t('editprofile.username')}
                 autoCapitalize="none"
-                label={t('signup.username')}
+                label={t('editprofile.username')}
                 onChangeText={text => changeText(text, 'username')}
               />
             </View>
             <View style={[styles.textInput, {marginTop: -5}]}>
               <TextInput
-                placeholder={t('signup.email')}
+                placeholder={t('editprofile.email')}
                 autoCapitalize="none"
-                label={t('signup.email')}
+                label={t('editprofile.email')}
                 onChangeText={text => changeText(text, 'email')}
               />
             </View>
             <View style={[styles.textInput, {marginTop: -5}]}>
               <TextInput
-                placeholder={t('signup.phone')}
+                placeholder={t('editprofile.phone')}
                 autoCapitalize="none"
-                label={t('signup.phone')}
+                label={t('editprofile.phone')}
                 onChangeText={text => changeText(text, 'phone')}
               />
             </View>
-            <View style={[styles.textInput, {marginTop: -5}]}>
-              <TextInput
-                placeholder={t('signup.password')}
-                autoCapitalize="none"
-                label={t('signup.password')}
-                password
-                onChangeText={text => changeText(text, 'password')}
-              />
-            </View>
-            <View style={[styles.textInput, {marginTop: -5}]}>
-              <TextInput
-                placeholder={t('signup.repeatPassword')}
-                autoCapitalize="none"
-                label={t('signup.repeatPassword')}
-                password
-                onChangeText={text => changeText(text, 'repeatPassword')}
-              />
-            </View>
             <View style={{alignSelf: 'center', marginTop: 5, width: '90%'}}>
-              <Text style={styles.signupError}>{apiError}</Text>
+              <Text style={styles.editprofileError}>{apiError}</Text>
             </View>
             <View style={styles.buttonWrapper}>
               <StyledButton
@@ -155,30 +125,23 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
                 onPress={() => onSubmit()}
                 disabled={!enableButton || apiError != ''}
                 children={() => (
-                  <Text style={{color: 'gray'}}>{t('signup.button')}</Text>
+                  <Text style={{color: 'gray'}}>{t('editprofile.button')}</Text>
                 )}
-              />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <TouchableText
-                touchableText={t('signup.haveAccount')}
-                onPress={() => navigation.replace(EAuthStack.LOGIN)}
-                fontSize={12}
               />
             </View>
           </>
         ) : (
           <>
-            <View style={[styles.signupLogoWrapper, {marginTop: 80}]}>
+            <View style={[styles.editprofileLogoWrapper, {marginTop: 80}]}>
               <Icon name="check-circle" size={200} style={styles.iconStyle} />
             </View>
             <View style={{marginTop: 30}}>
-              <Text style={styles.textStyle}>{t('signup.successSignUp')}</Text>
+              <Text style={styles.textStyle}>{t('editprofile.success')}</Text>
             </View>
             <View style={{marginTop: 20}}>
               <TouchableText
-                touchableText={t('signup.clickToLogin')}
-                onPress={() => navigation.replace(EAuthStack.LOGIN)}
+                touchableText={t('editprofile.goback')}
+                onPress={() => navigation.goback()}
                 fontSize={12}
               />
             </View>
@@ -189,15 +152,15 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
   );
 });
 
-SignUp.displayName = 'SignUp';
+ChangeProfile.displayName = 'Edit Profile';
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 80
+    marginBottom: 80,
   },
-  signupError: {
+  editprofileError: {
     color: APP_COLORS.typography.error,
     textAlign: 'center',
   },
@@ -206,13 +169,13 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     width: '100%',
   },
-  signupLogoWrapper: {
-    paddingTop: 20,
+  editprofileLogoWrapper: {
+    paddingTop: 40,
     flexDirection: 'row',
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_primary,
+    color: APP_COLORS.background.container_secondary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
@@ -228,4 +191,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUp;
+export default ChangeProfile;

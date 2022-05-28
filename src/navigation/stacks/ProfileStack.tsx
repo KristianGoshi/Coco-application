@@ -6,9 +6,13 @@ import {
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
 import MyProfile from '../../views/profile/MyProfile';
+import ChangeProfile from '../../views/profile/ChangeProfile';
+import ChangePassword from '../../views/profile/ChangePassword';
 
 export enum EProfileStack {
   MY_PROFILE = 'My Profile',
+  EDIT_PROFILE = 'Edit Profile',
+  CHANGE_PASSWORD = 'Change Password'
 }
 export interface ProfileStackProps {
   navigation: NativeStackHeaderProps;
@@ -29,6 +33,14 @@ const ProfileStack: React.FC<ProfileStackProps> = ({navigation}) => {
           },
         }}>
         <Stack.Screen name={EProfileStack.MY_PROFILE} component={MyProfile} />
+        <Stack.Screen
+          name={EProfileStack.EDIT_PROFILE}
+          component={ChangeProfile}
+        />
+        <Stack.Screen
+          name={EProfileStack.CHANGE_PASSWORD}
+          component={ChangePassword}
+        />
       </Stack.Navigator>
     </SafeAreaView>
   );

@@ -6,6 +6,7 @@ import {APP_COLORS} from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch, useSelector} from 'react-redux';
 import { userProfileSelector } from '../../redux/selectors/userSelectors';
+import { EProfileStack } from '../../navigation/stacks/ProfileStack';
 
 export interface MyProfileProps {
   navigation: any;
@@ -37,7 +38,9 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
             <Icon name="star" size={50} style={styles.settingsIconStyle} />
             <Text style={styles.settingsName}>{t('settings.favorite')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.containerSettings}>
+          <TouchableOpacity
+            style={styles.containerSettings}
+            onPress={() => navigation.navigate(EProfileStack.EDIT_PROFILE)}>
             <Icon
               name="pen-square"
               size={50}
@@ -52,7 +55,9 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
             <Icon name="language" size={50} style={styles.settingsIconStyle} />
             <Text style={styles.settingsName}>{t('settings.language')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.containerSettings}>
+          <TouchableOpacity
+            style={styles.containerSettings}
+            onPress={() => navigation.navigate(EProfileStack.CHANGE_PASSWORD)}>
             <Icon name="key" size={50} style={styles.settingsIconStyle} />
             <Text style={styles.settingsName}>{t('settings.password')}</Text>
           </TouchableOpacity>

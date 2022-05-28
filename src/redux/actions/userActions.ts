@@ -58,7 +58,6 @@ export const checkLoggedUser = () => async (dispatch: Dispatch) => {
 
 export const loginUser = () => async (dispatch: Dispatch) => {
   await AsyncStorage.setItem('userLogged', 'true');
-  console.log('TQRRRRRR');
 
   dispatch({
     userLogged: 'true',
@@ -78,3 +77,13 @@ export const logoutUser = () => async (dispatch: Dispatch) => {
 export const resetUserPassword = (userData: IProfile) => async (dispatch: Dispatch) => {
   //ketu do te behet vendosja e nje passwordi te ri nepermjet nje linku
 };
+
+export const editUser =
+  (userData: IProfile) => async (dispatch: Dispatch) => {
+    await AsyncStorage.setItem('userProfile', JSON.stringify(userData));
+
+    dispatch({
+      userProfile: userData,
+      type: UserActionTypes.GET_USER,
+    });
+  };
