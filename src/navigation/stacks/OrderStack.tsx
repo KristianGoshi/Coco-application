@@ -22,13 +22,21 @@ const OrderStack: React.FC<OrderStackProps> = ({navigation}) => {
       <Stack.Navigator
         initialRouteName={EOrderStack.EXAMPLE}
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: APP_COLORS.background.container_primary,
+          },
+          headerTintColor: APP_COLORS.typography.body_text,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitleAlign: 'center',
           contentStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
 
-      </Stack.Navigator>
+        </Stack.Navigator>
     </SafeAreaView>
   );
 };

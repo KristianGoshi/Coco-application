@@ -88,15 +88,7 @@ const MainTab: React.FC = () => {
     <Tab.Navigator
       initialRouteName={ETabs.MENU}
       screenOptions={{
-        headerShown: true,
-        headerStyle: {
-          backgroundColor: APP_COLORS.background.container_primary,
-        },
-        headerTintColor: APP_COLORS.typography.body_text,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTitleAlign: 'center',
+        headerShown: false,
         tabBarStyle: {
           backgroundColor: APP_COLORS.background.container_primary,
           borderTopColor: APP_COLORS.background.container_secondary,

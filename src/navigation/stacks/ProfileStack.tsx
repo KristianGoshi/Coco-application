@@ -29,7 +29,15 @@ const ProfileStack: React.FC<ProfileStackProps> = ({navigation}) => {
       <Stack.Navigator
         initialRouteName={EProfileStack.MY_PROFILE}
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: APP_COLORS.background.container_primary,
+          },
+          headerTintColor: APP_COLORS.typography.body_text,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitleAlign: 'center',
           contentStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
