@@ -31,7 +31,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     }
 
     return (
-      <ScrollView style={{marginTop: 10}}>
+      <ScrollView>
         <Image
           source={params.foto}
           style={{

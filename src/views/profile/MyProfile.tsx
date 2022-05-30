@@ -65,7 +65,8 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
         </View>
         <View style={{flexDirection: 'row', marginTop: 20, marginBottom: 30}}>
           <TouchableOpacity
-            style={[styles.containerSettings, {marginRight: 20}]}>
+            style={[styles.containerSettings, {marginRight: 20}]}
+            onPress={() => navigation.navigate(EProfileStack.INFO)}>
             <Icon
               name="info-circle"
               size={50}
