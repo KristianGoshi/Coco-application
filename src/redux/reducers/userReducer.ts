@@ -1,3 +1,4 @@
+import { IMenu } from "./../../models/IMenu";
 import { IProfile } from "./../../models/IProfile";
 import {Reducer} from 'redux';
 import {UserActions, UserActionTypes} from '../actions/userActions';
@@ -5,11 +6,13 @@ import {UserActions, UserActionTypes} from '../actions/userActions';
 export interface IUserState {
   userDetails: IProfile;
   userLogged: string;
+  userFavorites: Array<IMenu>
 }
 
 const initialUserState: IUserState = {
   userDetails: {},
-  userLogged: 'false'
+  userLogged: 'false',
+  userFavorites: []
 };
 
 export const userReducer: Reducer<IUserState, UserActions> = (
@@ -26,6 +29,11 @@ export const userReducer: Reducer<IUserState, UserActions> = (
       return {
         ...state,
         userLogged: action.userLogged,
+      };
+    case UserActionTypes.SET_FAVORITES:
+      return {
+        ...state,
+        userFavorites: action.userFavorites,
       };
     default:
       return state;

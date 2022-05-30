@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, TouchableOpacity, View, Modal, Pressable} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch, useSelector} from 'react-redux';
 import { userProfileSelector } from '../../redux/selectors/userSelectors';
 import { EProfileStack } from '../../navigation/stacks/ProfileStack';
+import { logoutUser } from '../../redux/actions/userActions';
 
 export interface MyProfileProps {
   navigation: any;
@@ -18,9 +19,11 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
   const {t} = useTranslation('user');
 
   const userName = useSelector(userProfileSelector).userName;
+  const [showModal, setModal] = useState(false)
 
-  useEffect(() => {
-
+  const logout = useCallback(async () => {
+    setModal(false);
+    await dispatch(logoutUser());
   }, []);
 
   return (
@@ -34,7 +37,8 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
         </View>
         <View style={{flexDirection: 'row', marginTop: 25}}>
           <TouchableOpacity
-            style={[styles.containerSettings, {marginRight: 20}]}>
+            style={[styles.containerSettings, {marginRight: 20}]}
+            onPress={() => navigation.navigate(EProfileStack.FAVORITES)}>
             <Icon name="star" size={50} style={styles.settingsIconStyle} />
             <Text style={styles.settingsName}>{t('settings.favorite')}</Text>
           </TouchableOpacity>
@@ -74,7 +78,9 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
             />
             <Text style={styles.settingsName}>{t('settings.info')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.containerSettings}>
+          <TouchableOpacity
+            style={styles.containerSettings}
+            onPress={() => setModal(true)}>
             <Icon
               name="sign-out-alt"
               size={50}
@@ -84,6 +90,25 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
           </TouchableOpacity>
         </View>
       </View>
+      <Modal animationType="slide" transparent={true} visible={showModal}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalTitle}>{t('settings.sureLogout')}</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Pressable
+                style={[styles.modalButton, {marginRight: 5}]}
+                onPress={() => setModal(!showModal)}>
+                <Text style={[styles.textStyle, {marginTop: 10}]}>Cancel</Text>
+              </Pressable>
+              <Pressable
+                style={[styles.modalButton, {marginLeft: 5}]}
+                onPress={() => logout()}>
+                <Text style={[styles.textStyle, {marginTop: 10}]}>Logout</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 });
@@ -132,7 +157,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: APP_COLORS.typography.body_text,
     textAlign: 'center',
-    marginHorizontal: 50,
   },
   containerSettings: {
     borderColor: APP_COLORS.background.elements_triary,
@@ -141,6 +165,40 @@ const styles = StyleSheet.create({
     height: 150,
     width: '45%',
     borderRadius: 16,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    paddingHorizontal: 25,
+    paddingVertical: 30,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalButton: {
+    borderRadius: 20,
+    backgroundColor: APP_COLORS.background.container_secondary,
+    height: 40,
+    width: 150,
+  },
+  modalTitle: {
+    marginBottom: 25,
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: APP_COLORS.background.container_secondary,
   },
 });
 

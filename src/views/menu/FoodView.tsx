@@ -5,34 +5,46 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 import {APP_COLORS} from '../../assets/styles/colors';
 import { EMenuStack } from '../../navigation/stacks/MenuStack';
 import StyledButton, { EButtonType } from '../../components/Button';
+import { EProfileStack } from '../../navigation/stacks/ProfileStack';
 
 export interface FoodViewProps {
   icon: any;
   name: string;
   price: number;
-  id: number;
   regular: boolean;
   width: any;
   height: number;
   categorie?: string;
+  favorite?: boolean;
 }
 
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({icon, name, id, regular, price, width, height, categorie = 'Ditore'}) => {
+  ({icon, name, regular, price, width, height, categorie = 'Ditore', favorite = false}) => {
     const {t} = useTranslation('menu');
     const navigation = useNavigation();
 
     const onSubmit = () => {
-      navigation.navigate(EMenuStack.SELECTED_FOOD, {
-        title: name,
-        foto: icon,
-        price: price,
-        id: id,
-        regular: regular,
-        categorie: categorie,
-        width: width,
-        height: height
-      });
+      if (favorite) {
+        navigation.navigate(EProfileStack.FAVORITE_FOOD, {
+          title: name,
+          foto: icon,
+          price: price,
+          regular: regular,
+          categorie: categorie,
+          width: width,
+          height: height,
+        });
+      } else {
+        navigation.navigate(EMenuStack.SELECTED_FOOD, {
+          title: name,
+          foto: icon,
+          price: price,
+          regular: regular,
+          categorie: categorie,
+          width: width,
+          height: height,
+        });
+      }
     }
 
     return (

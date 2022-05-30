@@ -21,12 +21,8 @@ export interface SelectedCategorieProps {
 }
 
 const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(({navigation}) => {
-  const dispatch = useDispatch();
   const {t} = useTranslation('menu');
   const params = useRoute().params;
-
-
-  useEffect(() => {}, []);
 
   return (
     <ScrollView>
@@ -44,7 +40,6 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(({navigat
                 <FoodView
                   icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                   name={item.emri}
-                  id={item.id}
                   price={item.cmimi}
                   regular={true}
                   width={'46%'}

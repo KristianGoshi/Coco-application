@@ -1,20 +1,32 @@
 import { useRoute } from '@react-navigation/native';
 import * as React from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {useTranslation} from 'react-i18next';
 import {View, StyleSheet, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {APP_COLORS} from '../../assets/styles/colors';
 import StyledButton, { EButtonType } from '../../components/Button';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFavorites } from '../../redux/actions/userActions';
+import { IMenu } from '../../models/IMenu';
+import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
 
 export interface SelectedFoodProps {}
 
 const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
   () => {
     const {t} = useTranslation('menu');
+    const dispatch = useDispatch();
+    const userFavorites = useSelector(userFavoritesSelector);
     const params = useRoute().params;
     const [counter, setCounter] = useState(1);
     const [favorite, setFavorite] = useState(false);
+
+    useEffect(() => {
+      if (userFavorites.some(e => e.emri === params.title)) {
+        setFavorite(true);
+      }
+    }, [userFavorites]);
 
     const onDecrease = () => {
       if (counter <= 1) {
@@ -26,9 +38,10 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
       setCounter(counter + 1);
     };
 
-    const onFavorite = () => {
+    const onFavorite = useCallback(async (favoriteFood: Array<IMenu>) => {
+      await dispatch(setFavorites(favoriteFood, !favorite, params.title));
       setFavorite(!favorite);
-    }
+    }, [favorite]);
 
     return (
       <ScrollView>
@@ -112,7 +125,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
                   name={favorite ? 'heart' : 'heart-outline'}
                   style={styles.icon}
                   size={35}
-                  onPress={() => onFavorite()}
+                  onPress={() => onFavorite([{emri: params.title, categorie: params.categorie, foto: params.foto, cmimi: params.price}])}
                 />
               </View>
             )}

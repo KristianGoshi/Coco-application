@@ -1,3 +1,4 @@
+import { IMenu } from "./../../models/IMenu";
 import { IProfile } from "./../../models/IProfile";
 // Import redux types
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -6,13 +7,15 @@ import {Dispatch} from 'redux';
 // Create Action Constants
 export enum UserActionTypes {
   GET_USER = 'GET_USER',
-  CHECK_LOGGED = 'CHECK_LOGGED'
+  CHECK_LOGGED = 'CHECK_LOGGED',
+  SET_FAVORITES = 'SET_FAVORITES',
 }
 // Interface to Get All Action Type
 export interface IUserGetAllUsersAction {
   type: UserActionTypes;
   userProfile: IProfile;
   userLogged: string;
+  userFavorites: Array<IMenu>
 }
 
 /*
@@ -74,10 +77,6 @@ export const logoutUser = () => async (dispatch: Dispatch) => {
   });
 };
 
-export const resetUserPassword = (userData: IProfile) => async (dispatch: Dispatch) => {
-  //ketu do te behet vendosja e nje passwordi te ri nepermjet nje linku
-};
-
 export const editUser =
   (userData: IProfile) => async (dispatch: Dispatch) => {
     await AsyncStorage.setItem('userProfile', JSON.stringify(userData));
@@ -87,3 +86,51 @@ export const editUser =
       type: UserActionTypes.GET_USER,
     });
   };
+
+export const setFavorites = (userFavorites: Array<IMenu>, add: boolean, emri: string) => async (dispatch: Dispatch) => {
+  const storageFavorites = await AsyncStorage.getItem('userFavorites');
+  if (storageFavorites != null) { //if there are previous saved items
+    let newFavorites;
+    if (add) { //for adding an item to the favorites list
+      newFavorites = userFavorites.concat(JSON.parse(storageFavorites));
+    } else { //for removing an item from the favorites list
+      const index = JSON.parse(storageFavorites).findIndex((o: any) => {
+        return o.emri === emri;
+      });
+      if (index > -1) {
+        newFavorites = JSON.parse(storageFavorites)
+        newFavorites.splice(index, 1);
+      }
+    }
+    await AsyncStorage.setItem(
+      'userFavorites',
+      JSON.stringify(newFavorites),
+    );
+    dispatch({
+      userFavorites: newFavorites,
+      type: UserActionTypes.SET_FAVORITES,
+    });
+  } else { //if there are no previous saved items
+    console.log('2B');
+    await AsyncStorage.setItem(
+      'userFavorites',
+      JSON.stringify(userFavorites),
+    );
+    dispatch({
+      userFavorites: userFavorites,
+      type: UserActionTypes.SET_FAVORITES,
+    });
+  }
+  // await AsyncStorage.removeItem('userFavorites');
+}
+
+export const getUserFavorites = () => async (dispatch: Dispatch) => {
+  const userFavorites = await AsyncStorage.getItem('userFavorites');
+
+  if (userFavorites != null) {
+    dispatch({
+      userFavorites: JSON.parse(userFavorites),
+      type: UserActionTypes.SET_FAVORITES,
+    });
+  }
+};

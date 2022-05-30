@@ -10,3 +10,7 @@ export const userLoggedSelector = createSelector(
   selectSelf,
   state => state?.userState?.userLogged,
 );
+export const userFavoritesSelector = createSelector(
+  selectSelf,
+  state => state?.userState?.userFavorites,
+);

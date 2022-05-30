@@ -3,5 +3,6 @@ export interface IMenu {
   foto?: string;
   emri?: string;
   cmimi?: number;
+  categorie?: string;
   fotot?: Array<String>
 }

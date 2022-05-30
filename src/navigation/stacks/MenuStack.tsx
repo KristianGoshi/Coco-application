@@ -6,8 +6,8 @@ import {
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
 import MainMenu from '../../views/menu/MainMenu';
-import SelectedCategorie from '../../views/menu/SelectedCategorie';
 import SelectedFood from '../../views/menu/SelectedFood';
+import SelectedCategorie from '../../views/menu/SelectedCategorie';
 
 export enum EMenuStack {
   MAIN_MENU = 'Coco',
