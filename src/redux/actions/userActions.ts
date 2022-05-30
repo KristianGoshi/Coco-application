@@ -30,7 +30,7 @@ export type UserActions = IUserGetAllUsersAction;
 export const getUserDetails = () => async (dispatch: Dispatch) => {
   const userProfile = await AsyncStorage.getItem('userProfile');
 
-  if (userProfile != null) {
+  if (userProfile != null) { //check if there is a user profile in storage
     dispatch({
       userProfile: JSON.parse(userProfile),
       type: UserActionTypes.GET_USER,
@@ -40,6 +40,7 @@ export const getUserDetails = () => async (dispatch: Dispatch) => {
 
 export const registerUser = (userData: IProfile) => async (dispatch: Dispatch) => {
   await AsyncStorage.setItem('userProfile', JSON.stringify(userData))
+  //register the user in the storage
 
   dispatch({
     userProfile: userData,
@@ -51,7 +52,7 @@ export const checkLoggedUser = () => async (dispatch: Dispatch) => {
   let userLogged = await AsyncStorage.getItem('userLogged');
   if (userLogged == null) {
     userLogged = 'false';
-  }
+  } //if there is no item it means the user is not logged in
 
   dispatch({
     userLogged: userLogged,
@@ -61,6 +62,7 @@ export const checkLoggedUser = () => async (dispatch: Dispatch) => {
 
 export const loginUser = () => async (dispatch: Dispatch) => {
   await AsyncStorage.setItem('userLogged', 'true');
+  //add the item in the storage to be used for the logged-in check
 
   dispatch({
     userLogged: 'true',
@@ -111,7 +113,6 @@ export const setFavorites = (userFavorites: Array<IMenu>, add: boolean, emri: st
       type: UserActionTypes.SET_FAVORITES,
     });
   } else { //if there are no previous saved items
-    console.log('2B');
     await AsyncStorage.setItem(
       'userFavorites',
       JSON.stringify(userFavorites),
@@ -127,7 +128,7 @@ export const setFavorites = (userFavorites: Array<IMenu>, add: boolean, emri: st
 export const getUserFavorites = () => async (dispatch: Dispatch) => {
   const userFavorites = await AsyncStorage.getItem('userFavorites');
 
-  if (userFavorites != null) {
+  if (userFavorites != null) { //check if there are any favorites items saved
     dispatch({
       userFavorites: JSON.parse(userFavorites),
       type: UserActionTypes.SET_FAVORITES,
