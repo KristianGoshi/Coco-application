@@ -89,21 +89,10 @@ export const editUser =
     });
   };
 
-export const setFavorites = (userFavorites: Array<IMenu>, add: boolean, emri: string) => async (dispatch: Dispatch) => {
+export const setFavorites = (userFavorites: Array<IMenu>) => async (dispatch: Dispatch) => {
   const storageFavorites = await AsyncStorage.getItem('userFavorites');
   if (storageFavorites != null) { //if there are previous saved items
-    let newFavorites;
-    if (add) { //for adding an item to the favorites list
-      newFavorites = userFavorites.concat(JSON.parse(storageFavorites));
-    } else { //for removing an item from the favorites list
-      const index = JSON.parse(storageFavorites).findIndex((o: any) => {
-        return o.emri === emri;
-      });
-      if (index > -1) {
-        newFavorites = JSON.parse(storageFavorites)
-        newFavorites.splice(index, 1);
-      }
-    }
+    const newFavorites = userFavorites.concat(JSON.parse(storageFavorites));
     await AsyncStorage.setItem(
       'userFavorites',
       JSON.stringify(newFavorites),
@@ -122,8 +111,24 @@ export const setFavorites = (userFavorites: Array<IMenu>, add: boolean, emri: st
       type: UserActionTypes.SET_FAVORITES,
     });
   }
-  // await AsyncStorage.removeItem('userFavorites');
 }
+
+export const removeFavorites = (emri: string) => async (dispatch: Dispatch) => {
+  const storageFavorites = await AsyncStorage.getItem('userFavorites');
+  let newFavorites;
+  const index = JSON.parse(storageFavorites).findIndex((o: any) => {
+    return o.emri === emri;
+  });
+  if (index > -1) {
+    newFavorites = JSON.parse(storageFavorites);
+    newFavorites.splice(index, 1);
+  }
+  await AsyncStorage.setItem('userFavorites', JSON.stringify(newFavorites));
+  dispatch({
+    userFavorites: newFavorites,
+    type: UserActionTypes.SET_FAVORITES,
+  });
+};
 
 export const getUserFavorites = () => async (dispatch: Dispatch) => {
   const userFavorites = await AsyncStorage.getItem('userFavorites');

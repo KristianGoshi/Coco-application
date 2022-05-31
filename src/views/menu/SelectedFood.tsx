@@ -7,7 +7,7 @@ import {APP_COLORS} from '../../assets/styles/colors';
 import StyledButton, { EButtonType } from '../../components/Button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFavorites } from '../../redux/actions/userActions';
+import { removeFavorites, setFavorites } from '../../redux/actions/userActions';
 import { IMenu } from '../../models/IMenu';
 import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
 
@@ -39,7 +39,11 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     };
 
     const onFavorite = useCallback(async (favoriteFood: Array<IMenu>) => {
-      await dispatch(setFavorites(favoriteFood, !favorite, params.title));
+      if (!favorite) {
+        await dispatch(setFavorites(favoriteFood));
+      } else {
+        await dispatch(removeFavorites(params.title));
+      }
       setFavorite(!favorite);
     }, [favorite]);
 
