@@ -19,7 +19,7 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
   const {t} = useTranslation('user');
 
   const userName = useSelector(userProfileSelector).userName;
-  const [showModal, setModal] = useState(false)
+  const [showModal, setModal] = useState(false);
 
   const logout = useCallback(async () => {
     setModal(false);
@@ -96,14 +96,26 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
             <Text style={styles.modalTitle}>{t('settings.sureLogout')}</Text>
             <View style={{flexDirection: 'row'}}>
               <Pressable
-                style={[styles.modalButton, {marginRight: 5}]}
+                style={[
+                  styles.modalButton,
+                  {marginRight: 5, backgroundColor: 'white'},
+                ]}
                 onPress={() => setModal(!showModal)}>
-                <Text style={[styles.textStyle, {marginTop: 10}]}>Cancel</Text>
+                <Text
+                  style={[
+                    styles.textStyle,
+                    {
+                      marginTop: 9,
+                      color: APP_COLORS.background.container_secondary,
+                    },
+                  ]}>
+                  {t('settings.cancel')}
+                </Text>
               </Pressable>
               <Pressable
                 style={[styles.modalButton, {marginLeft: 5}]}
                 onPress={() => logout()}>
-                <Text style={[styles.textStyle, {marginTop: 10}]}>Logout</Text>
+                <Text style={[styles.textStyle, {marginTop: 9}]}>{t('settings.confirm')}</Text>
               </Pressable>
             </View>
           </View>
@@ -189,6 +201,8 @@ const styles = StyleSheet.create({
   },
   modalButton: {
     borderRadius: 20,
+    borderColor: APP_COLORS.background.container_secondary,
+    borderWidth: 2,
     backgroundColor: APP_COLORS.background.container_secondary,
     height: 40,
     width: 150,

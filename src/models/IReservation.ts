@@ -1,7 +1,5 @@
 export interface IReservation {
-  id: number;
+  emri: string;
   data: string;
-  ora: string;
-  tavolina: string;
   nrPersonave: string;
 }

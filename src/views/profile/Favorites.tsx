@@ -1,19 +1,13 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
 import {
   FlatList,
-  Image,
   ScrollView,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
-import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import FoodView from '../menu/FoodView';
-import RegularFood from '../../assets/menu/RegularFood.json';
-import {useRoute} from '@react-navigation/native';
 import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
 
 export interface FavoritesProps {
@@ -28,26 +22,24 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
     return (
       <ScrollView>
         <View style={styles.container}>
-          <View>
-            <View style={{marginTop: 30, alignSelf: 'flex-start'}}>
-              <FlatList
-                data={userFavorites}
-                keyExtractor={(item, index) => index.toString()}
-                numColumns={2}
-                renderItem={({item, index}) => (
-                  <FoodView
-                    icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
-                    name={item.emri}
-                    price={item.cmimi}
-                    regular={true}
-                    width={'46%'}
-                    height={230}
-                    categorie={item.categorie}
-                    favorite
-                  />
-                )}
-              />
-            </View>
+          <View style={{marginTop: 30, alignSelf: 'flex-start'}}>
+            <FlatList
+              data={userFavorites}
+              keyExtractor={(item, index) => index.toString()}
+              numColumns={2}
+              renderItem={({item, index}) => (
+                <FoodView
+                  icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
+                  name={item.emri}
+                  price={item.cmimi}
+                  regular={true}
+                  width={'46%'}
+                  height={230}
+                  categorie={item.categorie}
+                  favorite
+                />
+              )}
+            />
           </View>
         </View>
       </ScrollView>

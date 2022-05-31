@@ -1,12 +1,13 @@
 import {Reducer} from 'redux';
+import { IReservation } from '../../models/IReservation';
 import {ReserveActions, ReserveActionTypes} from '../actions/reserveActions';
 
 export interface IReserveState {
-  example: any;
+  userReservations: Array<IReservation>;
 }
 
 const initialReserveState: IReserveState = {
-  example: '',
+  userReservations: [],
 };
 
 export const reserveReducer: Reducer<IReserveState, ReserveActions> = (
@@ -14,10 +15,10 @@ export const reserveReducer: Reducer<IReserveState, ReserveActions> = (
   action,
 ) => {
   switch (action.type) {
-    case ReserveActionTypes.EXAMPLE_TYPE:
+    case ReserveActionTypes.SET_RESERVATIONS:
       return {
         ...state,
-        allCars: action.example,
+        userReservations: action.userReservations,
       };
     default:
       return state;

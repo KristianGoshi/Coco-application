@@ -7,7 +7,6 @@ import ProfileStack from '../stacks/ProfileStack';
 import ReserveStack from '../stacks/ReserveStack';
 import { APP_COLORS } from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useIsFocused } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
@@ -113,7 +112,7 @@ const MainTab: React.FC = () => {
       />
       <Tab.Screen
         name={ETabs.RESERVE}
-        component={MenuStack}
+        component={ReserveStack}
         options={{
           tabBarIcon: reserveIcon,
           tabBarShowLabel: false,

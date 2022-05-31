@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useTranslation} from 'react-i18next';
 import { getUserDetails, getUserFavorites } from '../redux/actions/userActions';
 import { useDispatch } from 'react-redux';
+import { getUserReservations } from '../redux/actions/reserveActions';
 
 const CocoLoadProvider: React.FC = React.memo(() => {
   const {i18n} = useTranslation();
@@ -24,11 +25,16 @@ const CocoLoadProvider: React.FC = React.memo(() => {
     await dispatch(getUserFavorites());
   }, []);
 
+  const fetchReservations = useCallback(async () => {
+    await dispatch(getUserReservations());
+  }, []);
+
   useEffect(() => {
     fetchLanguage();
     fetchUserInfo();
     fetchFavorites();
-  }, [fetchLanguage, fetchUserInfo, fetchFavorites]);
+    fetchReservations();
+  }, [fetchLanguage, fetchUserInfo, fetchFavorites, fetchReservations]);
   return <></>;
 });
 

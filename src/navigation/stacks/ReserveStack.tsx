@@ -5,9 +5,10 @@ import {
 } from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
+import Reservations from '../../views/reserve/Reservations';
 
 export enum EReserveStack {
-  EXAMPLE = 'Example',
+  RESERVATIONS = 'Reservations',
 }
 export interface ReserveStackProps {
   navigation: NativeStackHeaderProps;
@@ -20,7 +21,7 @@ const ReserveStack: React.FC<ReserveStackProps> = ({navigation}) => {
       forceInset={{top: 'never', bottom: 'never'}}
       style={{flex: 1}}>
       <Stack.Navigator
-        initialRouteName={EReserveStack.EXAMPLE}
+        initialRouteName={EReserveStack.RESERVATIONS}
         screenOptions={{
           headerShown: true,
           headerStyle: {
@@ -35,8 +36,11 @@ const ReserveStack: React.FC<ReserveStackProps> = ({navigation}) => {
             backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
-
-        </Stack.Navigator>
+        <Stack.Screen
+          name={EReserveStack.RESERVATIONS}
+          component={Reservations}
+        />
+      </Stack.Navigator>
     </SafeAreaView>
   );
 };
