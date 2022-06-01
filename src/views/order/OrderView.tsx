@@ -51,25 +51,14 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
         <View style={styles.container}>
           <Image
             source={foto}
-            style={{
-              width: 65,
-              height: 65,
-              borderRadius: 20
-            }}
+            style={styles.image}
           />
           <View style={styles.sectionView}>
             <Text style={styles.textStyle}>{emri}</Text>
             <Text style={styles.textStyle}>{cmimi * counter + ' Lek'}</Text>
           </View>
           <View
-            style={{
-              flexDirection: 'row',
-              marginLeft: 15,
-              borderWidth: 2,
-              borderColor: APP_COLORS.background.container_secondary,
-              borderRadius: 12,
-              paddingVertical: 4
-            }}>
+            style={styles.counterButtons}>
             <TouchableOpacity
               onPress={() => onDecrease()}
               style={styles.increase}>
@@ -152,7 +141,7 @@ const styles = StyleSheet.create({
   sectionView: {
     marginLeft: 18,
     alignSelf: 'center',
-    width: 115
+    width: 115,
   },
   iconStyle: {
     color: APP_COLORS.background.container_secondary,
@@ -207,6 +196,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     color: APP_COLORS.background.elements_secondary,
+  },
+  counterButtons: {
+    flexDirection: 'row',
+    marginLeft: 15,
+    borderWidth: 2,
+    borderColor: APP_COLORS.background.container_secondary,
+    borderRadius: 12,
+    paddingVertical: 4,
+  },
+  image: {
+    width: 65,
+    height: 65,
+    borderRadius: 20,
   },
 });
 

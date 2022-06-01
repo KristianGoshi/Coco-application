@@ -33,7 +33,7 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
           <Icon name="user-alt" size={80} style={styles.iconStyle} />
         </View>
         <View style={{marginTop: 10}}>
-          <Text style={styles.textStyle}>{userName || 'Gzimi'}</Text>
+          <Text style={styles.textStyle}>{userName}</Text>
         </View>
         <View style={{flexDirection: 'row', marginTop: 25}}>
           <TouchableOpacity

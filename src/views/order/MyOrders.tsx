@@ -13,7 +13,7 @@ import {
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import {useDispatch, useSelector} from 'react-redux';
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { userOrderSelector } from '../../redux/selectors/orderSelectors';
 import OrderView from './OrderView';
 
@@ -24,26 +24,47 @@ export interface MyOrdersProps {
 
 const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
   const userOrder = useSelector(userOrderSelector);
-  const {t} = useTranslation('order');
+  const {t} = useTranslation('user');
 
   return (
     <>
       <ScrollView>
         <View style={styles.container}>
-          <View style={{marginTop: 15, borderWidth: 2, borderColor: APP_COLORS.background.container_secondary, padding: 5, borderRadius: 16, backgroundColor: APP_COLORS.background.container_triary}}>
-            <FlatList
-              data={userOrder}
-              keyExtractor={(item, index) => index.toString()}
-              renderItem={({item, index}) => (
-                <OrderView
-                  emri={item.emri}
-                  foto={item.foto}
-                  sasia={item.sasia}
-                  cmimi={item.cmimi}
+          {userOrder.length ? (
+            <View style={styles.listView}>
+              <FlatList
+                data={userOrder}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({item, index}) => (
+                  <OrderView
+                    emri={item.emri}
+                    foto={item.foto}
+                    sasia={item.sasia}
+                    cmimi={item.cmimi}
+                  />
+                )}
+              />
+            </View>
+          ) : (
+            <View style={{marginTop: 180, marginHorizontal: 30}}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  color: APP_COLORS.background.container_secondary,
+                  textAlign: 'center',
+                }}>
+                {t('none.order')}
+              </Text>
+              <View>
+                <Icon
+                  name="restaurant"
+                  size={150}
+                  style={styles.settingsIconStyle}
                 />
-              )}
-            />
-          </View>
+              </View>
+            </View>
+          )}
         </View>
       </ScrollView>
     </>
@@ -85,6 +106,19 @@ const styles = StyleSheet.create({
   addSign: {
     alignItems: 'center',
     marginTop: 5,
+  },
+  listView: {
+    marginTop: 15,
+    borderWidth: 2,
+    borderColor: APP_COLORS.background.container_secondary,
+    padding: 5,
+    borderRadius: 16,
+    backgroundColor: APP_COLORS.background.container_triary,
+  },
+  settingsIconStyle: {
+    color: APP_COLORS.background.container_secondary,
+    alignSelf: 'center',
+    marginTop: 50,
   },
 });
 

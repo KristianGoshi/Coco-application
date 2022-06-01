@@ -35,22 +35,41 @@ const Reservations: React.FC<ReservationsProps> = React.memo(({navigation}) => {
     <>
       <ScrollView>
         <View style={styles.container}>
-          <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
-            <Text style={styles.titleStyle}>{t('reservation.hello')}</Text>
-          </View>
-          <View style={{marginTop: 30}}>
-            <FlatList
-              data={userReservations}
-              keyExtractor={(item, index) => index.toString()}
-              renderItem={({item, index}) => (
-                <ReservationView
-                  name={item.emri}
-                  date={item.data}
-                  nrPersonave={item.nrPersonave}
+          {userReservations.length ? (
+            <>
+              <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
+                <Text style={styles.titleStyle}>{t('reservation.hello')}</Text>
+              </View>
+              <View style={{marginTop: 30}}>
+                <FlatList
+                  data={userReservations}
+                  keyExtractor={(item, index) => index.toString()}
+                  renderItem={({item, index}) => (
+                    <ReservationView
+                      name={item.emri}
+                      date={item.data}
+                      nrPersonave={item.nrPersonave}
+                    />
+                  )}
                 />
-              )}
-            />
-          </View>
+              </View>
+            </>
+          ) : (
+            <View style={{marginTop: 180, marginHorizontal: 30}}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  color: APP_COLORS.background.container_secondary,
+                  textAlign: 'center',
+                }}>
+                {t('none.reservation')}
+              </Text>
+              <View>
+                <Icon name="calendar" size={150} style={styles.settingsIconStyle} />
+              </View>
+            </View>
+          )}
         </View>
       </ScrollView>
       <TouchableOpacity style={styles.addButton} onPress={() => setModal(true)}>
@@ -104,6 +123,11 @@ const styles = StyleSheet.create({
   addSign: {
     alignItems: 'center',
     marginTop: 5,
+  },
+  settingsIconStyle: {
+    color: APP_COLORS.background.container_secondary,
+    alignSelf: 'center',
+    marginTop: 50,
   },
 });
 
