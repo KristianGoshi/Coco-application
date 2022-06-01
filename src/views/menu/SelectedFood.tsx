@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeFavorites, setFavorites } from '../../redux/actions/userActions';
 import { IMenu } from '../../models/IMenu';
 import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
+import { setOrder } from '../../redux/actions/orderActions';
 
 export interface SelectedFoodProps {}
 
@@ -46,6 +47,12 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
       }
       setFavorite(!favorite);
     }, [favorite]);
+
+    const onOrder = useCallback(async () => {
+        await dispatch(setOrder({foto: params.foto, emri: params.title, cmimi: params.price, sasia: counter}))
+      },
+      [params, counter],
+    );
 
     return (
       <ScrollView>
@@ -114,7 +121,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
               <StyledButton
                 type={EButtonType.SECONDARY}
                 width={'100%'}
-                //onPress={() => onSubmit()}
+                onPress={() => onOrder()}
                 children={() => (
                   <Text style={{color: APP_COLORS.typography.body_text}}>
                     {t('food.order')}

@@ -24,7 +24,6 @@ export type ReserveActions = IReserveGetAllReservesAction;
 
 export const setReservations =
   (userReservations: Array<IReservation>) => async (dispatch: Dispatch) => {
-    console.log("FF", userReservations)
     const storageReservations = await AsyncStorage.getItem('userReservations');
     if (storageReservations != null) {
       //if there are previous saved items

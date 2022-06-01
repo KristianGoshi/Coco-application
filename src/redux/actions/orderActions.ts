@@ -1,14 +1,16 @@
+import { IOrder } from "./../../models/IOrder";
 // Import redux types
 import {Dispatch} from 'redux';
 
 // Create Action Constants
 export enum OrderActionTypes {
-  EXAMPLE_TYPE = 'EXAMPLE_TYPE',
+  SET_ORDER = 'SET_ORDER',
+  REMOVE_ORDER = 'REMOVE_ORDER',
 }
 // Interface to Get All Action Type
 export interface IOrderGetAllOrdersAction {
   type: OrderActionTypes;
-  example: any;
+  userOrders: Array<IOrder>;
 }
 
 /*
@@ -20,10 +22,20 @@ export type OrderActions = IOrderGetAllOrdersAction;
 /* Get All Action
 <Promise<Return Type>, State Interface, Type of Param, Type of Action> */
 
-export const setExample = (isFiltered: boolean) => (dispatch: Dispatch) =>
+export const setOrder = (userOrder: IOrder) => async (dispatch: Dispatch) => {
   dispatch({
-    isFiltered: isFiltered,
-    type: OrderActionTypes.EXAMPLE_TYPE,
+    userOrders: userOrder,
+    type: OrderActionTypes.SET_ORDER,
   });
+}
+
+export const removeOrder =
+  (userOrder: IOrder) => async (dispatch: Dispatch) => {
+    console.log(userOrder)
+    dispatch({
+      userOrders: userOrder,
+      type: OrderActionTypes.REMOVE_ORDER,
+    });
+  };
 
 

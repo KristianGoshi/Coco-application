@@ -5,9 +5,10 @@ import {
 } from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
+import MyOrders from '../../views/order/MyOrders';
 
 export enum EOrderStack {
-  EXAMPLE = 'Example',
+  MY_ORDERS = 'My Order',
 }
 export interface OrderStackProps {
   navigation: NativeStackHeaderProps;
@@ -20,7 +21,7 @@ const OrderStack: React.FC<OrderStackProps> = ({navigation}) => {
       forceInset={{top: 'never', bottom: 'never'}}
       style={{flex: 1}}>
       <Stack.Navigator
-        initialRouteName={EOrderStack.EXAMPLE}
+        initialRouteName={EOrderStack.MY_ORDERS}
         screenOptions={{
           headerShown: true,
           headerStyle: {
@@ -35,8 +36,11 @@ const OrderStack: React.FC<OrderStackProps> = ({navigation}) => {
             backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
-
-        </Stack.Navigator>
+        <Stack.Screen
+          name={EOrderStack.MY_ORDERS}
+          component={MyOrders}
+        />
+      </Stack.Navigator>
     </SafeAreaView>
   );
 };

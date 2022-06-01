@@ -104,7 +104,7 @@ const MainTab: React.FC = () => {
       />
       <Tab.Screen
         name={ETabs.ORDER}
-        component={MenuStack}
+        component={OrderStack}
         options={{
           tabBarIcon: orderIcon,
           tabBarShowLabel: false,

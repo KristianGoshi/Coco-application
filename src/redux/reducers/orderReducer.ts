@@ -1,24 +1,30 @@
+import { IOrder } from "./../../models/IOrder";
 import {Reducer} from 'redux';
 import { OrderActions, OrderActionTypes } from '../actions/orderActions';
 
 export interface IOrderState {
-  example: any;
+  userOrders: Array<IOrder>;
 }
 
 const initialOrderState: IOrderState = {
-  example: '',
+  userOrders: [],
 };
 
 
-export const orderReducer: Reducer<IOrderState, OrderActions> = (
+export const orderReducer: Reducer = (
   state = initialOrderState,
   action,
 ) => {
   switch (action.type) {
-    case OrderActionTypes.EXAMPLE_TYPE:
+    case OrderActionTypes.SET_ORDER:
       return {
         ...state,
-        allCars: action.example,
+        userOrders: [action.userOrders, ...state.userOrders],
+      };
+    case OrderActionTypes.REMOVE_ORDER:
+      return {
+        ...state,
+        userOrders: state.userOrders.filter((order: IOrder) => order.emri !== action.userOrders.emri),
       };
     default:
       return state;
