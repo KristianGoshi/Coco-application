@@ -7,6 +7,8 @@ import ProfileStack from '../stacks/ProfileStack';
 import ReserveStack from '../stacks/ReserveStack';
 import { APP_COLORS } from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useSelector } from 'react-redux';
+import { userOrderSelector } from '../../redux/selectors/orderSelectors';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,72 +19,96 @@ export enum ETabs {
   PROFILE = 'Profile'
 }
 
-const menuIcon = (icon: {focused: boolean}) => (
-  <View style={[styles.iconBaseContainer]} accessibilityLabel="menu">
-    <Icon
-      name="restaurant"
-      style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
-      size={25}
-    />
-    <Text
-      style={[
-        icon.focused ? styles.activeLogo : styles.inActiveLogo,
-        {fontSize: 10},
-      ]}>
-      Menu
-    </Text>
-  </View>
-);
-
-const orderIcon = (icon: {focused: boolean}) => (
-  <View style={[styles.iconBaseContainer]} accessibilityLabel="order">
-    <Icon
-      name="call"
-      style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
-      size={25}
-    />
-    <Text
-      style={[
-        icon.focused ? styles.activeLogo : styles.inActiveLogo,
-        {fontSize: 10},
-      ]}>
-      Order
-    </Text>
-  </View>
-);
-
-const reserveIcon = (icon: {focused: boolean}) => (
-  <View style={[styles.iconBaseContainer]} accessibilityLabel="reserve">
-    <Icon
-      name="calendar"
-      style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
-      size={25}
-    />
-    <Text style={[icon.focused ? styles.activeLogo : styles.inActiveLogo, {fontSize: 10}]}>
-      Reserve
-    </Text>
-  </View>
-);
-
-const profileIcon = (icon: {focused: boolean}) => (
-  <View style={[styles.iconBaseContainer]} accessibilityLabel="profile">
-    <Icon
-      name="person"
-      style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
-      size={25}
-    />
-    <Text
-      style={[
-        icon.focused ? styles.activeLogo : styles.inActiveLogo,
-        {fontSize: 10},
-      ]}>
-      Profile
-    </Text>
-  </View>
-);
-
-
 const MainTab: React.FC = () => {
+  const userOrder = useSelector(userOrderSelector);
+
+  const menuIcon = (icon: {focused: boolean}) => (
+    <View style={[styles.iconBaseContainer]} accessibilityLabel="menu">
+      <Icon
+        name="restaurant"
+        style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
+        size={25}
+      />
+      <Text
+        style={[
+          icon.focused ? styles.activeLogo : styles.inActiveLogo,
+          {fontSize: 10},
+        ]}>
+        Menu
+      </Text>
+    </View>
+  );
+
+  const orderIcon = (icon: {focused: boolean}) => (
+    <View style={[styles.iconBaseContainer]} accessibilityLabel="order">
+      <Icon
+        name="call"
+        style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
+        size={25}
+      />
+      <Text
+        style={[
+          icon.focused ? styles.activeLogo : styles.inActiveLogo,
+          {fontSize: 10},
+        ]}>
+        Order
+      </Text>
+      {userOrder.length !== 0 && (
+        <View
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: -3,
+            backgroundColor: 'red',
+            paddingHorizontal: 3,
+            borderRadius: 10,
+          }}>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: 12,
+            }}>
+            {userOrder.length}
+          </Text>
+        </View>
+      )}
+    </View>
+  );
+
+  const reserveIcon = (icon: {focused: boolean}) => (
+    <View style={[styles.iconBaseContainer]} accessibilityLabel="reserve">
+      <Icon
+        name="calendar"
+        style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
+        size={25}
+      />
+      <Text
+        style={[
+          icon.focused ? styles.activeLogo : styles.inActiveLogo,
+          {fontSize: 10},
+        ]}>
+        Reserve
+      </Text>
+    </View>
+  );
+
+  const profileIcon = (icon: {focused: boolean}) => (
+    <View style={[styles.iconBaseContainer]} accessibilityLabel="profile">
+      <Icon
+        name="person"
+        style={icon.focused ? styles.activeLogo : styles.inActiveLogo}
+        size={25}
+      />
+      <Text
+        style={[
+          icon.focused ? styles.activeLogo : styles.inActiveLogo,
+          {fontSize: 10},
+        ]}>
+        Profile
+      </Text>
+    </View>
+  );
+
   return (
     <Tab.Navigator
       initialRouteName={ETabs.MENU}

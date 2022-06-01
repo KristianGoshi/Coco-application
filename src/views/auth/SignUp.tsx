@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_primary,
+    color: APP_COLORS.background.container_secondary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',

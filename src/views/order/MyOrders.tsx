@@ -16,6 +16,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { userOrderSelector } from '../../redux/selectors/orderSelectors';
 import OrderView from './OrderView';
+import StyledButton, { EButtonType } from '../../components/Button';
+import { completeOrder } from '../../redux/actions/orderActions';
+import { useFocusEffect } from '@react-navigation/native';
 
 export interface MyOrdersProps {
   navigation: any;
@@ -24,14 +27,27 @@ export interface MyOrdersProps {
 
 const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
   const userOrder = useSelector(userOrderSelector);
-  const {t} = useTranslation('user');
+  const {t} = useTranslation('order');
+  const dispatch = useDispatch();
+  const [completed, setCompleted] = useState(false);
+
+  useFocusEffect(
+    useCallback(() => {
+      setCompleted(false);
+    }, [])
+  );
+
+  const onSubmit = useCallback(async () => {
+    setCompleted(true);
+    await dispatch(completeOrder());
+  }, []);
 
   return (
     <>
-      <ScrollView>
-        <View style={styles.container}>
-          {userOrder.length ? (
-            <View style={styles.listView}>
+      <View style={styles.container}>
+        {userOrder.length !== 0 && !completed && (
+          <>
+            <ScrollView style={styles.listView}>
               <FlatList
                 data={userOrder}
                 keyExtractor={(item, index) => index.toString()}
@@ -44,29 +60,45 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
                   />
                 )}
               />
+            </ScrollView>
+            <View style={styles.buttonWrapper}>
+              <StyledButton
+                type={EButtonType.SECONDARY}
+                spinner={APP_COLORS.typography.body_text}
+                onPress={() => onSubmit()}
+                children={() => (
+                  <Text style={{color: 'white'}}>{t('buttons.submit')}</Text>
+                )}
+              />
             </View>
-          ) : (
-            <View style={{marginTop: 180, marginHorizontal: 30}}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  color: APP_COLORS.background.container_secondary,
-                  textAlign: 'center',
-                }}>
-                {t('none.order')}
-              </Text>
-              <View>
-                <Icon
-                  name="restaurant"
-                  size={150}
-                  style={styles.settingsIconStyle}
-                />
-              </View>
+          </>
+        )}
+        {userOrder.length === 0 && !completed && (
+          <View style={{marginTop: 180, marginHorizontal: 30}}>
+            <Text
+              style={styles.textStyle}>
+              {t('none.order')}
+            </Text>
+            <View>
+              <Icon
+                name="restaurant"
+                size={150}
+                style={styles.settingsIconStyle}
+              />
             </View>
-          )}
-        </View>
-      </ScrollView>
+          </View>
+        )}
+        {completed && (
+          <>
+            <View style={[styles.successLogoWrapper, {marginTop: 150}]}>
+              <Icon name="checkmark-circle-outline" size={200} style={styles.iconStyle} />
+            </View>
+            <View>
+              <Text style={styles.textStyle}>{t('complete.success')}</Text>
+            </View>
+          </>
+        )}
+      </View>
     </>
   );
 });
@@ -87,9 +119,9 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
   },
   addButton: {
@@ -119,6 +151,19 @@ const styles = StyleSheet.create({
     color: APP_COLORS.background.container_secondary,
     alignSelf: 'center',
     marginTop: 50,
+  },
+  buttonWrapper: {
+    paddingBottom: 25,
+    paddingTop: 20,
+    width: '70%',
+    alignSelf: 'center',
+  },
+  successLogoWrapper: {
+    paddingTop: 20,
+    alignSelf: 'center',
+  },
+  iconStyle: {
+    color: APP_COLORS.background.container_secondary,
   },
 });
 

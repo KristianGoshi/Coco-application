@@ -26,6 +26,8 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     useEffect(() => {
       if (userFavorites.some(e => e.emri === params.title)) {
         setFavorite(true);
+      } else {
+        setFavorite(false);
       }
     }, [userFavorites]);
 

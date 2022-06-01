@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import { APP_COLORS } from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
@@ -54,17 +54,20 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
   }, [username, password]);
 
   const fetchInfo = useCallback(async () => {
-    await dispatch(getUserDetails());
     await dispatch(loginUser());
+    await dispatch(getUserDetails());
   }, []);
 
   return (
     <KeyboardAwareContainer>
       <View style={styles.container}>
-        <View style={styles.loginLogoWrapper}>
-          <Icon name="book" size={100} style={styles.iconStyle} />
+        <View style={{alignSelf: 'center', width: 200, height: 200}}>
+          <Image
+            source={require('../../assets/images/logo.png')}
+            style={{width: 200, height: 200}}
+          />
         </View>
-        <View style={{marginTop: 50}}>
+        <View>
           <Text style={styles.textStyle}>{t('login.text')}</Text>
         </View>
         <View style={[styles.textInput, {marginTop: 30}]}>
@@ -103,14 +106,14 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
           />
         </View>
         <View style={{flexDirection: 'row'}}>
-          <View style={{ marginRight: 20 }}>
+          <View style={{marginRight: 20}}>
             <TouchableText
               touchableText={t('login.doNotHaveAccount')}
               onPress={() => navigation.replace(EAuthStack.SIGNUP)}
               fontSize={12}
             />
           </View>
-          <View style={{ marginLeft: 20}}>
+          <View style={{marginLeft: 20}}>
             <TouchableText
               touchableText={t('login.forgotPassword')}
               onPress={() => navigation.navigate(EAuthStack.RESET_PASSWORD)}
@@ -145,7 +148,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_primary,
+    color: APP_COLORS.background.container_secondary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',

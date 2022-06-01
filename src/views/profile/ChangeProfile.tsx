@@ -88,7 +88,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) =>
             </View>
             <View style={[styles.textInput, {marginTop: 40}]}>
               <TextInput
-                placeholder={t('editprofile.username')}
+                placeholder={profile.userName}
                 autoCapitalize="none"
                 label={t('editprofile.username')}
                 onChangeText={text => changeText(text, 'username')}
@@ -96,7 +96,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) =>
             </View>
             <View style={[styles.textInput, {marginTop: -5}]}>
               <TextInput
-                placeholder={t('editprofile.email')}
+                placeholder={profile.email}
                 autoCapitalize="none"
                 label={t('editprofile.email')}
                 onChangeText={text => changeText(text, 'email')}
@@ -104,7 +104,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) =>
             </View>
             <View style={[styles.textInput, {marginTop: -5}]}>
               <TextInput
-                placeholder={t('editprofile.phone')}
+                placeholder={profile.nrTel}
                 autoCapitalize="none"
                 label={t('editprofile.phone')}
                 onChangeText={text => changeText(text, 'phone')}

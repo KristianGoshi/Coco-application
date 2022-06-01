@@ -6,6 +6,7 @@ import {Dispatch} from 'redux';
 export enum OrderActionTypes {
   SET_ORDER = 'SET_ORDER',
   REMOVE_ORDER = 'REMOVE_ORDER',
+  COMPLETE_ORDER = 'COMPLETE_ORDER'
 }
 // Interface to Get All Action Type
 export interface IOrderGetAllOrdersAction {
@@ -31,10 +32,16 @@ export const setOrder = (userOrder: IOrder) => async (dispatch: Dispatch) => {
 
 export const removeOrder =
   (userOrder: IOrder) => async (dispatch: Dispatch) => {
-    console.log(userOrder)
     dispatch({
       userOrders: userOrder,
       type: OrderActionTypes.REMOVE_ORDER,
+    });
+  };
+
+export const completeOrder =
+  () => async (dispatch: Dispatch) => {
+    dispatch({
+      type: OrderActionTypes.COMPLETE_ORDER,
     });
   };
 

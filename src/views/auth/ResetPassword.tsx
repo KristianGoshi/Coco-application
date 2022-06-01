@@ -10,7 +10,7 @@ import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useDispatch} from 'react-redux';
-import {resetUserPassword} from '../../redux/actions/userActions';
+//import {resetUserPassword} from '../../redux/actions/userActions';
 
 export interface ResetPasswordProps {
   navigation: any;
@@ -59,12 +59,12 @@ const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) =>
   }, [email, phone]);
 
   const resetPassword = useCallback(async () => {
-    await dispatch(
-      resetUserPassword({
-        email: email,
-        nrTel: phone,
-      }),
-    );
+    // await dispatch(
+    //   resetUserPassword({
+    //     email: email,
+    //     nrTel: phone,
+    //   }),
+    // );
     setSubmitted(true);
   }, [email, phone]);
 
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_primary,
+    color: APP_COLORS.background.container_secondary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',

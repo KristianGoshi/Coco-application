@@ -24,7 +24,14 @@ export const orderReducer: Reducer = (
     case OrderActionTypes.REMOVE_ORDER:
       return {
         ...state,
-        userOrders: state.userOrders.filter((order: IOrder) => order.emri !== action.userOrders.emri),
+        userOrders: state.userOrders.filter(
+          (order: IOrder) => order.emri !== action.userOrders.emri,
+        ),
+      };
+    case OrderActionTypes.COMPLETE_ORDER:
+      return {
+        ...state,
+        userOrders: [],
       };
     default:
       return state;

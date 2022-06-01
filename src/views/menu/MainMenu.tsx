@@ -63,15 +63,6 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
     },
   ];
 
-  useEffect(() => {
-
-  }, []);
-
-  // const slides = {
-  //   foto: require(icon),
-  // };
-
-
   return (
     <ScrollView>
       <View style={styles.container}>
