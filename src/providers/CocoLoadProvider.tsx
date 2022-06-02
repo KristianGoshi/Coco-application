@@ -5,6 +5,9 @@ import {useTranslation} from 'react-i18next';
 import { getUserDetails, getUserFavorites } from '../redux/actions/userActions';
 import { useDispatch } from 'react-redux';
 import { getUserReservations } from '../redux/actions/reserveActions';
+import i18n from '../assets/langs/i18n';
+
+const initI18n = i18n;
 
 const CocoLoadProvider: React.FC = React.memo(() => {
   const {i18n} = useTranslation();

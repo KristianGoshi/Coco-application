@@ -46,7 +46,7 @@ const ChangeLanguage: React.FC<ChangeLanguageProps> = React.memo(
           <Text style={styles.titleStyle}>{t('changeLanguage.language')}</Text>
           <TouchableOpacity
             style={styles.sectionView}
-            onPress={() => changeLanguage('alb')}>
+            onPress={() => changeLanguage('al')}>
             <Image
               source={require('../../assets/images/polish.png')}
               style={styles.image}
@@ -56,8 +56,8 @@ const ChangeLanguage: React.FC<ChangeLanguageProps> = React.memo(
             </Text>
             <View style={styles.radioPosition}>
               <StyledRadio
-                onClick={() => changeLanguage('alb')}
-                selected={lang == 'alb'}
+                onClick={() => changeLanguage('al')}
+                selected={lang == 'al'}
               />
             </View>
           </TouchableOpacity>

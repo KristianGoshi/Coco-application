@@ -20,14 +20,14 @@ export enum I18NNamespaces {
 }
 
 const resources = {
-  alb: {
+  al: {
     [I18NNamespaces.USER]: userAlb,
     [I18NNamespaces.AUTH]: authAlb,
     [I18NNamespaces.MENU]: menuAlb,
     [I18NNamespaces.ORDER]: orderAlb,
     [I18NNamespaces.RESERVATION]: reservationAlb,
   },
-  eng: {
+  en: {
     [I18NNamespaces.USER]: userEng,
     [I18NNamespaces.AUTH]: authEng,
     [I18NNamespaces.MENU]: menuEng,
@@ -40,17 +40,17 @@ i18n.use(initReactI18next).init({
   resources,
   lng: 'en',
   fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false,
-  },
+  // interpolation: {
+  //   escapeValue: false,
+  // },
   defaultNS: I18NNamespaces.MENU,
 });
 
-i18n
-  .changeLanguage('eng', (err, t) => {
-    console.log('error', err);
-    console.log(t);
-  })
-  .then((r) => console.log('i18 response', r));
+// i18n
+//   .changeLanguage('eng', (err, t) => {
+//     console.log('error', err);
+//     console.log(t);
+//   })
+//   .then((r) => console.log('i18 response', r));
 
 export default i18n;

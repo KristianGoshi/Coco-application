@@ -358,16 +358,142 @@
       {
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
-        "emri": "Krep me cokollat",
-        "cmimi": 1
+        "emri": "Cokollate",
+        "cmimi": 100
+      },
+      {
+        "id": 2,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Malibu",
+        "cmimi": 140
+      },
+      {
+        "id": 3,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Baileys",
+        "cmimi": 160
+      },
+      {
+        "id": 4,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Disaronno",
+        "cmimi": 150
+      },
+      {
+        "id": 5,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Ananas",
+        "cmimi": 150
+      },
+      {
+        "id": 6,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Kahlua",
+        "cmimi": 150
+      },
+      {
+        "id": 7,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Krem",
+        "cmimi": 150
+      },
+      {
+        "id": 8,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Lidia",
+        "cmimi": 150
+      },
+      {
+        "id": 9,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Simple",
+        "cmimi": 200
+      },
+      {
+        "id": 10,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Sallami",
+        "cmimi": 200
+      },
+      {
+        "id": 11,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "4 djathrat",
+        "cmimi": 220
+      },
+      {
+        "id": 12,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Omelete",
+        "cmimi": 230
+      },
+      {
+        "id": 13,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Fileto chicken",
+        "cmimi": 310
+      },
+      {
+        "id": 14,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Nani",
+        "cmimi": 210
       }
     ],
     "Pije": [
       {
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
-        "emri": "Fanta",
-        "cmimi": 1
+        "emri": "Uje",
+        "cmimi": 60
+      },
+      {
+        "id": 2,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Uje me gaz",
+        "cmimi": 60
+      },
+      {
+        "id": 3,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Fanta portokall",
+        "cmimi": 80
+      },
+      {
+        "id": 4,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Fanta ekzotik",
+        "cmimi": 80
+      },
+      {
+        "id": 5,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Koka-kola",
+        "cmimi": 80
+      },
+      {
+        "id": 6,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Uje me vitamina",
+        "cmimi": 100
+      },
+      {
+        "id": 7,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Amstel",
+        "cmimi": 140
+      },
+      {
+        "id": 8,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Heineken",
+        "cmimi": 150
+      },
+      {
+        "id": 9,
+        "foto": "../../assets/images/krepa/krepa_coko.jpeg",
+        "emri": "Korca",
+        "cmimi": 140
       }
     ]
   }
