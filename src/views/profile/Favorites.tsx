@@ -55,7 +55,7 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
                   color: APP_COLORS.background.container_secondary,
                   textAlign: 'center',
                 }}>
-                {t('none.favorite')}
+                {t('settings.none')}
               </Text>
               <View>
                 <Icon name="star" size={150} style={styles.settingsIconStyle} />

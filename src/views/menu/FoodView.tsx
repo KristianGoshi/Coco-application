@@ -68,7 +68,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
             width={'80%'}
             onPress={() => onSubmit()}
             children={() => (
-              <Text style={{color: 'gray'}}>{t('food.order')}</Text>
+              <Text style={{color: 'gray'}}>{t('main.order')}</Text>
             )}
           />
         </View>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     // height: 250,
     // width: 180,
-    backgroundColor: APP_COLORS.background.elements_secondary,
+    backgroundColor: APP_COLORS.background.container_secondary,
     marginRight: 20,
     marginBottom: 20,
   },

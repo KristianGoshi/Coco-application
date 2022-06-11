@@ -171,8 +171,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   containerSettings: {
-    borderColor: APP_COLORS.background.elements_triary,
-    backgroundColor: APP_COLORS.background.elements_triary,
+    borderColor: APP_COLORS.background.container_triary,
+    backgroundColor: APP_COLORS.background.container_triary,
     borderWidth: 1,
     height: 150,
     width: '45%',

@@ -1,46 +1,8 @@
 {
-  "login": {
-    "button": "Sign In",
-    "text": "Sign in to gain access to your garage",
-    "username": "Username",
-    "password": "Password",
-    "forgotPassword": "Forgot my password",
-    "doNotHaveAccount": "I want to create an account",
-    "usernameError": "Username must contain at least 3 characters",
-    "passwordError": "Password must contain at least 8 characters, including at least 1 letter and 1 number"
-  },
-  "signup": {
-    "button": "Register",
-    "username": "Username",
-    "email": "Email",
-    "phone": "Phone number",
-    "password": "Password",
-    "repeatPassword": "Repeat password",
-    "usernameError": "Username must contain at least 3 characters",
-    "passwordError": "Password must contain at least 8 characters, including at least 1 letter and 1 number",
-    "phoneError": "Phone must be at least 8 digits long and contain only numbers and a +",
-    "emailError": "Email is not in the correct format",
-    "repeatPasswordError": "Password must contain at least 8 characters, including at least 1 letter and 1 number",
-    "termsAndConditions": "I have read and accept the regulations",
-    "successSignUp": "You have successfully created an account! Please login to access it",
-    "haveAccount": "Do you already have an account? Then sign in",
-    "clickToLogin": "Sign in with the account you created"
-  },
-  "resetPassword": {
-    "button": "Password reset",
-    "text": "Please enter email or phone number to receive link for resetting the password",
-    "email": "Email",
-    "phone": "Phone number",
-    "phoneError": "Phone must be at least 8 digits long and contain only numbers and a +",
-    "emailError": "Email is not in the correct format",
-    "header": "Provide the email for resetting the password",
-    "recover": "Recover password",
-    "success": "Follow the link sent in the message to reset your password",
-    "clickToLogin": "Sign in to your account"
-  },
-  "logout": {
-    "sureLogout": "Are you sure you want to log out of your account?",
-    "yesLogout": "Yes, log me out",
-    "noLogout": "Oops, of course not"
+  "main": {
+    "hello": "Hello",
+    "categories": "Categories",
+    "ditore": "Daily",
+    "order": "Order"
   }
 }

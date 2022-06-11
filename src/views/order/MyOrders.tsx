@@ -67,7 +67,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
                 spinner={APP_COLORS.typography.body_text}
                 onPress={() => onSubmit()}
                 children={() => (
-                  <Text style={{color: 'white'}}>{t('buttons.submit')}</Text>
+                  <Text style={{color: 'white'}}>{t('order.submit')}</Text>
                 )}
               />
             </View>
@@ -77,7 +77,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
           <View style={{marginTop: 180, marginHorizontal: 30}}>
             <Text
               style={styles.textStyle}>
-              {t('none.order')}
+              {t('order.none')}
             </Text>
             <View>
               <Icon
@@ -94,7 +94,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
               <Icon name="checkmark-circle-outline" size={200} style={styles.iconStyle} />
             </View>
             <View>
-              <Text style={styles.textStyle}>{t('complete.success')}</Text>
+              <Text style={styles.textStyle}>{t('order.success')}</Text>
             </View>
           </>
         )}

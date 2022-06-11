@@ -38,7 +38,7 @@ const Reservations: React.FC<ReservationsProps> = React.memo(({navigation}) => {
           {userReservations.length ? (
             <>
               <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
-                <Text style={styles.titleStyle}>{t('reservation.hello')}</Text>
+                <Text style={styles.titleStyle}>{t('reserve.hello')}</Text>
               </View>
               <View style={{marginTop: 30}}>
                 <FlatList
@@ -63,7 +63,7 @@ const Reservations: React.FC<ReservationsProps> = React.memo(({navigation}) => {
                   color: APP_COLORS.background.container_secondary,
                   textAlign: 'center',
                 }}>
-                {t('none.reservation')}
+                {t('reserve.none')}
               </Text>
               <View>
                 <Icon name="calendar" size={150} style={styles.settingsIconStyle} />

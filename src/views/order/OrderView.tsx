@@ -28,7 +28,6 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
     const {t} = useTranslation('order');
     const dispatch = useDispatch();
 
-    const [showModal, setModal] = useState(false);
     const [counter, setCounter] = useState(sasia);
 
     const onDecrease = () => {
@@ -42,7 +41,6 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
     };
 
     const deleteOrder = useCallback(async () => {
-      setModal(false);
       await dispatch(removeOrder({foto: foto, emri: emri, cmimi: cmimi, sasia: sasia}));
     }, []);
 
@@ -73,43 +71,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
               <Text style={styles.increaseIcon}>+</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={() => setModal(true)}>
-            <Icon name="trash" size={20} style={styles.iconStyle} />
-          </TouchableOpacity>
         </View>
-        <Modal animationType="slide" transparent={true} visible={showModal}>
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalTitle}>{t('modal.sureDelete')}</Text>
-              <View style={{flexDirection: 'row'}}>
-                <Pressable
-                  style={[
-                    styles.modalButton,
-                    {marginRight: 5, backgroundColor: 'white'},
-                  ]}
-                  onPress={() => setModal(false)}>
-                  <Text
-                    style={[
-                      styles.textStyle,
-                      {
-                        marginTop: 9,
-                        color: APP_COLORS.background.container_secondary,
-                      },
-                    ]}>
-                    {t('modal.cancel')}
-                  </Text>
-                </Pressable>
-                <Pressable
-                  style={[styles.modalButton, {marginLeft: 5}]}
-                  onPress={() => deleteOrder()}>
-                  <Text style={[styles.textStyle, {marginTop: 9}]}>
-                    {t('modal.confirm')}
-                  </Text>
-                </Pressable>
-              </View>
-            </View>
-          </View>
-        </Modal>
       </>
     );
   },
@@ -186,7 +148,7 @@ const styles = StyleSheet.create({
   },
   increase: {
     marginHorizontal: 5,
-    borderColor: APP_COLORS.background.elements_secondary,
+    borderColor: APP_COLORS.background.container_secondary,
     borderWidth: 2,
     width: 30,
     height: 30,
@@ -195,7 +157,7 @@ const styles = StyleSheet.create({
   increaseIcon: {
     fontSize: 20,
     textAlign: 'center',
-    color: APP_COLORS.background.elements_secondary,
+    color: APP_COLORS.background.container_secondary,
   },
   counterButtons: {
     flexDirection: 'row',

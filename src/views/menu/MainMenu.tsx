@@ -81,12 +81,12 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
         </View>
         <View style={{marginTop: 10, alignSelf: 'flex-start'}}>
           <Text style={styles.helloStyle}>
-            {t('user.hello') + ' ' + userName}
+            {t('main.hello') + ' ' + userName}
           </Text>
         </View>
         <View>
           <View style={{marginTop: 40, alignSelf: 'flex-start'}}>
-            <Text style={styles.subTitleStyle}>{t('user.categories')}</Text>
+            <Text style={styles.subTitleStyle}>{t('main.categories')}</Text>
           </View>
           <View style={styles.list}>
             <FlatList
@@ -101,7 +101,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
         </View>
         <View>
           <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
-            <Text style={styles.subTitleStyle}>{t('user.ditore')}</Text>
+            <Text style={styles.subTitleStyle}>{t('main.ditore')}</Text>
           </View>
           <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
             <FlatList
@@ -116,7 +116,6 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                   <FoodView
                     icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                     name={item.emri}
-                    id={item.id}
                     price={item.cmimi}
                     regular={false}
                     width={180}

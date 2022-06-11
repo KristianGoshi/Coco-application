@@ -13,9 +13,6 @@ export const APP_COLORS = {
     container_primary: '#C6C9CE',
     container_secondary: '#33465F',
     container_triary: '#566277',
-    elements_primary: '#C6C9CE',
-    elements_secondary: '#33465F',
-    elements_triary: '#566277',
     extra: '#1D2021'
   },
   typography: {

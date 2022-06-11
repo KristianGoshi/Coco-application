@@ -152,14 +152,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   [EInputType.TYPING]: {
-    backgroundColor: APP_COLORS.background.elements_primary,
-    borderColor: APP_COLORS.background.elements_primary,
+    backgroundColor: APP_COLORS.background.container_primary,
+    borderColor: APP_COLORS.background.container_primary,
     borderRadius: 8,
     flex: 1,
   },
   [EInputType.DISABLED]: {
-    backgroundColor: APP_COLORS.background.elements_primary,
-    borderColor: APP_COLORS.background.elements_primary,
+    backgroundColor: APP_COLORS.background.container_primary,
+    borderColor: APP_COLORS.background.container_primary,
     opacity: 0.2,
     borderRadius: 8,
     flex: 1,

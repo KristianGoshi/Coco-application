@@ -52,10 +52,10 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
 
     const onSubmit = useCallback(() => {
       if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-        setApiError(t('signup.passwordError'));
+        setApiError(t('password.passwordError'));
         return;
       } else if (password != repeatPassword) {
-        setApiError(t('signup.repeatPasswordError'));
+        setApiError(t('password.repeatPasswordError'));
         return;
       }
       changePassword();
@@ -83,18 +83,18 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
               </View>
               <View style={[styles.textInput, {marginTop: 50}]}>
                 <TextInput
-                  placeholder={t('signup.password')}
+                  placeholder={t('password.password')}
                   autoCapitalize="none"
-                  label={t('signup.password')}
+                  label={t('password.password')}
                   password
                   onChangeText={text => changeText(text, 'password')}
                 />
               </View>
               <View style={[styles.textInput, {marginTop: -5}]}>
                 <TextInput
-                  placeholder={t('signup.repeatPassword')}
+                  placeholder={t('password.repeatPassword')}
                   autoCapitalize="none"
-                  label={t('signup.repeatPassword')}
+                  label={t('password.repeatPassword')}
                   password
                   onChangeText={text => changeText(text, 'repeatPassword')}
                 />
@@ -114,7 +114,7 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
                   disabled={!enableButton || apiError != ''}
                   children={() => (
                     <Text style={{color: 'gray'}}>
-                      {t('changePassword.button')}
+                      {t('password.button')}
                     </Text>
                   )}
                 />
@@ -127,12 +127,12 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
               </View>
               <View style={{marginTop: 30}}>
                 <Text style={styles.textStyle}>
-                  {t('changePassword.success')}
+                  {t('password.success')}
                 </Text>
               </View>
               <View style={{marginTop: 20}}>
                 <TouchableText
-                  touchableText={t('changePassword.goback')}
+                  touchableText={t('password.goback')}
                   onPress={() => navigation.goback()}
                   fontSize={12}
                 />

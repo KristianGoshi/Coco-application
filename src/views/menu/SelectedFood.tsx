@@ -125,8 +125,8 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
                 width={'100%'}
                 onPress={() => onOrder()}
                 children={() => (
-                  <Text style={{color: APP_COLORS.typography.body_text}}>
-                    {t('food.order')}
+                  <Text style={{color: APP_COLORS.typography.body_text, fontSize: 16, fontWeight: 'bold'}}>
+                    {t('main.order')}
                   </Text>
                 )}
               />
@@ -179,11 +179,11 @@ const styles = StyleSheet.create({
     color: APP_COLORS.typography.body_text,
   },
   icon: {
-    color: APP_COLORS.background.elements_triary,
+    color: APP_COLORS.background.container_triary,
   },
   increase: {
     marginHorizontal: 15,
-    borderColor: APP_COLORS.background.elements_secondary,
+    borderColor: APP_COLORS.background.container_secondary,
     borderWidth: 2,
     width: 30,
     height: 30,
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   increaseIcon: {
     fontSize: 20,
     textAlign: 'center',
-    color: APP_COLORS.background.elements_triary,
+    color: APP_COLORS.background.container_triary,
   },
   heartView: {
     marginTop: 40,
