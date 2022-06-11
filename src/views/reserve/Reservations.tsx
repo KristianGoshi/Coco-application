@@ -43,7 +43,7 @@ const Reservations: React.FC<ReservationsProps> = React.memo(({navigation}) => {
               <View style={{marginTop: 30}}>
                 <FlatList
                   data={userReservations}
-                  keyExtractor={(item, index) => index.toString()}
+                  keyExtractor={(item, index) => item.emri}
                   renderItem={({item, index}) => (
                     <ReservationView
                       name={item.emri}

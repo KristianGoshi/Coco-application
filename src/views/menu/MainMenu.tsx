@@ -92,7 +92,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
             <FlatList
               data={foodCategories}
               horizontal
-              keyExtractor={(item, index) => index.toString()}
+              keyExtractor={(item, index) => item.name}
               renderItem={({item, index}) => (
                 <Categories icon={item.icon} name={item.name} id={item.id} />
               )}

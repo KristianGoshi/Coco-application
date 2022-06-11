@@ -50,7 +50,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
             <ScrollView style={styles.listView}>
               <FlatList
                 data={userOrder}
-                keyExtractor={(item, index) => index.toString()}
+                keyExtractor={(item, index) => item.emri}
                 renderItem={({item, index}) => (
                   <OrderView
                     emri={item.emri}

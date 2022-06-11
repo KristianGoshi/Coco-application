@@ -11,6 +11,7 @@ import { removeFavorites, setFavorites } from '../../redux/actions/userActions';
 import { IMenu } from '../../models/IMenu';
 import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
 import { setOrder } from '../../redux/actions/orderActions';
+import { userOrderSelector } from '../../redux/selectors/orderSelectors';
 
 export interface SelectedFoodProps {}
 
@@ -19,9 +20,11 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     const {t} = useTranslation('menu');
     const dispatch = useDispatch();
     const userFavorites = useSelector(userFavoritesSelector);
+    const userOrder = useSelector(userOrderSelector);
     const params = useRoute().params;
     const [counter, setCounter] = useState(1);
     const [favorite, setFavorite] = useState(false);
+    const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
       if (userFavorites.some(e => e.emri === params.title)) {
@@ -30,6 +33,14 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
         setFavorite(false);
       }
     }, [userFavorites]);
+
+    useEffect(() => {
+      if (userOrder.some(e => e.emri === params.title)) {
+        setDisabled(true);
+      } else {
+        setDisabled(false);
+      }
+    }, [userOrder]);
 
     const onDecrease = () => {
       if (counter <= 1) {
@@ -51,9 +62,18 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     }, [favorite]);
 
     const onOrder = useCallback(async () => {
-        await dispatch(setOrder({foto: params.foto, emri: params.title, cmimi: params.price, sasia: counter}))
+      if (!disabled) {
+        await dispatch(
+          setOrder({
+            foto: params.foto,
+            emri: params.title,
+            cmimi: params.price,
+            sasia: counter,
+          }),
+        );
+      }
       },
-      [params, counter],
+      [params, counter, disabled],
     );
 
     return (
@@ -89,24 +109,15 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
             <TouchableOpacity
               onPress={() => onDecrease()}
               style={styles.increase}>
-              <Text
-                style={styles.increaseIcon}>
-                -
-              </Text>
+              <Text style={styles.increaseIcon}>-</Text>
             </TouchableOpacity>
             <View style={{width: 25, alignSelf: 'center'}}>
-              <Text
-                style={styles.increaseIcon}>
-                {counter}
-              </Text>
+              <Text style={styles.increaseIcon}>{counter}</Text>
             </View>
             <TouchableOpacity
               onPress={() => onIncrease()}
               style={styles.increase}>
-              <Text
-                style={styles.increaseIcon}>
-                +
-              </Text>
+              <Text style={styles.increaseIcon}>+</Text>
             </TouchableOpacity>
             <View style={{alignSelf: 'center', marginLeft: 70}}>
               <Text style={styles.priceStyle}>
@@ -121,24 +132,42 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
                 alignSelf: 'flex-start',
               }}>
               <StyledButton
-                type={EButtonType.SECONDARY}
+                type={
+                  disabled
+                    ? EButtonType.DISABLED
+                    : EButtonType.SECONDARY
+                }
                 width={'100%'}
                 onPress={() => onOrder()}
+                disabled={disabled}
                 children={() => (
-                  <Text style={{color: APP_COLORS.typography.body_text, fontSize: 16, fontWeight: 'bold'}}>
+                  <Text
+                    style={{
+                      color: APP_COLORS.typography.body_text,
+                      fontSize: 16,
+                      fontWeight: 'bold',
+                    }}>
                     {t('main.order')}
                   </Text>
                 )}
               />
             </View>
             {params.regular && (
-              <View
-                style={styles.heartView}>
+              <View style={styles.heartView}>
                 <Icon
                   name={favorite ? 'heart' : 'heart-outline'}
                   style={styles.icon}
                   size={35}
-                  onPress={() => onFavorite([{emri: params.title, categorie: params.categorie, foto: params.foto, cmimi: params.price}])}
+                  onPress={() =>
+                    onFavorite([
+                      {
+                        emri: params.title,
+                        categorie: params.categorie,
+                        foto: params.foto,
+                        cmimi: params.price,
+                      },
+                    ])
+                  }
                 />
               </View>
             )}

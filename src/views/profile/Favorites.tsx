@@ -30,7 +30,7 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
             <View style={{marginTop: 30}}>
               <FlatList
                 data={userFavorites}
-                keyExtractor={(item, index) => index.toString()}
+                keyExtractor={(item, index) => item.emri}
                 numColumns={2}
                 renderItem={({item, index}) => (
                   <FoodView

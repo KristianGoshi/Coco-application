@@ -31,6 +31,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
     const [counter, setCounter] = useState(sasia);
 
     const onDecrease = () => {
+      console.log("dd", counter)
       if (counter <= 1) {
         deleteOrder();
       }
@@ -41,6 +42,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
     };
 
     const deleteOrder = useCallback(async () => {
+      console.log(foto, emri, cmimi, sasia)
       await dispatch(removeOrder({foto: foto, emri: emri, cmimi: cmimi, sasia: sasia}));
     }, []);
 

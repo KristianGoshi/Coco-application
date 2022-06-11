@@ -34,7 +34,7 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(({navigat
           <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
             <FlatList
               data={RegularFood[0][params.title]}
-              keyExtractor={(item, index) => index.toString()}
+              keyExtractor={(item, index) => item.emri}
               numColumns={2}
               renderItem={({item, index}) => (
                 <FoodView
