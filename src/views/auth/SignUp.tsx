@@ -94,7 +94,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
   return (
     <KeyboardAwareContainer>
       <View style={styles.container}>
-        {submitted ? (
+        {!submitted ? (
           <>
             <View style={styles.signupLogoWrapper}>
               <Icon name="user-plus" size={100} style={styles.iconStyle} />
