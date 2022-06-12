@@ -115,7 +115,7 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
               <Pressable
                 style={[styles.modalButton, {marginLeft: 5}]}
                 onPress={() => logout()}>
-                <Text style={[styles.textStyle, {marginTop: 9}]}>{t('settings.confirm')}</Text>
+                <Text style={[styles.textStyle, {marginTop: 9, color: APP_COLORS.background.extra}]}>{t('settings.confirm')}</Text>
               </Pressable>
             </View>
           </View>
@@ -133,10 +133,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 20,
   },
-  loginError: {
-    color: APP_COLORS.typography.error,
-    textAlign: 'center',
-  },
   buttonWrapper: {
     paddingBottom: 30,
     paddingTop: 15,
@@ -148,10 +144,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
   },
   settingsIconStyle: {
-    color: APP_COLORS.background.container_primary,
+    color: APP_COLORS.background.extra,
     alignSelf: 'center',
     marginTop: 30,
   },
@@ -167,12 +163,12 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   containerSettings: {
-    borderColor: APP_COLORS.background.container_triary,
-    backgroundColor: APP_COLORS.background.container_triary,
+    borderColor: APP_COLORS.background.container_secondary,
+    backgroundColor: APP_COLORS.background.container_secondary,
     borderWidth: 1,
     height: 150,
     width: '45%',
@@ -185,7 +181,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: 'white',
+    backgroundColor: APP_COLORS.background.container_triary,
     borderRadius: 20,
     paddingHorizontal: 25,
     paddingVertical: 30,
@@ -212,7 +208,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.extra,
   },
 });
 

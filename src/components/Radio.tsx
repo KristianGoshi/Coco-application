@@ -51,15 +51,15 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     borderWidth: 1,
     borderColor: APP_COLORS.background.container_triary,
-    backgroundColor: 'transparent',
+    backgroundColor: APP_COLORS.background.extra,
   },
   circleFilled: {
     height: 30,
     width: 30,
     borderRadius: 100,
     borderWidth: 1,
-    borderColor: APP_COLORS.background.container_primary,
-    backgroundColor: APP_COLORS.background.container_primary,
+    borderColor: APP_COLORS.background.container_triary,
+    backgroundColor: APP_COLORS.background.container_triary,
   },
   container: {
     alignItems: 'center',

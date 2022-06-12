@@ -37,9 +37,6 @@ const Reservations: React.FC<ReservationsProps> = React.memo(({navigation}) => {
         <View style={styles.container}>
           {userReservations.length ? (
             <>
-              <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
-                <Text style={styles.titleStyle}>{t('reserve.hello')}</Text>
-              </View>
               <View style={{marginTop: 30}}>
                 <FlatList
                   data={userReservations}
@@ -99,14 +96,7 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 22,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-    textAlign: 'center',
-  },
-  textStyle: {
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   addButton: {

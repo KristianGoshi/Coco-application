@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 15,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'left',
     marginBottom: 5,
   },
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     width: 115,
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
     left: 145,
     bottom: 75,
   },
@@ -133,24 +133,9 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  modalButton: {
-    borderRadius: 20,
-    borderColor: APP_COLORS.background.container_secondary,
-    borderWidth: 2,
-    backgroundColor: APP_COLORS.background.container_secondary,
-    height: 40,
-    width: 150,
-  },
-  modalTitle: {
-    marginBottom: 25,
-    textAlign: 'center',
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: APP_COLORS.background.container_secondary,
-  },
   increase: {
     marginHorizontal: 5,
-    borderColor: APP_COLORS.background.container_secondary,
+    borderColor: APP_COLORS.background.container_triary,
     borderWidth: 2,
     width: 30,
     height: 30,
@@ -159,7 +144,7 @@ const styles = StyleSheet.create({
   increaseIcon: {
     fontSize: 20,
     textAlign: 'center',
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
   },
   counterButtons: {
     flexDirection: 'row',

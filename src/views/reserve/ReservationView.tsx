@@ -62,7 +62,7 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
                       styles.textStyle,
                       {
                         marginTop: 9,
-                        color: APP_COLORS.background.container_secondary,
+                        color: APP_COLORS.background.container_triary,
                       },
                     ]}>
                     {t('modal.cancel')}
@@ -95,9 +95,9 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     borderRadius: 16,
-    backgroundColor: APP_COLORS.background.container_triary,
+    backgroundColor: APP_COLORS.background.container_secondary,
     borderWidth: 2,
-    borderColor: APP_COLORS.background.container_secondary,
+    borderColor: APP_COLORS.background.container_triary,
     marginBottom: 15,
     width: '100%',
   },
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 15,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.extra,
     textAlign: 'center'
   },
   sectionView: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_primary,
+    color: APP_COLORS.background.extra,
     left: 145,
     bottom: 75,
   },
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
   },
 });
 

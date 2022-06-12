@@ -1,9 +1,6 @@
 import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
 import {
-  FlatList,
-  Image,
-  Modal,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -14,7 +11,6 @@ import {
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import {useDispatch, useSelector} from 'react-redux';
-import {userFavoritesSelector} from '../../redux/selectors/userSelectors';
 import TextInput from '../../components/Input';
 import DatePicker from 'react-native-date-picker';
 import Button from '../../components/Button';
@@ -78,11 +74,11 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
             <Icon
               name="calendar-alt"
               size={30}
-              style={{color: APP_COLORS.background.container_secondary}}
+              style={{color: APP_COLORS.background.extra}}
             />
           </View>
           <View style={{marginTop: 8, marginLeft: 15}}>
-            <Text style={{color: APP_COLORS.background.container_secondary}}>
+            <Text style={{color: APP_COLORS.background.extra}}>
               {moment(date).format('MMMM Do YYYY, h:mm a') != falseDate
                 ? moment(date).format('MMMM Do YYYY, h:mm a')
                 : t('modal.chooseDate')}
@@ -107,12 +103,12 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
           <Pressable
             style={[styles.modalButton, {marginRight: 5, backgroundColor: 'white'}]}
             onPress={() => closeModal(false)}>
-            <Text style={[styles.textStyle, {marginTop: 8, color: APP_COLORS.background.container_secondary}]}>{t('modal.cancel')}</Text>
+            <Text style={[styles.textStyle, {marginTop: 8}]}>{t('modal.cancel')}</Text>
           </Pressable>
           <Pressable
             style={[styles.modalButton, {marginLeft: 5}]}
             onPress={() => createReservation()}>
-            <Text style={[styles.textStyle, {marginTop: 8}]}>{t('modal.confirm')}</Text>
+            <Text style={[styles.textStyle, {marginTop: 8, color: APP_COLORS.background.extra}]}>{t('modal.confirm')}</Text>
           </Pressable>
         </View>
       </View>
@@ -131,7 +127,7 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 18,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   centeredView: {
@@ -141,7 +137,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: 'white',
+    backgroundColor: APP_COLORS.background.container_triary,
     borderRadius: 20,
     paddingHorizontal: 25,
     paddingVertical: 30,
@@ -161,7 +157,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.extra,
   },
   textInput: {
     alignSelf: 'center',

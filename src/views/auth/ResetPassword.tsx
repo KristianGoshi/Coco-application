@@ -103,13 +103,13 @@ const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) =>
                 type={
                   !enableButton || apiError != ''
                     ? EButtonType.DISABLED
-                    : EButtonType.PRIMARY
+                    : EButtonType.TRINARY
                 }
                 spinner={APP_COLORS.typography.body_text}
                 onPress={() => onSubmit()}
                 disabled={!enableButton || apiError != ''}
                 children={() => (
-                  <Text style={{color: 'gray'}}>
+                  <Text style={{color: APP_COLORS.background.extra}}>
                     {t('resetPassword.button')}
                   </Text>
                 )}
@@ -161,13 +161,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
     marginHorizontal: 50,
   },

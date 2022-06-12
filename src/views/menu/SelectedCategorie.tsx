@@ -66,16 +66,9 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 22,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
-  },
-  textStyle: {
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-    textAlign: 'center',
-  },
+  }
 });
 
 export default SelectedCategorie;

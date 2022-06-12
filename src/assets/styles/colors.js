@@ -1,19 +1,20 @@
 export const APP_COLORS = {
   tabs_logos: {
-    active: '#33465F',
-    inactive: '#5D7FAF'
+    active: '#272643',
+    inactive: '#566277'
   },
   buttons: {
-    primary: '#C6C9CE',
-    secondary: '#33465F',
-    triary: '#566277',
-    inactive: '#A5AAB1'
+    primary: '#566277',
+    secondary: '#ffffff',
+    triary: '#272643',
+    inactive: '#272643'
   },
   background: {
-    container_primary: '#C6C9CE',
-    container_secondary: '#33465F',
-    container_triary: '#566277',
-    extra: '#1D2021'
+    container_primary: '#eaeff2',
+    container_secondary: '#566277',
+    container_triary: '#272643',
+    fourth: '#c6c9ce',
+    extra: '#ffffff'
   },
   typography: {
     body_text: '#F9F9F9',
@@ -22,13 +23,4 @@ export const APP_COLORS = {
     success: '#00BA88',
     warning: '#F4B740',
   },
-  icons: {
-    primary: '#C6C9CE',
-    secondary: '#1D2021'
-  },
-  input: {
-    initial: '',
-    typing: '',
-    disabled: ''
-  }
 };

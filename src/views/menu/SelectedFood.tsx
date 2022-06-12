@@ -135,7 +135,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
                 type={
                   disabled
                     ? EButtonType.DISABLED
-                    : EButtonType.SECONDARY
+                    : EButtonType.PRIMARY
                 }
                 width={'100%'}
                 onPress={() => onOrder()}
@@ -181,11 +181,6 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
 SelectedFood.displayName = 'SelectedFood';
 
 const styles = StyleSheet.create({
-  label: {
-    //fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   container: {
     marginHorizontal: 30,
     marginTop: 20,
@@ -194,18 +189,18 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 25,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
   },
   categorieStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
   },
   priceStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 20,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
   },
   icon: {
     color: APP_COLORS.background.container_triary,

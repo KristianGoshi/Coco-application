@@ -81,7 +81,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
         </View>
         <View style={{marginTop: 10, alignSelf: 'flex-start'}}>
           <Text style={styles.helloStyle}>
-            {t('main.hello') + ' ' + userName}
+            {t('main.hello') + ' ' + userName+"!"}
           </Text>
         </View>
         <View>
@@ -143,30 +143,30 @@ const styles = StyleSheet.create({
   },
   helloStyle: {
     //fontFamily: 'DMSans-Regular',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   motoStyle: {
     //fontFamily: 'DMSans-Regular',
-    fontSize: 19,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   subTitleStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 18,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   textInput: {

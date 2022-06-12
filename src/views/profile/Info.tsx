@@ -58,17 +58,17 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
     padding: 5,
   },
   textStyle: {
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     marginTop: 10,
   },
   sectionTitle: {
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     //fontFamily: 'DMSans-Regular',
     fontSize: 19,
     marginBottom: 2,

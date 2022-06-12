@@ -29,7 +29,7 @@ const Categories: React.FC<CategoriesProps> = React.memo(
 
     return (
       <TouchableOpacity style={styles.container} onPress={() => onCategorie()}>
-        <Icon name={icon} size={20} style={{marginTop: 10}} />
+        <Icon name={icon} size={20} style={{marginTop: 10, color: APP_COLORS.background.extra}} />
         <View style={{marginTop: 15}}>
           <Text style={styles.textStyle}>{name}</Text>
         </View>
@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     width: 40,
-    backgroundColor: APP_COLORS.typography.body_text,
+    backgroundColor: APP_COLORS.background.container_secondary,
     marginRight: 20,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 12,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
   },
 });

@@ -31,9 +31,10 @@ const MenuStack: React.FC<MenuStackProps> = ({navigation}) => {
           headerStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
-          headerTintColor: APP_COLORS.typography.body_text,
+          headerTintColor: APP_COLORS.background.container_triary,
           headerTitleStyle: {
             fontWeight: 'bold',
+            fontSize: 22
           },
           headerTitleAlign: 'center',
           contentStyle: {

@@ -62,13 +62,13 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
             {price + 'L'}
           </Text>
           <StyledButton
-            type={EButtonType.PRIMARY}
+            type={EButtonType.SECONDARY}
             spinner={APP_COLORS.typography.body_text}
             height={20}
             width={'80%'}
             onPress={() => onSubmit()}
             children={() => (
-              <Text style={{color: 'gray'}}>{t('main.order')}</Text>
+              <Text style={{color: APP_COLORS.background.container_triary, fontWeight: 'bold'}}>{t('main.order')}</Text>
             )}
           />
         </View>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     //fontFamily: 'DMSans-Regular',
     fontSize: 15,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.extra,
   },
   nameStyle: {
     marginTop: 15,

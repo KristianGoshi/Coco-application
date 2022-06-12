@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   menuElements: {
     //fontFamily: 'DMSans-Regular',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     fontWeight: 'bold',
   },
   clearText: {

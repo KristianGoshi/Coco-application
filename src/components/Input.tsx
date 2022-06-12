@@ -56,7 +56,7 @@ const TextInput: React.FC<TextInputProps> = React.memo(
     };
 
     return (
-      <Animated.View style={styles.container}>
+      <Animated.View>
         <Animated.Text style={[styles.labelText, {opacity: fadeAnim}]}>
           {label}
         </Animated.Text>
@@ -76,7 +76,7 @@ const TextInput: React.FC<TextInputProps> = React.memo(
               props.onBlur?.(e);
               if (closing == '' || closing == 0) fadeOut();
             }}
-            selectionColor={APP_COLORS.typography.body_text}
+            selectionColor={APP_COLORS.background.container_triary}
             testID="input"
             style={[
               isFocused ? styles[EInputType.TYPING] : (styles as any)[type],
@@ -86,7 +86,7 @@ const TextInput: React.FC<TextInputProps> = React.memo(
               //fontFamily: 'DMSans-Regular',
               marginRight: inputRight,
               height: multiline ? 160 : undefined,
-              color: APP_COLORS.background.container_primary,
+              color: APP_COLORS.background.container_triary,
             }}
           />
           {password === true && (
@@ -115,7 +115,6 @@ const TextInput: React.FC<TextInputProps> = React.memo(
 TextInput.displayName = 'TextInput';
 
 const styles = StyleSheet.create({
-  container: {},
   iconStyle: {
     position: 'absolute',
     right: 13,
@@ -143,16 +142,16 @@ const styles = StyleSheet.create({
     marginBottom: 3,
     fontSize: 10,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
   },
   [EInputType.INITIAL]: {
-    backgroundColor: APP_COLORS.background.container_triary,
-    borderColor: APP_COLORS.background.container_primary,
+    backgroundColor: APP_COLORS.background.container_secondary,
+    borderColor: APP_COLORS.background.container_triary,
     borderRadius: 8,
     flex: 1,
   },
   [EInputType.TYPING]: {
-    backgroundColor: APP_COLORS.background.container_primary,
+    backgroundColor: APP_COLORS.background.fourth,
     borderColor: APP_COLORS.background.container_primary,
     borderRadius: 8,
     flex: 1,

@@ -48,7 +48,7 @@ const ChangeLanguage: React.FC<ChangeLanguageProps> = React.memo(
             style={styles.sectionView}
             onPress={() => changeLanguage('al')}>
             <Image
-              source={require('../../assets/images/polish.png')}
+              source={require('../../assets/images/albania.png')}
               style={styles.image}
             />
             <Text style={styles.languageTitle}>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
     padding: 5,
   },
   radioPosition: {
@@ -110,24 +110,18 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   titleStyle: {
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     //fontFamily: 'DMSans-Regular',
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 40,
     marginTop: 10
   },
-  sectionTitle: {
-    color: APP_COLORS.typography.body_text,
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 12,
-    marginBottom: 40,
-  },
   languageTitle: {
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_triary,
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: 'bold',
     paddingTop: 10,
   },
   languageLogoWrapper: {

@@ -27,19 +27,17 @@ const OrderStack: React.FC<OrderStackProps> = ({navigation}) => {
           headerStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
-          headerTintColor: APP_COLORS.typography.body_text,
+          headerTintColor: APP_COLORS.background.container_triary,
           headerTitleStyle: {
             fontWeight: 'bold',
+            fontSize: 22,
           },
           headerTitleAlign: 'center',
           contentStyle: {
             backgroundColor: APP_COLORS.background.container_primary,
           },
         }}>
-        <Stack.Screen
-          name={EOrderStack.MY_ORDERS}
-          component={MyOrders}
-        />
+        <Stack.Screen name={EOrderStack.MY_ORDERS} component={MyOrders} />
       </Stack.Navigator>
     </SafeAreaView>
   );

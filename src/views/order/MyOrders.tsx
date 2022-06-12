@@ -63,7 +63,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(({navigation}) => {
             </ScrollView>
             <View style={styles.buttonWrapper}>
               <StyledButton
-                type={EButtonType.SECONDARY}
+                type={EButtonType.PRIMARY}
                 spinner={APP_COLORS.typography.body_text}
                 onPress={() => onSubmit()}
                 children={() => (
@@ -110,13 +110,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
   },
-  titleStyle: {
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-    textAlign: 'center',
-  },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 20,
@@ -145,7 +138,7 @@ const styles = StyleSheet.create({
     borderColor: APP_COLORS.background.container_secondary,
     padding: 5,
     borderRadius: 16,
-    backgroundColor: APP_COLORS.background.container_triary,
+    backgroundColor: APP_COLORS.background.container_primary,
   },
   settingsIconStyle: {
     color: APP_COLORS.background.container_secondary,

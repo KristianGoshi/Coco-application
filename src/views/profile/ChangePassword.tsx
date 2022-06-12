@@ -107,13 +107,13 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
                   type={
                     !enableButton || apiError != ''
                       ? EButtonType.DISABLED
-                      : EButtonType.PRIMARY
+                      : EButtonType.TRINARY
                   }
                   spinner={APP_COLORS.typography.body_text}
                   onPress={() => onSubmit()}
                   disabled={!enableButton || apiError != ''}
                   children={() => (
-                    <Text style={{color: 'gray'}}>
+                    <Text style={{color: APP_COLORS.background.extra}}>
                       {t('password.button')}
                     </Text>
                   )}
@@ -123,19 +123,10 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
           ) : (
             <>
               <View style={[styles.changePasswordLogoWrapper, {marginTop: 80}]}>
-                <Icon name="check-circle" size={200} style={styles.iconStyle} />
+                <Icon name="check-circle" size={200} style={{color: APP_COLORS.background.container_secondary}} />
               </View>
               <View style={{marginTop: 30}}>
-                <Text style={styles.textStyle}>
-                  {t('password.success')}
-                </Text>
-              </View>
-              <View style={{marginTop: 20}}>
-                <TouchableText
-                  touchableText={t('password.goback')}
-                  onPress={() => navigation.goback()}
-                  fontSize={12}
-                />
+                <Text style={styles.textStyle}>{t('password.success')}</Text>
               </View>
             </>
           )}
@@ -168,13 +159,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
     marginHorizontal: 50,
   },

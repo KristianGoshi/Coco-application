@@ -118,13 +118,13 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) =>
                 type={
                   !enableButton || apiError != ''
                     ? EButtonType.DISABLED
-                    : EButtonType.PRIMARY
+                    : EButtonType.TRINARY
                 }
                 spinner={APP_COLORS.typography.body_text}
                 onPress={() => onSubmit()}
                 disabled={!enableButton || apiError != ''}
                 children={() => (
-                  <Text style={{color: 'gray'}}>{t('editprofile.button')}</Text>
+                  <Text style={{color: APP_COLORS.background.extra}}>{t('editprofile.button')}</Text>
                 )}
               />
             </View>
@@ -132,17 +132,10 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) =>
         ) : (
           <>
             <View style={[styles.editprofileLogoWrapper, {marginTop: 80}]}>
-              <Icon name="check-circle" size={200} style={styles.iconStyle} />
+              <Icon name="check-circle" size={200} style={{color: APP_COLORS.background.container_secondary}} />
             </View>
             <View style={{marginTop: 30}}>
               <Text style={styles.textStyle}>{t('editprofile.success')}</Text>
-            </View>
-            <View style={{marginTop: 20}}>
-              <TouchableText
-                touchableText={t('editprofile.goback')}
-                onPress={() => navigation.goback()}
-                fontSize={12}
-              />
             </View>
           </>
         )}
@@ -174,13 +167,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconStyle: {
-    color: APP_COLORS.background.container_secondary,
+    color: APP_COLORS.background.container_triary,
   },
   textStyle: {
     //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
+    color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
     marginHorizontal: 50,
   },
