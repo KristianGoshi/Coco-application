@@ -99,7 +99,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
           <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
             <Text style={styles.subTitleStyle}>{t('main.ditore')}</Text>
           </View>
-          <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
+          <View style={{marginTop: 15, alignSelf: 'flex-start'}}>
             <FlatList
               data={DailyFood}
               horizontal
@@ -132,35 +132,31 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   helloStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 18,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   motoStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 20,
     fontWeight: 'bold',
-    color: APP_COLORS.background.container_triary,
+    color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
   },
   subTitleStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 18,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
     textAlign: 'center',
   },
   list: {
-    marginTop: 20,
+    marginTop: 15,
     alignSelf: 'flex-start',
     height: 80,
   },
