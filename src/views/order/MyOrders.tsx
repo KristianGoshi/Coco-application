@@ -1,13 +1,10 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useState} from 'react';
 import {
   FlatList,
-  Image,
-  Modal,
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import {useTranslation} from 'react-i18next';

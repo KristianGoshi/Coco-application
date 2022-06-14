@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, ActivityIndicator, Platform} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Button, ButtonProps} from '@ui-kitten/components';
 import { APP_COLORS } from '../assets/styles/colors';
 

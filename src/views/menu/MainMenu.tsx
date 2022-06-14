@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
 import {FlatList, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';

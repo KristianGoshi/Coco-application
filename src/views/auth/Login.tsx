@@ -8,7 +8,6 @@ import KeyboardAwareContainer from '../../components/Keyboard';
 import { EAuthStack } from '../../navigation/stacks/AuthStack';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch } from 'react-redux';
 import { getUserDetails, loginUser } from '../../redux/actions/userActions';
 

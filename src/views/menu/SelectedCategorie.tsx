@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
 import {
   FlatList,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,7 +8,6 @@ import {
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
-import {useDispatch, useSelector} from 'react-redux';
 import FoodView from './FoodView';
 import RegularFood from '../../assets/menu/RegularFood.json';
 import { useRoute } from '@react-navigation/native';

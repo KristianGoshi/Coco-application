@@ -1,10 +1,8 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {StatusBar} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useDispatch, useSelector} from 'react-redux';
-import {useCallback, useEffect, useState} from 'react';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {useEffect} from 'react';
 import AuthStack from '../navigation/stacks/AuthStack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { checkLoggedUser } from '../redux/actions/userActions';

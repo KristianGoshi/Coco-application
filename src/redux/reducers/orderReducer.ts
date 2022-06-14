@@ -1,6 +1,6 @@
 import { IOrder } from "./../../models/IOrder";
 import {Reducer} from 'redux';
-import { OrderActions, OrderActionTypes } from '../actions/orderActions';
+import { OrderActionTypes } from '../actions/orderActions';
 
 export interface IOrderState {
   userOrders: Array<IOrder>;

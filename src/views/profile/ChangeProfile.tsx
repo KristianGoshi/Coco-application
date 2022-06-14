@@ -6,7 +6,6 @@ import {APP_COLORS} from '../../assets/styles/colors';
 import StyledButton, {EButtonType} from '../../components/Button';
 import KeyboardAwareContainer from '../../components/Keyboard';
 import TextInput from '../../components/Input';
-import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch, useSelector} from 'react-redux';
 import {editUser} from '../../redux/actions/userActions';

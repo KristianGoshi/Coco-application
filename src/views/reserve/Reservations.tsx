@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
+import {useState} from 'react';
 import {
   FlatList,
-  Image,
   Modal,
   ScrollView,
   StyleSheet,
@@ -12,9 +11,7 @@ import {
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
-import {useDispatch, useSelector} from 'react-redux';
-import {useRoute} from '@react-navigation/native';
-import {userFavoritesSelector} from '../../redux/selectors/userSelectors';
+import {useSelector} from 'react-redux';
 import ReservationView from './ReservationView';
 import Icon from 'react-native-vector-icons/Entypo';
 import ReservationModal from './ReservationModal';

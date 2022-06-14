@@ -1,4 +1,3 @@
-import {useNavigation} from '@react-navigation/native';
 import * as React from 'react';
 import {useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
@@ -8,10 +7,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  Modal,
-  Pressable,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch} from 'react-redux';
 import {APP_COLORS} from '../../assets/styles/colors';
 import {removeOrder} from '../../redux/actions/orderActions';

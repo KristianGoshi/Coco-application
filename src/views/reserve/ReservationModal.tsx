@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useState} from 'react';
 import {
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -10,10 +9,9 @@ import {
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import TextInput from '../../components/Input';
 import DatePicker from 'react-native-date-picker';
-import Button from '../../components/Button';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { setReservations } from '../../redux/actions/reserveActions';
