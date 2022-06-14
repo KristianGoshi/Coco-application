@@ -6,19 +6,15 @@ import {
   Text,
   View,
 } from 'react-native';
-import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import FoodView from './FoodView';
 import RegularFood from '../../assets/menu/RegularFood.json';
 import { useRoute } from '@react-navigation/native';
 
 export interface SelectedCategorieProps {
-  navigation: any;
-  onPress(): () => void;
 }
 
-const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(({navigation}) => {
-  const {t} = useTranslation('menu');
+const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
   const params = useRoute().params;
 
   return (

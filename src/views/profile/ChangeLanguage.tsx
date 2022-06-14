@@ -15,11 +15,10 @@ import { APP_COLORS } from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export interface ChangeLanguageProps {
-  navigation: any;
 }
 
 const ChangeLanguage: React.FC<ChangeLanguageProps> = React.memo(
-  ({navigation}) => {
+  () => {
     const {t, i18n} = useTranslation('user');
     const [lang, setLang] = useState('');
 

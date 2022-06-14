@@ -13,7 +13,6 @@ import { getUserDetails, loginUser } from '../../redux/actions/userActions';
 
 export interface LoginProps {
   navigation: any;
-  onPress(): () => void;
 }
 
 const Login: React.FC<LoginProps> = React.memo(({navigation}) => {

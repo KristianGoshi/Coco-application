@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {useCallback, useState} from 'react';
-import {useTranslation} from 'react-i18next';
 import {
   View,
   StyleSheet,
@@ -21,7 +20,6 @@ export interface OrderViewProps {
 
 const OrderView: React.FC<OrderViewProps> = React.memo(
   ({emri, sasia, cmimi, foto}) => {
-    const {t} = useTranslation('order');
     const dispatch = useDispatch();
 
     const [counter, setCounter] = useState(sasia);

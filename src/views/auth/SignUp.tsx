@@ -14,7 +14,6 @@ import {registerUser} from '../../redux/actions/userActions';
 
 export interface SignUpProps {
   navigation: any;
-  onPress(): () => void;
 }
 
 const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {

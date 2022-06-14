@@ -18,11 +18,9 @@ import ReservationModal from './ReservationModal';
 import { userReservationsSelector } from '../../redux/selectors/reserveSelectors';
 
 export interface ReservationsProps {
-  navigation: any;
-  onPress(): () => void;
 }
 
-const Reservations: React.FC<ReservationsProps> = React.memo(({navigation}) => {
+const Reservations: React.FC<ReservationsProps> = React.memo(() => {
   const userReservations = useSelector(userReservationsSelector)
   const {t} = useTranslation('reservation');
 

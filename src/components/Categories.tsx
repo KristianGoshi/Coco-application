@@ -16,7 +16,6 @@ const Categories: React.FC<CategoriesProps> = React.memo(
     icon,
     name,
     id,
-    ...props
   }) => {
 
     const navigation = useNavigation();

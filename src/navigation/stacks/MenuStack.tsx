@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {
   createNativeStackNavigator,
-  NativeStackHeaderProps,
 } from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
@@ -15,11 +14,11 @@ export enum EMenuStack {
   SELECTED_FOOD = 'Selected Food'
 }
 export interface MenuStackProps {
-  navigation: NativeStackHeaderProps;
+
 }
 const Stack = createNativeStackNavigator();
 
-const MenuStack: React.FC<MenuStackProps> = ({navigation}) => {
+const MenuStack: React.FC<MenuStackProps> = () => {
   return (
     <SafeAreaView
       forceInset={{top: 'never', bottom: 'never'}}

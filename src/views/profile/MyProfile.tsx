@@ -11,7 +11,6 @@ import { logoutUser } from '../../redux/actions/userActions';
 
 export interface MyProfileProps {
   navigation: any;
-  onPress(): () => void;
 }
 
 const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {

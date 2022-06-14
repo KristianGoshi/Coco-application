@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {
   createNativeStackNavigator,
-  NativeStackHeaderProps,
 } from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
@@ -11,11 +10,10 @@ export enum EReserveStack {
   RESERVATIONS = 'Reservations',
 }
 export interface ReserveStackProps {
-  navigation: NativeStackHeaderProps;
 }
 const Stack = createNativeStackNavigator();
 
-const ReserveStack: React.FC<ReserveStackProps> = ({navigation}) => {
+const ReserveStack: React.FC<ReserveStackProps> = () => {
   return (
     <SafeAreaView
       forceInset={{top: 'never', bottom: 'never'}}

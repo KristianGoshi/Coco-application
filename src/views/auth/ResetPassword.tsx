@@ -10,11 +10,9 @@ import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useDispatch} from 'react-redux';
-//import {resetUserPassword} from '../../redux/actions/userActions';
 
 export interface ResetPasswordProps {
   navigation: any;
-  onPress(): () => void;
 }
 
 const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) => {

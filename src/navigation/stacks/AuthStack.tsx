@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createNativeStackNavigator, NativeStackHeaderProps} from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SafeAreaView from 'react-native-safe-area-view';
 import { APP_COLORS } from '../../assets/styles/colors';
 import Login from '../../views/auth/Login';
@@ -12,11 +12,11 @@ export enum EAuthStack {
   RESET_PASSWORD = 'Reset Password'
 }
 export interface AuthStackProps {
-  navigation: NativeStackHeaderProps;
+
 }
 const Stack = createNativeStackNavigator();
 
-const AuthStack: React.FC<AuthStackProps> = ({navigation}) => {
+const AuthStack: React.FC<AuthStackProps> = () => {
   return (
     <SafeAreaView
       forceInset={{top: 'never', bottom: 'never'}}

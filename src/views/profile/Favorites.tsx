@@ -14,12 +14,10 @@ import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export interface FavoritesProps {
-  navigation: any;
-  onPress(): () => void;
 }
 
 const Favorites: React.FC<FavoritesProps> = React.memo(
-  ({navigation}) => {
+  () => {
     const userFavorites = useSelector(userFavoritesSelector);
     const {t} = useTranslation('user');
 

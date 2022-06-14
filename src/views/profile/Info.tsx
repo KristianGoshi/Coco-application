@@ -10,11 +10,10 @@ import {APP_COLORS} from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export interface InfoProps {
-  navigation: any;
 }
 
 const Info: React.FC<InfoProps> = React.memo(
-  ({navigation}) => {
+  () => {
     const {t, i18n} = useTranslation('user');
 
     return (

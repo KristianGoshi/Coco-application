@@ -12,11 +12,9 @@ import {editUser} from '../../redux/actions/userActions';
 import { userProfileSelector } from '../../redux/selectors/userSelectors';
 
 export interface ChangeProfileProps {
-  navigation: any;
-  onPress(): () => void;
 }
 
-const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(({navigation}) => {
+const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
   const dispatch = useDispatch();
   const profile = useSelector(userProfileSelector);
 

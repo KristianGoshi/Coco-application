@@ -12,12 +12,10 @@ import {editUser} from '../../redux/actions/userActions';
 import {userProfileSelector} from '../../redux/selectors/userSelectors';
 
 export interface ChangePasswordProps {
-  navigation: any;
-  onPress(): () => void;
 }
 
 const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
-  ({navigation}) => {
+  () => {
     const dispatch = useDispatch();
     const profile = useSelector(userProfileSelector);
 

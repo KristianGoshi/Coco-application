@@ -2,19 +2,16 @@ import * as React from 'react';
 import {FlatList, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import { userProfileSelector } from '../../redux/selectors/userSelectors';
 import Categories from '../../components/Categories';
 import FoodView from './FoodView';
 import DailyFood from '../../assets/menu/DailyFood.json'
 
 export interface MainMenuProps {
-  navigation: any;
-  onPress(): () => void;
 }
 
-const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
-  const dispatch = useDispatch();
+const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
   const {t} = useTranslation('menu');
 
   const userName = useSelector(userProfileSelector).userName;
