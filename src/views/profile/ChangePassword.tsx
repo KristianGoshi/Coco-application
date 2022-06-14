@@ -23,6 +23,7 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
     const [apiError, setApiError] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const [password, setPassword] = useState('');
+    const [oldPassword, setOldPassword] = useState('');
     const [enableButton, setEnableButton] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
@@ -30,6 +31,8 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
       setApiError('');
       if (type == 'password') {
         setPassword(text);
+      } else if (type == 'oldPassword') {
+        setOldPassword(text);
       } else {
         setRepeatPassword(text);
       }
@@ -38,13 +41,14 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
     useEffect(() => {
       if (
         password != '' &&
-        repeatPassword != ''
+        repeatPassword != '' &&
+        oldPassword != ''
       ) {
         setEnableButton(true);
       } else {
         setEnableButton(false);
       }
-    }, [password, repeatPassword]);
+    }, [password, repeatPassword, oldPassword]);
 
     const onSubmit = useCallback(() => {
       if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
@@ -53,9 +57,15 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
       } else if (password != repeatPassword) {
         setApiError(t('password.repeatPasswordError'));
         return;
+      } else if (oldPassword != profile.password) {
+        setApiError(t('password.oldPasswordError'));
+        return;
+      } else if (oldPassword == password) {
+        setApiError(t('password.newPasswordError'));
+        return;
       }
       changePassword();
-    }, [password, repeatPassword]);
+    }, [password, repeatPassword, oldPassword]);
 
     const changePassword = useCallback(async () => {
       await dispatch(
@@ -78,6 +88,15 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
                 <Icon name="key" size={120} style={styles.iconStyle} />
               </View>
               <View style={[styles.textInput, {marginTop: 50}]}>
+                <TextInput
+                  placeholder={t('password.oldPassword')}
+                  autoCapitalize="none"
+                  label={t('password.oldPassword')}
+                  password
+                  onChangeText={text => changeText(text, 'oldPassword')}
+                />
+              </View>
+              <View style={[styles.textInput, {marginTop: -5}]}>
                 <TextInput
                   placeholder={t('password.password')}
                   autoCapitalize="none"
@@ -119,7 +138,11 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
           ) : (
             <>
               <View style={[styles.changePasswordLogoWrapper, {marginTop: 80}]}>
-                <Icon name="check-circle" size={200} style={{color: APP_COLORS.background.container_secondary}} />
+                <Icon
+                  name="check-circle"
+                  size={200}
+                  style={{color: APP_COLORS.background.container_secondary}}
+                />
               </View>
               <View style={{marginTop: 30}}>
                 <Text style={styles.textStyle}>{t('password.success')}</Text>

@@ -68,6 +68,9 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
             </TouchableOpacity>
           </View>
         </View>
+        <View style={{borderWidth: 0.5, width: '92%', borderColor: 'black', alignSelf: 'center'}}>
+
+        </View>
       </>
     );
   },
@@ -82,6 +85,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     margin: 15,
     width: '100%',
+    marginLeft: 12
   },
   textStyle: {
     fontSize: 15,

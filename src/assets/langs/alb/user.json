@@ -31,8 +31,11 @@
   "password": {
     "passwordError": "Fjalëkalimi duhet të permbajë të paktën 8 karaktere, perfshirë 1 shkronjë të madhe dhe 1 numër",
     "repeatPasswordError": "Fjalëkalimi i përsëritur nuk është i njëjtë",
+    "oldPasswordError": "Fjalëkalimi i vjetër nuk është i saktë",
+    "newPasswordError": "Fjalëkalimi i ri nuk mund të jetë i njëjtë me atë të vjetrin",
     "password": "Fjalëkalimi",
     "repeatPassword": "Përsërisni fjalëkalimin",
+    "oldPassword": "Fjalëkalimi i vjetër",
     "button": "Vazhdo",
     "success": "Fjalëkalimi juaj është ndryshuar me sukses",
     "goBack": "Kthehu mbrapa"

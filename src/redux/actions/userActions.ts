@@ -72,6 +72,7 @@ export const loginUser = () => async (dispatch: Dispatch) => {
 
 export const logoutUser = () => async (dispatch: Dispatch) => {
   await AsyncStorage.setItem('userLogged', 'false');
+  //turn the item in the storage used for the logged-in check false
 
   dispatch({
     userLogged: 'false',

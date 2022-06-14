@@ -31,8 +31,11 @@
   "password": {
     "passwordError": "Password must contain at least 8 characters, including at least 1 letter and 1 number",
     "repeatPasswordError": "Repeated password is not the same",
+    "oldPasswordError": "Old password is not correct",
+    "newPasswordError": "New password can't be the same as old password",
     "password": "Password",
     "repeatPassword": "Repeat password",
+    "oldPassword": "Old password",
     "button": "Submit",
     "success": "You password has been successfully changed",
     "goBack": "Go back"
