@@ -108,26 +108,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 20,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
-  },
-  addButton: {
-    borderWidth: 1,
-    borderRadius: 30,
-    borderColor: APP_COLORS.background.container_triary,
-    backgroundColor: APP_COLORS.background.container_triary,
-    width: 60,
-    height: 60,
-    position: 'absolute',
-    right: 30,
-    bottom: 25,
-  },
-  addSign: {
-    alignItems: 'center',
-    marginTop: 5,
   },
   listView: {
     marginTop: 15,

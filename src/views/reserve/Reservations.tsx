@@ -87,13 +87,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 30,
   },
-  titleStyle: {
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: APP_COLORS.background.container_triary,
-    textAlign: 'center',
-  },
   addButton: {
     borderWidth: 1,
     borderRadius: 30,

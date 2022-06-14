@@ -9,14 +9,12 @@ import {EAuthStack} from '../../navigation/stacks/AuthStack';
 import TextInput from '../../components/Input';
 import TouchableText from '../../components/TouchableText';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {useDispatch} from 'react-redux';
 
 export interface ResetPasswordProps {
   navigation: any;
 }
 
 const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) => {
-  const dispatch = useDispatch();
   const {t} = useTranslation('auth');
   const [apiError, setApiError] = useState('');
   const [email, setEmail] = useState('');
@@ -162,7 +160,6 @@ const styles = StyleSheet.create({
     color: APP_COLORS.background.container_triary,
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,

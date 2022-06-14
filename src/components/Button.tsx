@@ -67,16 +67,8 @@ const StyledButton: React.FC<StyledButtonProps> = React.memo(
 StyledButton.displayName = 'StyledButton';
 
 const styles = StyleSheet.create({
-  label: {
-    //fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   container: {
     alignItems: 'center',
-  },
-  spinnerStyle: {
-    color: APP_COLORS.typography.body_text,
   },
   [EButtonType.PRIMARY]: {
     backgroundColor: APP_COLORS.buttons.primary,

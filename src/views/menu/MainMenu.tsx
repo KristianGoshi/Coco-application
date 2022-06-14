@@ -105,9 +105,6 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
               horizontal
               keyExtractor={(item, index) => index.toString()}
               renderItem={({item, index}) => {
-                const slides = {
-                  foto: require('../../assets/images/krepa/krepa_coko.jpeg'),
-                };
                 return (
                   <FoodView
                     icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
@@ -133,9 +130,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 30,
-  },
-  iconStyle: {
-    color: APP_COLORS.background.container_primary,
   },
   helloStyle: {
     //fontFamily: 'DMSans-Regular',
@@ -164,10 +158,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
     textAlign: 'center',
-  },
-  textInput: {
-    alignSelf: 'center',
-    width: '90%',
   },
   list: {
     marginTop: 20,

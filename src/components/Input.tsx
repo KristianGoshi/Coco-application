@@ -120,19 +120,8 @@ const styles = StyleSheet.create({
     right: 13,
     top: 12,
   },
-  iconEyeStyle: {
-    position: 'absolute',
-    right: 45,
-    top: 12,
-  },
-  iconCheckStyle: {
-    color: APP_COLORS.typography.success,
-  },
   iconPasswordStyle: {
     color: APP_COLORS.typography.body_text,
-  },
-  iconErrorStyle: {
-    color: APP_COLORS.typography.error,
   },
   errorText: {
     fontSize: 10,

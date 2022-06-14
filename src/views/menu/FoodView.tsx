@@ -80,22 +80,14 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
 FoodView.displayName = 'FoodView';
 
 const styles = StyleSheet.create({
-  label: {
-    //fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   container: {
     alignItems: 'center',
     borderRadius: 16,
-    // height: 250,
-    // width: 180,
     backgroundColor: APP_COLORS.background.container_secondary,
     marginRight: 20,
     marginBottom: 20,
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 15,
     fontWeight: 'bold',
     color: APP_COLORS.background.extra,

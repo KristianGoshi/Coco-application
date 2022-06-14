@@ -86,11 +86,6 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
 ReservationView.displayName = 'ReservationView';
 
 const styles = StyleSheet.create({
-  label: {
-    //fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   container: {
     alignItems: 'center',
     borderRadius: 16,
@@ -101,7 +96,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 15,
     fontWeight: 'bold',
     color: APP_COLORS.background.extra,

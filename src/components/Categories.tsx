@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 12,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_secondary,

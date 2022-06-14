@@ -32,11 +32,6 @@ const StyledRadio: React.FC<StyledRadioProps> = React.memo(
 StyledRadio.displayName = 'StyledRadio';
 
 const styles = StyleSheet.create({
-  label: {
-    fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   smallCircle: {
     alignSelf: 'center',
     marginTop: 7,

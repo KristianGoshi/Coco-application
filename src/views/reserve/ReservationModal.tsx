@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 18,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,

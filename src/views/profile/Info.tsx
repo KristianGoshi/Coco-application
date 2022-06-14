@@ -14,7 +14,7 @@ export interface InfoProps {
 
 const Info: React.FC<InfoProps> = React.memo(
   () => {
-    const {t, i18n} = useTranslation('user');
+    const {t} = useTranslation('user');
 
     return (
       <ScrollView>
@@ -62,13 +62,11 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: APP_COLORS.background.container_secondary,
-    //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     marginTop: 10,
   },
   sectionTitle: {
     color: APP_COLORS.background.container_triary,
-    //fontFamily: 'DMSans-Regular',
     fontSize: 19,
     marginBottom: 2,
     fontWeight: 'bold',

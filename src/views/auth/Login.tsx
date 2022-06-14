@@ -145,11 +145,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  iconStyle: {
-    color: APP_COLORS.background.container_secondary,
-  },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,

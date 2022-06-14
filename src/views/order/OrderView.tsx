@@ -76,11 +76,6 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
 OrderView.displayName = 'OrderView';
 
 const styles = StyleSheet.create({
-  label: {
-    //fontFamily: 'DMSans-Regular',
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-  },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -89,7 +84,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 15,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
@@ -100,32 +94,6 @@ const styles = StyleSheet.create({
     marginLeft: 18,
     alignSelf: 'center',
     width: 115,
-  },
-  iconStyle: {
-    color: APP_COLORS.background.container_triary,
-    left: 145,
-    bottom: 75,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    paddingHorizontal: 25,
-    paddingVertical: 30,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
   },
   increase: {
     marginHorizontal: 5,

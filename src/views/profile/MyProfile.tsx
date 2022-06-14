@@ -151,7 +151,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   settingsName: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 14,
     fontWeight: 'bold',
     color: APP_COLORS.typography.body_text,
@@ -159,7 +158,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   textStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,

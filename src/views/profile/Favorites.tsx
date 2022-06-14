@@ -73,20 +73,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 30,
   },
-  titleStyle: {
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-    textAlign: 'center',
-  },
-  textStyle: {
-    //fontFamily: 'DMSans-Regular',
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: APP_COLORS.typography.body_text,
-    textAlign: 'center',
-  },
   settingsIconStyle: {
     color: APP_COLORS.background.container_secondary,
     alignSelf: 'center',

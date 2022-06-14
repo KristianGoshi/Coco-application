@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   titleStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 22,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,

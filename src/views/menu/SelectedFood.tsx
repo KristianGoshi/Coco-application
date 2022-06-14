@@ -186,18 +186,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   nameStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 25,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
   },
   categorieStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 16,
     color: APP_COLORS.background.container_secondary,
   },
   priceStyle: {
-    //fontFamily: 'DMSans-Regular',
     fontSize: 20,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_triary,
