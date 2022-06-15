@@ -79,6 +79,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) =>
               <TextInput
                 placeholder={t('resetPassword.email')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('resetPassword.email')}
                 onChangeText={text => changeText(text, 'email')}
               />
@@ -87,6 +88,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) =>
               <TextInput
                 placeholder={t('resetPassword.phone')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('resetPassword.phone')}
                 onChangeText={text => changeText(text, 'phone')}
               />

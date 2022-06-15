@@ -91,6 +91,7 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
                 <TextInput
                   placeholder={t('password.oldPassword')}
                   autoCapitalize="none"
+                  autoCorrect={false}
                   label={t('password.oldPassword')}
                   password
                   onChangeText={text => changeText(text, 'oldPassword')}
@@ -100,6 +101,7 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
                 <TextInput
                   placeholder={t('password.password')}
                   autoCapitalize="none"
+                  autoCorrect={false}
                   label={t('password.password')}
                   password
                   onChangeText={text => changeText(text, 'password')}
@@ -109,6 +111,7 @@ const ChangePassword: React.FC<ChangePasswordProps> = React.memo(
                 <TextInput
                   placeholder={t('password.repeatPassword')}
                   autoCapitalize="none"
+                  autoCorrect={false}
                   label={t('password.repeatPassword')}
                   password
                   onChangeText={text => changeText(text, 'repeatPassword')}

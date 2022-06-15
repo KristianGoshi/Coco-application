@@ -102,6 +102,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
               <TextInput
                 placeholder={t('signup.username')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('signup.username')}
                 onChangeText={text => changeText(text, 'username')}
               />
@@ -110,6 +111,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
               <TextInput
                 placeholder={t('signup.email')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('signup.email')}
                 onChangeText={text => changeText(text, 'email')}
               />
@@ -118,6 +120,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
               <TextInput
                 placeholder={t('signup.phone')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('signup.phone')}
                 onChangeText={text => changeText(text, 'phone')}
               />
@@ -126,6 +129,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
               <TextInput
                 placeholder={t('signup.password')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('signup.password')}
                 password
                 onChangeText={text => changeText(text, 'password')}
@@ -135,6 +139,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
               <TextInput
                 placeholder={t('signup.repeatPassword')}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('signup.repeatPassword')}
                 password
                 onChangeText={text => changeText(text, 'repeatPassword')}
@@ -154,7 +159,9 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
                 onPress={() => onSubmit()}
                 disabled={!enableButton || apiError != ''}
                 children={() => (
-                  <Text style={{color: APP_COLORS.background.extra}}>{t('signup.button')}</Text>
+                  <Text style={{color: APP_COLORS.background.extra}}>
+                    {t('signup.button')}
+                  </Text>
                 )}
               />
             </View>

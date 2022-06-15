@@ -53,6 +53,7 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
           <TextInput
             placeholder={t('modal.name')}
             autoCapitalize="none"
+            autoCorrect={false}
             label={t('modal.name')}
             onChangeText={text => changeText(text, 'name')}
           />
@@ -61,6 +62,7 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
           <TextInput
             placeholder={t('modal.persona')}
             autoCapitalize="none"
+            autoCorrect={false}
             label={t('modal.persona')}
             onChangeText={text => changeText(text, 'persona')}
           />
@@ -99,14 +101,25 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
         </View>
         <View style={{flexDirection: 'row', marginTop: 30}}>
           <Pressable
-            style={[styles.modalButton, {marginRight: 5, backgroundColor: 'white'}]}
+            style={[
+              styles.modalButton,
+              {marginRight: 5, backgroundColor: 'white'},
+            ]}
             onPress={() => closeModal(false)}>
-            <Text style={[styles.textStyle, {marginTop: 8}]}>{t('modal.cancel')}</Text>
+            <Text style={[styles.textStyle, {marginTop: 8}]}>
+              {t('modal.cancel')}
+            </Text>
           </Pressable>
           <Pressable
             style={[styles.modalButton, {marginLeft: 5}]}
             onPress={() => createReservation()}>
-            <Text style={[styles.textStyle, {marginTop: 8, color: APP_COLORS.background.extra}]}>{t('modal.confirm')}</Text>
+            <Text
+              style={[
+                styles.textStyle,
+                {marginTop: 8, color: APP_COLORS.background.extra},
+              ]}>
+              {t('modal.confirm')}
+            </Text>
           </Pressable>
         </View>
       </View>

@@ -72,6 +72,7 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
           <TextInput
             placeholder={t('login.username')}
             autoCapitalize="none"
+            autoCorrect={false}
             label={t('login.username')}
             onChangeText={text => changeText(text, 'username')}
           />
@@ -80,6 +81,7 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
           <TextInput
             placeholder={t('login.password')}
             autoCapitalize="none"
+            autoCorrect={false}
             label={t('login.password')}
             password
             onChangeText={text => changeText(text, 'password')}
@@ -99,7 +101,9 @@ const Login: React.FC<LoginProps> = React.memo(({navigation}) => {
             onPress={() => onSubmit()}
             disabled={!enableButton || apiError != ''}
             children={() => (
-              <Text style={{color: APP_COLORS.background.extra}}>{t('login.button')}</Text>
+              <Text style={{color: APP_COLORS.background.extra}}>
+                {t('login.button')}
+              </Text>
             )}
           />
         </View>

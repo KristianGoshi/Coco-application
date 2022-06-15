@@ -87,6 +87,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
               <TextInput
                 placeholder={profile.userName}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('editprofile.username')}
                 onChangeText={text => changeText(text, 'username')}
               />
@@ -95,6 +96,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
               <TextInput
                 placeholder={profile.email}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('editprofile.email')}
                 onChangeText={text => changeText(text, 'email')}
               />
@@ -103,6 +105,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
               <TextInput
                 placeholder={profile.nrTel}
                 autoCapitalize="none"
+                autoCorrect={false}
                 label={t('editprofile.phone')}
                 onChangeText={text => changeText(text, 'phone')}
               />
@@ -121,7 +124,9 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
                 onPress={() => onSubmit()}
                 disabled={!enableButton || apiError != ''}
                 children={() => (
-                  <Text style={{color: APP_COLORS.background.extra}}>{t('editprofile.button')}</Text>
+                  <Text style={{color: APP_COLORS.background.extra}}>
+                    {t('editprofile.button')}
+                  </Text>
                 )}
               />
             </View>
@@ -129,7 +134,11 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
         ) : (
           <>
             <View style={[styles.editprofileLogoWrapper, {marginTop: 80}]}>
-              <Icon name="check-circle" size={200} style={{color: APP_COLORS.background.container_secondary}} />
+              <Icon
+                name="check-circle"
+                size={200}
+                style={{color: APP_COLORS.background.container_secondary}}
+              />
             </View>
             <View style={{marginTop: 30}}>
               <Text style={styles.textStyle}>{t('editprofile.success')}</Text>
