@@ -1,0 +1,42 @@
+[
+    {
+      "id": 0,
+      "icon": "pasta",
+      "name": "Pasta"
+    },
+    {
+      "id": 1,
+      "icon": "rice",
+      "name": "Rizoto"
+    },
+    {
+      "id": 2,
+      "icon": "baguette",
+      "name": "Sanduic"
+    },
+    {
+      "id": 3,
+      "icon": "pizza",
+      "name": "Pica"
+    },
+    {
+      "id": 4,
+      "icon": "leaf",
+      "name": "Sallat"
+    },
+    {
+      "id": 5,
+      "icon": "food-steak",
+      "name": "Tave"
+    },
+    {
+      "id": 6,
+      "icon": "cupcake",
+      "name": "Krepa"
+    },
+    {
+      "id": 7,
+      "icon": "beer",
+      "name": "Pije"
+    }
+  ]

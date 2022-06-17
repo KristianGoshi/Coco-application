@@ -1,12 +1,14 @@
 import { IOrder } from "./../../models/IOrder";
 // Import redux types
 import {Dispatch} from 'redux';
+import { IMenu } from "../../models/IMenu";
 
 // Create Action Constants
 export enum OrderActionTypes {
   SET_ORDER = 'SET_ORDER',
   REMOVE_ORDER = 'REMOVE_ORDER',
-  COMPLETE_ORDER = 'COMPLETE_ORDER'
+  COMPLETE_ORDER = 'COMPLETE_ORDER',
+  SEARCH_FOOD = 'SEARCH_FOOD'
 }
 // Interface to Get All Action Type
 export interface IOrderGetAllOrdersAction {
@@ -44,5 +46,12 @@ export const completeOrder =
       type: OrderActionTypes.COMPLETE_ORDER,
     });
   };
+
+export const setSearchFood = (searchMenu: IMenu) => async (dispatch: Dispatch) => {
+  dispatch({
+    searchFood: searchMenu,
+    type: OrderActionTypes.SEARCH_FOOD,
+  });
+};
 
 

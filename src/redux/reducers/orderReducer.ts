@@ -1,13 +1,16 @@
+import { IMenu } from "./../../models/IMenu";
 import { IOrder } from "./../../models/IOrder";
 import {Reducer} from 'redux';
 import { OrderActionTypes } from '../actions/orderActions';
 
 export interface IOrderState {
   userOrders: Array<IOrder>;
+  searchFood: Array<IMenu>;
 }
 
 const initialOrderState: IOrderState = {
   userOrders: [],
+  searchFood: []
 };
 
 
@@ -32,6 +35,11 @@ export const orderReducer: Reducer = (
       return {
         ...state,
         userOrders: [],
+      };
+    case OrderActionTypes.SEARCH_FOOD:
+      return {
+        ...state,
+        searchFood: action.searchFood,
       };
     default:
       return state;

@@ -6,3 +6,7 @@ export const userOrderSelector = createSelector(
   selectSelf,
   state => state?.orderState.userOrders,
 );
+export const userSearchSelector = createSelector(
+  selectSelf,
+  state => state?.orderState.searchFood,
+);
