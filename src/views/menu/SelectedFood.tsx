@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeFavorites, setFavorites } from '../../redux/actions/userActions';
 import { IMenu } from '../../models/IMenu';
 import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
-import { setOrder } from '../../redux/actions/orderActions';
+import { addCount, setOrder } from '../../redux/actions/orderActions';
 import { userOrderSelector } from '../../redux/selectors/orderSelectors';
 
 export interface SelectedFoodProps {}
@@ -24,7 +24,6 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     const params = useRoute().params;
     const [counter, setCounter] = useState(1);
     const [favorite, setFavorite] = useState(false);
-    const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
       if (userFavorites.some(e => e.emri === params.title)) {
@@ -33,14 +32,6 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
         setFavorite(false);
       }
     }, [userFavorites]);
-
-    useEffect(() => {
-      if (userOrder.some(e => e.emri === params.title)) {
-        setDisabled(true);
-      } else {
-        setDisabled(false);
-      }
-    }, [userOrder]);
 
     const onDecrease = () => {
       if (counter <= 1) {
@@ -62,7 +53,11 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
     }, [favorite]);
 
     const onOrder = useCallback(async () => {
-      if (!disabled) {
+      if (userOrder.some(e => e.emri === params.title)) {
+        await dispatch(
+          addCount({foto: params.foto, emri: params.title, cmimi: params.price, sasia: counter}),
+        );
+      } else {
         await dispatch(
           setOrder({
             foto: params.foto,
@@ -73,7 +68,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
         );
       }
       },
-      [params, counter, disabled],
+      [params, counter, userOrder],
     );
 
     return (
@@ -81,8 +76,11 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
         <Image
           source={params.foto}
           style={{
-            width: '100%',
-            height: 400,
+            width: '93%',
+            height: 360,
+            borderRadius: 16,
+            alignSelf: 'center',
+            marginTop: 15,
           }}
         />
         <View style={styles.container}>
@@ -132,14 +130,9 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
                 alignSelf: 'flex-start',
               }}>
               <StyledButton
-                type={
-                  disabled
-                    ? EButtonType.DISABLED
-                    : EButtonType.PRIMARY
-                }
+                type={EButtonType.PRIMARY}
                 width={'100%'}
                 onPress={() => onOrder()}
-                disabled={disabled}
                 children={() => (
                   <Text
                     style={{

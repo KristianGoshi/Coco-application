@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import {APP_COLORS} from '../../assets/styles/colors';
 import { EMenuStack } from '../../navigation/stacks/MenuStack';
-import StyledButton, { EButtonType } from '../../components/Button';
 import { EProfileStack } from '../../navigation/stacks/ProfileStack';
+import Icon from 'react-native-vector-icons/Entypo';
 
 export interface FoodViewProps {
   icon: any;
@@ -56,21 +56,32 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
         <View style={styles.nameStyle}>
           <Text style={styles.textStyle}>{name}</Text>
         </View>
+        <Text
+          style={[
+            styles.textStyle,
+            {
+              paddingTop: 10,
+              alignSelf: 'flex-start',
+              marginLeft: 10
+            },
+          ]}>
+          {price + 'L'}
+        </Text>
         <View
-          style={styles.priceView}>
-          <Text style={[styles.textStyle, {paddingTop: 10}]}>
-            {price + 'L'}
-          </Text>
-          <StyledButton
-            type={EButtonType.SECONDARY}
-            spinner={APP_COLORS.typography.body_text}
-            height={20}
-            width={'80%'}
-            onPress={() => onSubmit()}
-            children={() => (
-              <Text style={{color: APP_COLORS.background.container_triary, fontWeight: 'bold'}}>{t('main.order')}</Text>
-            )}
-          />
+          style={{
+            position: 'absolute',
+            top: height - 50,
+            right: 12
+          }}>
+          <TouchableOpacity style={styles.addButton} onPress={() => onSubmit()}>
+            <View style={styles.addSign}>
+              <Icon
+                name="plus"
+                size={28}
+                style={{color: APP_COLORS.background.container_secondary}}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -95,18 +106,26 @@ const styles = StyleSheet.create({
   nameStyle: {
     marginTop: 15,
     alignSelf: 'flex-start',
-    marginHorizontal: 15,
+    marginHorizontal: 10,
   },
   imageStyle: {
     width: '100%',
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
   },
-  priceView: {
-    marginTop: 10,
-    flexDirection: 'row',
-    alignSelf: 'flex-start',
-    marginLeft: 15,
+  addButton: {
+    borderWidth: 1,
+    borderRadius: 30,
+    borderColor: APP_COLORS.buttons.secondary,
+    backgroundColor: APP_COLORS.buttons.secondary,
+    width: 40,
+    height: 40,
+    alignSelf: 'flex-end',
+    alignContent: 'flex-end',
+  },
+  addSign: {
+    alignItems: 'center',
+    marginTop: 5,
   },
 });
 

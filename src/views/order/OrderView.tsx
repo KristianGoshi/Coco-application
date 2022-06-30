@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {APP_COLORS} from '../../assets/styles/colors';
-import {removeOrder} from '../../redux/actions/orderActions';
+import {addCount, removeCount, removeOrder} from '../../redux/actions/orderActions';
 
 export interface OrderViewProps {
   emri: string;
@@ -22,21 +22,22 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
   ({emri, sasia, cmimi, foto}) => {
     const dispatch = useDispatch();
 
-    const [counter, setCounter] = useState(sasia);
-
-    const onDecrease = () => {
-      console.log("dd", counter)
-      if (counter <= 1) {
+    const onDecrease = useCallback(async () => {
+      if (sasia <= 1) {
         deleteOrder();
+      } else {
+        await dispatch(
+          removeCount({foto: foto, emri: emri, cmimi: cmimi, sasia: sasia}),
+        );
       }
-      setCounter(counter - 1);
-    };
-    const onIncrease = () => {
-      setCounter(counter + 1);
-    };
+    }, [sasia]);
+    const onIncrease = useCallback(async () => {
+      await dispatch(
+        addCount({foto: foto, emri: emri, cmimi: cmimi, sasia: 1}),
+      );
+    }, [sasia]);
 
     const deleteOrder = useCallback(async () => {
-      console.log(foto, emri, cmimi, sasia)
       await dispatch(removeOrder({foto: foto, emri: emri, cmimi: cmimi, sasia: sasia}));
     }, []);
 
@@ -49,7 +50,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
           />
           <View style={styles.sectionView}>
             <Text style={styles.textStyle}>{emri}</Text>
-            <Text style={styles.textStyle}>{cmimi * counter + ' Lek'}</Text>
+            <Text style={styles.textStyle}>{cmimi * sasia + ' Lek'}</Text>
           </View>
           <View
             style={styles.counterButtons}>
@@ -59,7 +60,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
               <Text style={styles.increaseIcon}>-</Text>
             </TouchableOpacity>
             <View style={{width: 25, alignSelf: 'center'}}>
-              <Text style={styles.increaseIcon}>{counter}</Text>
+              <Text style={styles.increaseIcon}>{sasia}</Text>
             </View>
             <TouchableOpacity
               onPress={() => onIncrease()}
@@ -68,9 +69,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{borderWidth: 0.5, width: '92%', borderColor: 'black', alignSelf: 'center'}}>
-
-        </View>
+        <View style={{borderWidth: 0.5, width: '92%', borderColor: 'black', alignSelf: 'center'}}></View>
       </>
     );
   },

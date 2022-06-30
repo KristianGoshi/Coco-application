@@ -13,7 +13,6 @@ const initialOrderState: IOrderState = {
   searchFood: []
 };
 
-
 export const orderReducer: Reducer = (
   state = initialOrderState,
   action,
@@ -35,6 +34,34 @@ export const orderReducer: Reducer = (
       return {
         ...state,
         userOrders: [],
+      };
+    case OrderActionTypes.ADD_COUNT:
+      return {
+        ...state,
+        userOrders: state.userOrders.map((order: IOrder) => {
+          if (order.emri !== action.userOrders.emri) {
+            return order;
+          }
+
+          return {
+            ...order,
+            sasia: order.sasia + action.userOrders.sasia,
+          };
+        }),
+      };
+    case OrderActionTypes.REMOVE_COUNT:
+      return {
+        ...state,
+        userOrders: state.userOrders.map((order: IOrder) => {
+          if (order.emri !== action.userOrders.emri) {
+            return order;
+          }
+
+          return {
+            ...order,
+            sasia: order.sasia - 1,
+          };
+        }),
       };
     case OrderActionTypes.SEARCH_FOOD:
       return {

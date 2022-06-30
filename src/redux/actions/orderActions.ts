@@ -8,7 +8,9 @@ export enum OrderActionTypes {
   SET_ORDER = 'SET_ORDER',
   REMOVE_ORDER = 'REMOVE_ORDER',
   COMPLETE_ORDER = 'COMPLETE_ORDER',
-  SEARCH_FOOD = 'SEARCH_FOOD'
+  SEARCH_FOOD = 'SEARCH_FOOD',
+  ADD_COUNT = 'ADD_COUNT',
+  REMOVE_COUNT = 'REMOVE_COUNT'
 }
 // Interface to Get All Action Type
 export interface IOrderGetAllOrdersAction {
@@ -46,6 +48,20 @@ export const completeOrder =
       type: OrderActionTypes.COMPLETE_ORDER,
     });
   };
+
+export const addCount = (userOrder: IOrder) => async (dispatch: Dispatch) => {
+  dispatch({
+    userOrders: userOrder,
+    type: OrderActionTypes.ADD_COUNT,
+  });
+};
+
+export const removeCount = (userOrder: IOrder) => async (dispatch: Dispatch) => {
+  dispatch({
+    userOrders: userOrder,
+    type: OrderActionTypes.REMOVE_COUNT,
+  });
+};
 
 export const setSearchFood = (searchMenu: IMenu) => async (dispatch: Dispatch) => {
   dispatch({

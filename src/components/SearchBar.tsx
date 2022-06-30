@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   [EInputType.INITIAL]: {
     backgroundColor: APP_COLORS.background.container_secondary,
-    borderColor: APP_COLORS.background.container_triary,
+    borderColor: APP_COLORS.background.container_secondary,
     borderRadius: 26,
     flex: 1,
   },
