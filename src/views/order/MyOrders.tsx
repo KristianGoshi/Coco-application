@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useCallback, useEffect, useState} from 'react';
 import {
+  Dimensions,
   FlatList,
   ScrollView,
   StyleSheet,
@@ -34,8 +35,8 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
   );
 
   useEffect(() => {
-    const sum = userOrder.reduce((partialSum, a) => partialSum + a.cmimi * a.sasia, 0);
-    setTotal(sum);
+    const totalSum = userOrder.reduce((partialSum, a) => partialSum + a.cmimi * a.sasia, 0);
+    setTotal(totalSum);
   }, [userOrder]);
 
   const onSubmit = useCallback(async () => {
@@ -48,7 +49,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
       <View style={styles.container}>
         {userOrder.length !== 0 && !completed && (
           <>
-            <ScrollView style={styles.listView}>
+            <ScrollView style={[styles.listView, {maxHeight: Dimensions.get('window').height - 150}]}>
               <FlatList
                 data={userOrder}
                 keyExtractor={(item, index) => item.emri}
