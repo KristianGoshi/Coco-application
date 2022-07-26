@@ -26,7 +26,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
   const userName = useSelector(userProfileSelector).userName;
   const food = useSelector(userSearchSelector);
 
-  let allFoods: Array<any> = []
+  let allFoods: Array<IMenu> = []
   allFoods = allFoods.concat(
     RegularFood[0].Krepa,
     RegularFood[0].Pasta,
@@ -42,7 +42,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
     async (searchVal: string) => {
       setSearch(searchVal);
 
-      const newData: IMenu = allFoods?.filter((item: any) => {
+      const newData: IMenu[] = allFoods?.filter((item: any) => {
         // Applying filter for the inserted text in search bar
         const itemData = item?.emri
           ? item?.emri

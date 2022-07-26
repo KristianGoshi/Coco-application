@@ -63,7 +63,7 @@ export const removeCount = (userOrder: IOrder) => async (dispatch: Dispatch) => 
   });
 };
 
-export const setSearchFood = (searchMenu: IMenu) => async (dispatch: Dispatch) => {
+export const setSearchFood = (searchMenu: IMenu[]) => async (dispatch: Dispatch) => {
   dispatch({
     searchFood: searchMenu,
     type: OrderActionTypes.SEARCH_FOOD,
