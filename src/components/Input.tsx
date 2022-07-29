@@ -136,20 +136,20 @@ const styles = StyleSheet.create({
   [EInputType.INITIAL]: {
     backgroundColor: APP_COLORS.background.container_secondary,
     borderColor: APP_COLORS.background.container_triary,
-    borderRadius: 8,
+    borderRadius: 16,
     flex: 1,
   },
   [EInputType.TYPING]: {
     backgroundColor: APP_COLORS.background.fourth,
     borderColor: APP_COLORS.background.container_primary,
-    borderRadius: 8,
+    borderRadius: 16,
     flex: 1,
   },
   [EInputType.DISABLED]: {
     backgroundColor: APP_COLORS.background.container_primary,
     borderColor: APP_COLORS.background.container_primary,
     opacity: 0.2,
-    borderRadius: 8,
+    borderRadius: 16,
     flex: 1,
   },
 });

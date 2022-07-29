@@ -18,6 +18,7 @@ import StyledButton, { EButtonType } from '../../components/Button';
 import { completeOrder } from '../../redux/actions/orderActions';
 import { useFocusEffect } from '@react-navigation/native';
 import { IOrder } from '../../models/IOrder';
+import TextInput from '../../components/Input';
 
 export interface MyOrdersProps {}
 
@@ -49,7 +50,11 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
       <View style={styles.container}>
         {userOrder.length !== 0 && !completed && (
           <>
-            <ScrollView style={[styles.listView, {maxHeight: Dimensions.get('window').height - 150}]}>
+            <ScrollView
+              style={[
+                styles.listView,
+                {maxHeight: Dimensions.get('window').height - 250},
+              ]}>
               <FlatList
                 data={userOrder}
                 keyExtractor={(item, index) => item.emri}
@@ -63,11 +68,20 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
                 )}
               />
             </ScrollView>
+            <View style={{marginTop: -5}}>
+              <TextInput
+                placeholder={t('order.specialRequest')}
+                autoCapitalize="none"
+                autoCorrect={false}
+                multiline
+                //onChangeText={text => changeText(text, 'phone')}
+              />
+            </View>
             <View
               style={{
                 flexDirection: 'row',
                 paddingBottom: 25,
-                paddingTop: 20,
+                paddingTop: 5,
                 alignSelf: 'center',
               }}>
               <View style={{alignSelf: 'center'}}>
