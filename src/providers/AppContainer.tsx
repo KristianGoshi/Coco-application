@@ -31,10 +31,6 @@ const App: React.FC = React.memo(() => {
             component={AuthStack}
             options={{
               headerShown: false,
-              //title: '',
-              // When logging out, a pop animation feels intuitive
-              // You can remove this if you want the default 'push' animation
-              //animationTypeForReplace: state.isSignout ? 'pop' : 'push',
             }}
           />
         ) : (
