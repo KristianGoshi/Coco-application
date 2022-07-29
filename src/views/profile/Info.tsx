@@ -4,10 +4,12 @@ import {
   StyleSheet,
   ScrollView,
   Text,
+  Linking
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import TouchableText from '../../components/TouchableText';
 
 export interface InfoProps {
 }
@@ -15,6 +17,9 @@ export interface InfoProps {
 const Info: React.FC<InfoProps> = React.memo(
   () => {
     const {t} = useTranslation('user');
+    const callNumber = () => {
+      Linking.openURL(`tel:${+355694042345}`);
+    }
 
     return (
       <ScrollView>
@@ -24,18 +29,33 @@ const Info: React.FC<InfoProps> = React.memo(
           </View>
           <View style={{marginTop: 35}}>
             <Text style={styles.sectionTitle}>{t('info.oraret')}</Text>
-            <Text style={styles.textStyle}>
-              {'• Restaurant: 7:00am - 22:00pm'}
-            </Text>
-            <Text style={styles.textStyle}>
-              {'• Delivery: 9:00am - 21:00pm'}
-            </Text>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={styles.textStyle}>{'• Restaurant: '}</Text>
+              <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>
+                {'7:00am - 22:00pm'}
+              </Text>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={styles.textStyle}>{'• Delivery: '}</Text>
+              <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>
+                {'9:00am - 21:00pm'}
+              </Text>
+            </View>
           </View>
           <View style={{marginTop: 35}}>
             <Text style={styles.sectionTitle}>{t('info.tel')}</Text>
-            <Text style={styles.textStyle}>
-              {'• ' + t('info.call') + ': 0694042345'}
-            </Text>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={styles.textStyle}>
+                {'• ' + t('info.call') + ': '}
+              </Text>
+              <View style={{marginTop: 10}}>
+                <TouchableText
+                  touchableText={'0694042345'}
+                  onPress={() => callNumber()}
+                  fontSize={16}
+                />
+              </View>
+            </View>
           </View>
           <View style={{marginTop: 35}}>
             <Text style={styles.sectionTitle}>{t('info.location')}</Text>
