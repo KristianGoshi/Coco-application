@@ -9,6 +9,7 @@ import {
 import {APP_COLORS} from '../../assets/styles/colors';
 import FoodView from './FoodView';
 import RegularFood from '../../assets/menu/RegularFood.json';
+import DailyFood from '../../assets/menu/DailyFood.json'
 import { useRoute } from '@react-navigation/native';
 
 export interface SelectedCategorieProps {
@@ -26,7 +27,7 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
           </View>
           <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
             <FlatList
-              data={RegularFood[0][params.title]}
+              data={params.daily ? DailyFood : RegularFood[0][params.title]}
               keyExtractor={(item, index) => item.emri}
               numColumns={2}
               renderItem={({item, index}) => (

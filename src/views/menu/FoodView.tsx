@@ -19,7 +19,7 @@ export interface FoodViewProps {
 }
 
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({icon, name, regular, price, width, height, categorie = 'Ditore', favorite = false}) => {
+  ({icon, name, regular, price, width, height, categorie, favorite = false}) => {
     const {t} = useTranslation('menu');
     const navigation = useNavigation();
 

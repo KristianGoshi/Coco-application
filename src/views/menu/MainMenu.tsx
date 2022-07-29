@@ -14,11 +14,14 @@ import { useCallback, useState } from 'react';
 import { userSearchSelector } from '../../redux/selectors/orderSelectors';
 import { setSearchFood } from '../../redux/actions/orderActions';
 import { IMenu } from '../../models/IMenu';
+import TouchableText from '../../components/TouchableText';
+import { EMenuStack } from '../../navigation/stacks/MenuStack';
 
 export interface MainMenuProps {
+  navigation: any;
 }
 
-const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
+const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
   const {t} = useTranslation('menu');
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
@@ -115,8 +118,23 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
               </View>
             </View>
             <View>
-              <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
-                <Text style={styles.subTitleStyle}>{t('main.ditore')}</Text>
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <View style={{marginTop: 20}}>
+                  <Text style={styles.subTitleStyle}>{t('main.ditore')}</Text>
+                </View>
+                <View style={{marginTop: 20}}>
+                  <TouchableText
+                    touchableText={t('main.seeAll')}
+                    onPress={() =>
+                      navigation.navigate(EMenuStack.SELECTED_CATEGORIE, {
+                        title: t('main.ditore'),
+                        daily: true
+                      })
+                    }
+                    fontSize={14}
+                  />
+                </View>
               </View>
               <View style={{marginTop: 15, alignSelf: 'flex-start'}}>
                 <FlatList
@@ -132,6 +150,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(() => {
                         regular={false}
                         width={180}
                         height={250}
+                        categorie={t('main.ditore')}
                       />
                     );
                   }}
