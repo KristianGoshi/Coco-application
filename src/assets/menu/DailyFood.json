@@ -3,48 +3,56 @@
     "id": 1,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Perime ne avull",
-    "cmimi": 200
+    "cmimi": 200,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 2,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Perime furre",
-    "cmimi": 200
+    "cmimi": 200,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 3,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Lazanja",
-    "cmimi": 260
+    "cmimi": 260,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 4,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Kaneloni",
-    "cmimi": 280
+    "cmimi": 280,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 5,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Musaka",
-    "cmimi": 300
+    "cmimi": 300,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 6,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Supe kerpudhe",
-    "cmimi": 170
+    "cmimi": 170,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 7,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Karkaleca deti",
-    "cmimi": 350
+    "cmimi": 350,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   },
   {
     "id": 8,
     "foto": "../../assets/images/krepa/krepa_coko.jpeg",
     "emri": "Rizoto 4 djathrat",
-    "cmimi": 150
+    "cmimi": 150,
+    "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
   }
 ]

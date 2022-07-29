@@ -8,18 +8,19 @@ import { EProfileStack } from '../../navigation/stacks/ProfileStack';
 import Icon from 'react-native-vector-icons/Entypo';
 
 export interface FoodViewProps {
-  icon: any;
-  name: string;
-  price: number;
-  regular: boolean;
+  icon?: any;
+  name?: string;
+  price?: number;
+  regular?: boolean;
   width: any;
   height: number;
   categorie?: string;
+  pershkrimi?: string;
   favorite?: boolean;
 }
 
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({icon, name, regular, price, width, height, categorie, favorite = false}) => {
+  ({icon, name, regular, price, width, height, categorie, pershkrimi, favorite = false}) => {
     const {t} = useTranslation('menu');
     const navigation = useNavigation();
 
@@ -31,6 +32,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
           price: price,
           regular: regular,
           categorie: categorie,
+          pershkrimi: pershkrimi,
           width: width,
           height: height,
         });
@@ -41,6 +43,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
           price: price,
           regular: regular,
           categorie: categorie,
+          pershkrimi: pershkrimi,
           width: width,
           height: height,
         });

@@ -39,6 +39,7 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
                   width={'46%'}
                   height={230}
                   categorie={params.title}
+                  pershkrimi={item.pershkrimi}
                 />
               )}
             />

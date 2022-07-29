@@ -151,6 +151,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                         width={180}
                         height={250}
                         categorie={t('main.ditore')}
+                        pershkrimi={item.pershkrimi}
                       />
                     );
                   }}

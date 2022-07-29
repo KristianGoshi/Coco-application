@@ -39,6 +39,7 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
                     width={userFavorites.length == 1 ? 170 : '46%'}
                     height={230}
                     categorie={item.categorie}
+                    pershkrimi={item.pershkrimi}
                     favorite
                   />
                 )}

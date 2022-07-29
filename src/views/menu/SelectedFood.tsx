@@ -100,6 +100,13 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
           </View>
           <View
             style={{
+              marginTop: 5,
+              alignSelf: 'flex-start',
+            }}>
+            <Text style={styles.descriptionStyle}>{params.pershkrimi}</Text>
+          </View>
+          <View
+            style={{
               flexDirection: 'row',
               alignSelf: 'flex-start',
               marginTop: 20,
@@ -126,7 +133,7 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
           <View style={{flexDirection: 'row', marginBottom: 20}}>
             <View
               style={{
-                marginTop: 40,
+                marginTop: 30,
                 alignSelf: 'flex-start',
               }}>
               <StyledButton
@@ -185,6 +192,11 @@ const styles = StyleSheet.create({
   },
   categorieStyle: {
     fontSize: 16,
+    fontWeight: 'bold',
+    color: APP_COLORS.background.container_secondary,
+  },
+  descriptionStyle: {
+    fontSize: 18,
     color: APP_COLORS.background.container_secondary,
   },
   priceStyle: {

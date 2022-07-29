@@ -4,5 +4,6 @@ export interface IMenu {
   emri?: string;
   cmimi?: number;
   categorie?: string;
+  pershkrimi?: string;
   fotot?: Array<String>
 }

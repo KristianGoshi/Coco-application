@@ -5,67 +5,78 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta gjalp",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta napoli",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta pana-kerpudhe",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta pana-proshute",
-        "cmimi": 260
+        "cmimi": 260,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta pesto spinaq-borzilok",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta me ton",
-        "cmimi": 320
+        "cmimi": 320,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta karbunara",
-        "cmimi": 350
+        "cmimi": 350,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta 4 djathrat",
-        "cmimi": 350
+        "cmimi": 350,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 9,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta bolonjeze",
-        "cmimi": 350
+        "cmimi": 350,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 10,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta fruta deti",
-        "cmimi": 450
+        "cmimi": 450,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pasta me karkaleca",
-        "cmimi": 550
+        "cmimi": 550,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Rizoto": [
@@ -73,43 +84,50 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pilaf",
-        "cmimi": 90
+        "cmimi": 90,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me perime",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me perime & pule",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto pule teriyaki",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me mish",
-        "cmimi": 300
+        "cmimi": 300,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto me fruta deti",
-        "cmimi": 350
+        "cmimi": 350,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Rizoto vici",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Sanduic": [
@@ -117,55 +135,64 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic sallam-proshut",
-        "cmimi": 120
+        "cmimi": 120,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic omlet",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic normal",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic pikant",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic ton-kerpudhe",
-        "cmimi": 170
+        "cmimi": 170,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic chicken",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic special coco",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic milanez",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 9,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sanduic integral",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Pica": [
@@ -173,61 +200,71 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza margarita",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza sallam",
-        "cmimi": 300
+        "cmimi": 300,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza proshut",
-        "cmimi": 350
+        "cmimi": 350,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza ton",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza vegjetariane",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza kapricoza",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza 4 stinet",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza diavola",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 9,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza 4 djathrat",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 10,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Pizza speciale",
-        "cmimi": 500
+        "cmimi": 500,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Sallat": [
@@ -235,49 +272,57 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate fshati",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate greke",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate caprese",
-        "cmimi": 190
+        "cmimi": 190,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate stine",
-        "cmimi": 220
+        "cmimi": 220,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate me avokado",
-        "cmimi": 220
+        "cmimi": 220,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate cezar",
-        "cmimi": 280
+        "cmimi": 280,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate rukola",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallate coco",
-        "cmimi": 300
+        "cmimi": 300,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Tave": [
@@ -285,73 +330,85 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Supe pule",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Supe perime",
-        "cmimi": 140
+        "cmimi": 140,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fileto pule zgare",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Eskallop pule",
-        "cmimi": 300
+        "cmimi": 300,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fileto pule e mbushur",
-        "cmimi": 330
+        "cmimi": 330,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Eskallop vici",
-        "cmimi": 380
+        "cmimi": 380,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Biftek vici",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Berxolle vici",
-        "cmimi": 400
+        "cmimi": 400,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 9,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Perime te mbushura",
-        "cmimi": 250
+        "cmimi": 250,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 10,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Patate furre",
-        "cmimi": 120
+        "cmimi": 120,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 11,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Patate te skuqura",
-        "cmimi": 120
+        "cmimi": 120,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 13,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Perime zgare",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Krepa": [
@@ -359,85 +416,99 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Cokollate",
-        "cmimi": 100
+        "cmimi": 100,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Malibu",
-        "cmimi": 140
+        "cmimi": 140,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Baileys",
-        "cmimi": 160
+        "cmimi": 160,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Disaronno",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Ananas",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Kahlua",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Krem",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Lidia",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 9,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Simple",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 10,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Sallami",
-        "cmimi": 200
+        "cmimi": 200,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 11,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "4 djathrat",
-        "cmimi": 220
+        "cmimi": 220,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 12,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Omelete",
-        "cmimi": 230
+        "cmimi": 230,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 13,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fileto chicken",
-        "cmimi": 310
+        "cmimi": 310,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 14,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Nani",
-        "cmimi": 210
+        "cmimi": 210,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ],
     "Pije": [
@@ -445,55 +516,64 @@
         "id": 1,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Uje",
-        "cmimi": 60
+        "cmimi": 60,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 2,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Uje me gaz",
-        "cmimi": 60
+        "cmimi": 60,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 3,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fanta portokall",
-        "cmimi": 80
+        "cmimi": 80,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 4,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Fanta ekzotik",
-        "cmimi": 80
+        "cmimi": 80,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 5,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Koka-kola",
-        "cmimi": 80
+        "cmimi": 80,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 6,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Uje me vitamina",
-        "cmimi": 100
+        "cmimi": 100,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 7,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Amstel",
-        "cmimi": 140
+        "cmimi": 140,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 8,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Heineken",
-        "cmimi": 150
+        "cmimi": 150,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       },
       {
         "id": 9,
         "foto": "../../assets/images/krepa/krepa_coko.jpeg",
         "emri": "Korca",
-        "cmimi": 140
+        "cmimi": 140,
+        "pershkrimi": "Ketu do te vendoset pershkrimi i ushqimit"
       }
     ]
   }
