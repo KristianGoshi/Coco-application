@@ -1,7 +1,8 @@
 {
   "reserve": {
     "hello": "Here you will find saved reservations",
-    "none": "You have no reservations saved"
+    "none": "You have no reservations saved",
+    "search": "Search your reservation"
   },
   "modal": {
     "title": "Make the reservation",

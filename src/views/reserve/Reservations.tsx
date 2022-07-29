@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {
   FlatList,
   Modal,
@@ -16,6 +16,8 @@ import ReservationView from './ReservationView';
 import Icon from 'react-native-vector-icons/Entypo';
 import ReservationModal from './ReservationModal';
 import { userReservationsSelector } from '../../redux/selectors/reserveSelectors';
+import SearchBar from '../../components/SearchBar';
+import { IReservation } from '../../models/IReservation';
 
 export interface ReservationsProps {
 }
@@ -25,6 +27,32 @@ const Reservations: React.FC<ReservationsProps> = React.memo(() => {
   const {t} = useTranslation('reservation');
 
   const [showModal, setModal] = useState(false);
+  const [reservations, setReservations] = useState(userReservations);
+  const [searchRes, setSearch] = useState('');
+
+  const onSearch = React.useCallback(async (searchVal: string) => {
+    setSearch(searchVal);
+    const newData: IReservation[] = userReservations?.filter((item: any) => {
+      // Applying filter for the inserted text in search bar
+      const itemData = item?.emri
+        ? item?.emri
+            ?.toUpperCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+        : ''
+            .toUpperCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+      const textData = searchVal.toUpperCase();
+      return itemData.indexOf(textData) > -1;
+    });
+    setReservations(newData);
+  }, [reservations, userReservations]);
+
+  useEffect(() => {
+    setReservations(userReservations);
+    onSearch(searchRes);
+  }, [userReservations]);
 
   return (
     <>
@@ -32,9 +60,18 @@ const Reservations: React.FC<ReservationsProps> = React.memo(() => {
         <View style={styles.container}>
           {userReservations.length ? (
             <>
+              <View style={{marginTop: 25}}>
+                <SearchBar
+                  placeholder={t('reserve.search')}
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  label={t('reserve.search')}
+                  onChangeText={onSearch}
+                />
+              </View>
               <View style={{marginTop: 30}}>
                 <FlatList
-                  data={userReservations}
+                  data={reservations}
                   keyExtractor={(item, index) => item.emri}
                   renderItem={({item, index}) => (
                     <ReservationView
@@ -58,7 +95,11 @@ const Reservations: React.FC<ReservationsProps> = React.memo(() => {
                 {t('reserve.none')}
               </Text>
               <View>
-                <Icon name="calendar" size={150} style={styles.settingsIconStyle} />
+                <Icon
+                  name="calendar"
+                  size={150}
+                  style={styles.settingsIconStyle}
+                />
               </View>
             </View>
           )}

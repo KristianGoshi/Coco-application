@@ -1,7 +1,8 @@
 {
   "reserve": {
     "hello": "Këtu do të gjeni rezervimet e ruajtura",
-    "none": "Ju nuk keni asnjë rezervim të ruajtur"
+    "none": "Ju nuk keni asnjë rezervim të ruajtur",
+    "search": "Kërko rezervimin tënd"
   },
   "modal": {
     "title": "Krijo rezervimin",

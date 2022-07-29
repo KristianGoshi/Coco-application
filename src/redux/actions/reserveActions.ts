@@ -67,7 +67,7 @@ export const getUserReservations = () => async (dispatch: Dispatch) => {
   const userReservations = await AsyncStorage.getItem('userReservations');
 
   if (userReservations != null) {
-    //check if there are any favorites items saved
+    //check if there are any reservations saved
     dispatch({
       userReservations: JSON.parse(userReservations),
       type: ReserveActionTypes.SET_RESERVATIONS,
