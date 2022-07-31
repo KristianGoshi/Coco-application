@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  ImageURISource,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {APP_COLORS} from '../../assets/styles/colors';
@@ -15,7 +16,7 @@ export interface OrderViewProps {
   emri: string;
   sasia: number;
   cmimi: number;
-  foto: string
+  foto: ImageURISource;
 }
 
 const OrderView: React.FC<OrderViewProps> = React.memo(

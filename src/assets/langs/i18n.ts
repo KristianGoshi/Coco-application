@@ -46,11 +46,4 @@ i18n.use(initReactI18next).init({
   defaultNS: I18NNamespaces.MENU,
 });
 
-// i18n
-//   .changeLanguage('eng', (err, t) => {
-//     console.log('error', err);
-//     console.log(t);
-//   })
-//   .then((r) => console.log('i18 response', r));
-
 export default i18n;

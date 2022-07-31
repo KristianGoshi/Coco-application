@@ -15,8 +15,12 @@ import { useRoute } from '@react-navigation/native';
 export interface SelectedCategorieProps {
 }
 
+type Params = {
+  [key: string]: any;
+};
+
 const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
-  const params = useRoute().params;
+  const params: Params = useRoute().params!;
 
   return (
     <ScrollView>

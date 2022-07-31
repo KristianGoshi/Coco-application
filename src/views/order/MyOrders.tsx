@@ -17,7 +17,6 @@ import OrderView from './OrderView';
 import StyledButton, { EButtonType } from '../../components/Button';
 import { completeOrder } from '../../redux/actions/orderActions';
 import { useFocusEffect } from '@react-navigation/native';
-import { IOrder } from '../../models/IOrder';
 import TextInput from '../../components/Input';
 
 export interface MyOrdersProps {}
@@ -36,7 +35,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
   );
 
   useEffect(() => {
-    const totalSum = userOrder.reduce((partialSum, a) => partialSum + a.cmimi * a.sasia, 0);
+    const totalSum = userOrder.reduce((partialSum, a: any) => partialSum + a.cmimi * a.sasia, 0);
     setTotal(totalSum);
   }, [userOrder]);
 
@@ -57,13 +56,13 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
               ]}>
               <FlatList
                 data={userOrder}
-                keyExtractor={(item, index) => item.emri}
+                keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => (
                   <OrderView
-                    emri={item.emri}
-                    foto={item.foto}
-                    sasia={item.sasia}
-                    cmimi={item.cmimi}
+                    emri={item.emri || 'Unknown'}
+                    foto={item.foto || 'Unknown'}
+                    sasia={item.sasia || 0}
+                    cmimi={item.cmimi || 0}
                   />
                 )}
               />

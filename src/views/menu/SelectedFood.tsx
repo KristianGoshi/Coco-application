@@ -16,13 +16,17 @@ import Snackbar from 'react-native-snackbar';
 
 export interface SelectedFoodProps {}
 
+type Params = {
+  [key: string]: any;
+};
+
 const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
   () => {
     const {t} = useTranslation('menu');
     const dispatch = useDispatch();
     const userFavorites = useSelector(userFavoritesSelector);
     const userOrder = useSelector(userOrderSelector);
-    const params = useRoute().params;
+    const params: Params = useRoute().params!;
     const [counter, setCounter] = useState(1);
     const [favorite, setFavorite] = useState(false);
 

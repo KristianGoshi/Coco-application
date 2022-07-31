@@ -64,16 +64,10 @@ const MainTab: React.FC = () => {
       </View>
       {userOrder.length !== 0 && (
         <View
-          style={{
-            position: 'absolute',
-            right: 2,
+          style={[styles.badge, {
             top: icon.focused ? 4 : 0,
             backgroundColor: icon.focused ? '#e1e4eb' : 'red',
-            paddingHorizontal: 3,
-            borderRadius: 10,
-            height: 10,
-            width: 10,
-          }}></View>
+          }]}></View>
       )}
     </View>
   );
@@ -205,6 +199,14 @@ const styles = StyleSheet.create({
     height: 60,
     alignSelf: 'center',
     marginBottom: 15,
+  },
+  badge: {
+    position: 'absolute',
+    right: 2,
+    paddingHorizontal: 3,
+    borderRadius: 10,
+    height: 10,
+    width: 10
   },
 });
 

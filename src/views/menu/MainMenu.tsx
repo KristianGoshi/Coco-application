@@ -166,7 +166,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
               <FlatList
                 data={food}
                 numColumns={2}
-                keyExtractor={(item, index) => item.emri}
+                keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => (
                   <FoodView
                     icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
