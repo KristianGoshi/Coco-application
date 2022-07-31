@@ -5,6 +5,10 @@
     "ditore": "Ditore",
     "order": "Porosit",
     "search": "Kërko për ushqimin tënd",
-    "seeAll": "Shiko të gjitha"
+    "seeAll": "Shfaq të gjitha"
+  },
+  "order": {
+    "new": "Ushqim i ri u shtua në porosi!",
+    "old": "Ushqimi ju shtua porosisë ekzistuese!"
   }
 }

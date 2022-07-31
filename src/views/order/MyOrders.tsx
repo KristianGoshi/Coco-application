@@ -53,7 +53,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
             <ScrollView
               style={[
                 styles.listView,
-                {maxHeight: Dimensions.get('window').height - 250},
+                {maxHeight: Dimensions.get('window').height - 150},
               ]}>
               <FlatList
                 data={userOrder}
@@ -74,7 +74,6 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 multiline
-                //onChangeText={text => changeText(text, 'phone')}
               />
             </View>
             <View

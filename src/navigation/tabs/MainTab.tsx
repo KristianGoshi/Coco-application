@@ -66,20 +66,14 @@ const MainTab: React.FC = () => {
         <View
           style={{
             position: 'absolute',
-            right: 0,
-            top: icon.focused ? 2 : -1,
-            backgroundColor: 'red',
+            right: 2,
+            top: icon.focused ? 4 : 0,
+            backgroundColor: icon.focused ? '#e1e4eb' : 'red',
             paddingHorizontal: 3,
             borderRadius: 10,
-          }}>
-            <Text
-              style={{
-                color: 'white',
-                fontSize: 12,
-              }}>
-              {userOrder.length}
-            </Text>
-        </View>
+            height: 10,
+            width: 10,
+          }}></View>
       )}
     </View>
   );

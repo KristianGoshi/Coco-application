@@ -5,6 +5,10 @@
     "ditore": "Daily",
     "order": "Order",
     "search": "Search for your food",
-    "seeAll": "See All"
+    "seeAll": "Shfaq të gjitha"
+  },
+  "order": {
+    "new": "New food was added to the order!",
+    "old": "Food was added to the existing order!"
   }
 }

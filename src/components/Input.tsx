@@ -80,12 +80,12 @@ const TextInput: React.FC<TextInputProps> = React.memo(
             testID="input"
             style={[
               isFocused ? styles[EInputType.TYPING] : (styles as any)[type],
-              {height: multiline ? 160 : 48},
+              {height: multiline ? 80 : 48},
             ]}
             textStyle={{
               //fontFamily: 'DMSans-Regular',
               marginRight: inputRight,
-              height: multiline ? 160 : undefined,
+              height: multiline ? 80 : undefined,
               color: APP_COLORS.background.container_triary,
             }}
           />

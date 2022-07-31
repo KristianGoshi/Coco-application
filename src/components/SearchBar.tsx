@@ -65,7 +65,7 @@ const SearchBar: React.FC<SearchBarProps> = React.memo(
             <Icon
               name={'search'}
               size={20}
-              style={styles.iconPasswordStyle}
+              style={styles.iconSearchStyle}
             />
           </View>
         </View>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     right: 13,
     top: 12,
   },
-  iconPasswordStyle: {
+  iconSearchStyle: {
     color: APP_COLORS.typography.body_text,
   },
   errorText: {

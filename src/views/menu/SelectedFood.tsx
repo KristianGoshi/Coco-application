@@ -12,6 +12,7 @@ import { IMenu } from '../../models/IMenu';
 import { userFavoritesSelector } from '../../redux/selectors/userSelectors';
 import { addCount, setOrder } from '../../redux/actions/orderActions';
 import { userOrderSelector } from '../../redux/selectors/orderSelectors';
+import Snackbar from 'react-native-snackbar';
 
 export interface SelectedFoodProps {}
 
@@ -57,6 +58,11 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
         await dispatch(
           addCount({foto: params.foto, emri: params.title, cmimi: params.price, sasia: counter}),
         );
+        Snackbar.show({
+          text: t('order.old'),
+          duration: 800,
+          backgroundColor: APP_COLORS.background.container_secondary,
+        });
       } else {
         await dispatch(
           setOrder({
@@ -66,6 +72,11 @@ const SelectedFood: React.FC<SelectedFoodProps> = React.memo(
             sasia: counter,
           }),
         );
+        Snackbar.show({
+          text: t('order.new'),
+          duration: 800,
+          backgroundColor: APP_COLORS.background.container_secondary,
+        });
       }
       },
       [params, counter, userOrder],
