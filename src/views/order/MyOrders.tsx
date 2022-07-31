@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     borderColor: APP_COLORS.background.container_secondary,
     padding: 5,
     borderRadius: 16,
-    backgroundColor: APP_COLORS.background.container_primary,
+    backgroundColor: '#e1e4eb',
   },
   settingsIconStyle: {
     color: APP_COLORS.background.container_secondary,

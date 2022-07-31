@@ -60,7 +60,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
               <Text style={styles.increaseIcon}>-</Text>
             </TouchableOpacity>
             <View style={{width: 25, alignSelf: 'center'}}>
-              <Text style={styles.increaseIcon}>{sasia}</Text>
+              <Text style={styles.counterNumber}>{sasia}</Text>
             </View>
             <TouchableOpacity
               onPress={() => onIncrease()}
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     margin: 15,
     width: '100%',
-    marginLeft: 12
+    marginLeft: 12,
   },
   textStyle: {
     fontSize: 15,
@@ -109,6 +109,11 @@ const styles = StyleSheet.create({
   increaseIcon: {
     fontSize: 20,
     textAlign: 'center',
+    color: APP_COLORS.background.container_secondary,
+  },
+  counterNumber: {
+    fontSize: 20,
+    textAlign: 'center',
     color: APP_COLORS.background.container_triary,
   },
   counterButtons: {
@@ -116,6 +121,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     borderWidth: 2,
     borderColor: APP_COLORS.background.container_secondary,
+    backgroundColor: APP_COLORS.background.container_primary,
     borderRadius: 12,
     paddingVertical: 4,
   },

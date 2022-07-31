@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   tabContainer: {
-    backgroundColor: '#F9F9F9',
+    backgroundColor: '#e1e4eb',
     borderTopColor: APP_COLORS.background.container_triary,
     borderColor: APP_COLORS.background.container_triary,
     borderTopWidth: 2,
