@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   counterButtons: {
     flexDirection: 'row',
-    marginLeft: 15,
+    marginLeft: '2.5%',
     borderWidth: 2,
     borderColor: APP_COLORS.background.container_secondary,
     backgroundColor: APP_COLORS.background.container_primary,

@@ -22,7 +22,7 @@ export interface FoodViewProps {
 const FoodView: React.FC<FoodViewProps> = React.memo(
   ({icon, name, regular, price, width, height, categorie, pershkrimi, favorite = false}) => {
     const {t} = useTranslation('menu');
-    const navigation = useNavigation();
+    const navigation: any = useNavigation();
 
     const onSubmit = () => {
       if (favorite) {

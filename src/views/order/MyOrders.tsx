@@ -56,11 +56,12 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
               ]}>
               <FlatList
                 data={userOrder}
+                scrollEnabled={false}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => (
                   <OrderView
                     emri={item.emri || 'Unknown'}
-                    foto={item.foto || 'Unknown'}
+                    foto={item.foto || require('../../assets/images/krepa/krepa_coko.jpeg')}
                     sasia={item.sasia || 0}
                     cmimi={item.cmimi || 0}
                   />

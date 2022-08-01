@@ -12,8 +12,7 @@ import RegularFood from '../../assets/menu/RegularFood.json';
 import DailyFood from '../../assets/menu/DailyFood.json'
 import { useRoute } from '@react-navigation/native';
 
-export interface SelectedCategorieProps {
-}
+export interface SelectedCategorieProps {}
 
 type Params = {
   [key: string]: any;
@@ -31,7 +30,11 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
           </View>
           <View style={{marginTop: 20, alignSelf: 'flex-start'}}>
             <FlatList
-              data={params.daily ? DailyFood : RegularFood[0][params.title]}
+              data={
+                params.daily
+                  ? DailyFood
+                  : RegularFood[0][params.title as keyof typeof RegularFood[0]]
+              }
               keyExtractor={(item, index) => item.emri}
               numColumns={2}
               renderItem={({item, index}) => (

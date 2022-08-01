@@ -14,11 +14,10 @@ export interface CategoriesProps {
 const Categories: React.FC<CategoriesProps> = React.memo(
   ({
     icon,
-    name,
-    id,
+    name
   }) => {
 
-    const navigation = useNavigation();
+    const navigation: any = useNavigation();
 
     const onCategorie = () => {
       navigation.navigate(EMenuStack.SELECTED_CATEGORIE, {

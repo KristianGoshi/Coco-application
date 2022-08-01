@@ -42,7 +42,7 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
             </Text>
           </View>
           <TouchableOpacity onPress={() => setModal(true)}>
-            <Icon name="trash" size={20} style={styles.iconStyle} />
+            <Icon name="trash" size={18} style={styles.iconStyle} />
           </TouchableOpacity>
         </View>
         <Modal animationType="slide" transparent={true} visible={showModal}>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   iconStyle: {
     color: APP_COLORS.background.extra,
-    left: 145,
+    left: 142,
     bottom: 75,
   },
   centeredView: {
