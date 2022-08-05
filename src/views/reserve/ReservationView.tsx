@@ -36,7 +36,7 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
           <View style={styles.sectionView}>
             <Text style={styles.textStyle}>{t('view.date') + ': ' + date}</Text>
           </View>
-          <View style={[styles.sectionView, {marginBottom: -5}]}>
+          <View style={[styles.sectionView, {marginBottom: 15}]}>
             <Text style={styles.textStyle}>
               {t('view.nrPers') + ': ' + nrPersonave}
             </Text>
@@ -108,16 +108,17 @@ const styles = StyleSheet.create({
   },
   iconStyle: {
     color: APP_COLORS.background.extra,
-    left: 142,
-    bottom: 75,
+    position: 'absolute',
+    bottom: 80,
+    right: '-48%'
   },
   centeredView: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignSelf: 'center',
+    width: '93%'
   },
   modalView: {
-    margin: 20,
     backgroundColor: 'white',
     borderRadius: 20,
     paddingHorizontal: 25,
