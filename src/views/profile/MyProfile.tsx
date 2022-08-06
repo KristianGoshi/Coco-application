@@ -104,7 +104,6 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
                   style={[
                     styles.textStyle,
                     {
-                      marginTop: 9,
                       color: APP_COLORS.background.container_secondary,
                     },
                   ]}>
@@ -114,7 +113,13 @@ const MyProfile: React.FC<MyProfileProps> = React.memo(({navigation}) => {
               <Pressable
                 style={[styles.modalButton, {marginLeft: 5}]}
                 onPress={() => logout()}>
-                <Text style={[styles.textStyle, {marginTop: 9, color: APP_COLORS.background.extra}]}>{t('settings.confirm')}</Text>
+                <Text
+                  style={[
+                    styles.textStyle,
+                    {color: APP_COLORS.background.extra},
+                  ]}>
+                  {t('settings.confirm')}
+                </Text>
               </Pressable>
             </View>
           </View>
@@ -199,6 +204,7 @@ const styles = StyleSheet.create({
     backgroundColor: APP_COLORS.background.container_secondary,
     height: 40,
     width: 150,
+    justifyContent: 'center'
   },
   modalTitle: {
     marginBottom: 25,

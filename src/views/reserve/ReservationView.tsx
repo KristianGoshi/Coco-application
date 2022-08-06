@@ -60,7 +60,6 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
                     style={[
                       styles.textStyle,
                       {
-                        marginTop: 9,
                         color: APP_COLORS.background.container_triary,
                       },
                     ]}>
@@ -70,7 +69,7 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
                 <Pressable
                   style={[styles.modalButton, {marginLeft: 5}]}
                   onPress={() => deleteReservation()}>
-                  <Text style={[styles.textStyle, {marginTop: 9}]}>
+                  <Text style={styles.textStyle}>
                     {t('modal.confirm')}
                   </Text>
                 </Pressable>
@@ -138,6 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: APP_COLORS.background.container_secondary,
     height: 40,
     width: 150,
+    justifyContent: 'center'
   },
   modalTitle: {
     marginBottom: 25,

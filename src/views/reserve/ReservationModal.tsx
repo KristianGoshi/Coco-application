@@ -121,7 +121,7 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
                 {marginRight: 5, backgroundColor: 'white'},
               ]}
               onPress={() => closeModal(false)}>
-              <Text style={[styles.textStyle, {marginTop: 8}]}>
+              <Text style={styles.textStyle}>
                 {t('modal.cancel')}
               </Text>
             </Pressable>
@@ -131,7 +131,7 @@ const ReservationModal: React.FC<ReservationModalProps> = React.memo(({closeModa
               <Text
                 style={[
                   styles.textStyle,
-                  {marginTop: 8, color: APP_COLORS.background.extra},
+                  {color: APP_COLORS.background.extra},
                 ]}>
                 {t('modal.confirm')}
               </Text>
@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     backgroundColor: APP_COLORS.background.container_secondary,
     height: 40,
     width: 125,
+    justifyContent: 'center'
   },
 });
 
