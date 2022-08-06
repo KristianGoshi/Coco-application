@@ -170,6 +170,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 40,
     width: 40,
+    position: 'absolute',
+    top: 8,
   },
   activeLogo: {
     color: APP_COLORS.tabs_logos.active,
@@ -185,7 +187,7 @@ const styles = StyleSheet.create({
     height: 48,
     alignItems: 'center',
     borderRadius: 16,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   tabContainer: {
     backgroundColor: '#e1e4eb',
@@ -193,7 +195,6 @@ const styles = StyleSheet.create({
     borderColor: APP_COLORS.background.container_triary,
     borderTopWidth: 2,
     borderWidth: 2,
-    //paddingVertical: 30,
     borderRadius: 24,
     width: '92%',
     height: 60,
@@ -209,7 +210,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 3,
     borderRadius: 10,
     height: 10,
-    width: 10
+    width: 10,
   },
 });
 
