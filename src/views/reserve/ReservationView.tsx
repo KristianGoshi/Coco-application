@@ -30,6 +30,9 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
     return (
       <>
         <View style={styles.container}>
+          <TouchableOpacity onPress={() => setModal(true)}>
+            <Icon name="trash" size={18} style={styles.iconStyle} />
+          </TouchableOpacity>
           <View style={[styles.sectionView, {marginTop: 15}]}>
             <Text style={styles.textStyle}>{t('view.name') + ': ' + name}</Text>
           </View>
@@ -41,9 +44,6 @@ const ReservationView: React.FC<ReservationViewProps> = React.memo(
               {t('view.nrPers') + ': ' + nrPersonave}
             </Text>
           </View>
-          <TouchableOpacity onPress={() => setModal(true)}>
-            <Icon name="trash" size={18} style={styles.iconStyle} />
-          </TouchableOpacity>
         </View>
         <Modal animationType="slide" transparent={true} visible={showModal}>
           <View style={styles.centeredView}>
@@ -87,13 +87,11 @@ ReservationView.displayName = 'ReservationView';
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     borderRadius: 16,
     backgroundColor: APP_COLORS.background.container_secondary,
     borderWidth: 2,
     borderColor: APP_COLORS.background.container_triary,
     marginBottom: 15,
-    width: '100%',
   },
   textStyle: {
     fontSize: 15,
@@ -109,8 +107,8 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: APP_COLORS.background.extra,
     position: 'absolute',
-    bottom: 80,
-    right: '-48%'
+    top: 8,
+    right: 8
   },
   centeredView: {
     flex: 1,

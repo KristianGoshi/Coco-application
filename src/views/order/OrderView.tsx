@@ -53,8 +53,7 @@ const OrderView: React.FC<OrderViewProps> = React.memo(
             <Text style={styles.textStyle}>{emri}</Text>
             <Text style={styles.textStyle}>{cmimi * sasia + ' Lek'}</Text>
           </View>
-          <View
-            style={styles.counterButtons}>
+          <View style={styles.counterButtons}>
             <TouchableOpacity
               onPress={() => onDecrease()}
               style={styles.increase}>
@@ -81,11 +80,12 @@ OrderView.displayName = 'OrderView';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    alignSelf: 'center',
     borderRadius: 16,
-    margin: 15,
-    width: '100%',
-    marginLeft: 12,
+    marginVertical: 15,
+    width: '92%'
   },
   textStyle: {
     fontSize: 15,
@@ -95,9 +95,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   sectionView: {
-    marginLeft: 18,
-    alignSelf: 'center',
-    width: 115,
+    width: 100,
   },
   increase: {
     marginHorizontal: 5,
@@ -119,7 +117,6 @@ const styles = StyleSheet.create({
   },
   counterButtons: {
     flexDirection: 'row',
-    marginLeft: '2.5%',
     borderWidth: 2,
     borderColor: APP_COLORS.background.container_secondary,
     backgroundColor: APP_COLORS.background.container_primary,
