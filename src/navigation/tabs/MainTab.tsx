@@ -34,7 +34,7 @@ const MainTab: React.FC = () => {
         {!icon.focused && (
           <Text
             style={[
-              icon.focused ? styles.activeLogo : styles.inActiveLogo,
+              styles.inActiveLogo,
               {fontSize: 10},
             ]}>
             Menu
@@ -55,7 +55,7 @@ const MainTab: React.FC = () => {
         {!icon.focused && (
           <Text
             style={[
-              icon.focused ? styles.activeLogo : styles.inActiveLogo,
+              styles.inActiveLogo,
               {fontSize: 10},
             ]}>
             Order
@@ -83,7 +83,7 @@ const MainTab: React.FC = () => {
         {!icon.focused && (
           <Text
             style={[
-              icon.focused ? styles.activeLogo : styles.inActiveLogo,
+              styles.inActiveLogo,
               {fontSize: 10},
             ]}>
             Reserve
@@ -104,7 +104,7 @@ const MainTab: React.FC = () => {
         {!icon.focused && (
           <Text
             style={[
-              icon.focused ? styles.activeLogo : styles.inActiveLogo,
+              styles.inActiveLogo,
               {fontSize: 10},
             ]}>
             Profile
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     height: 48,
     alignItems: 'center',
     borderRadius: 16,
-    paddingVertical: 10,
+    justifyContent: 'center'
   },
   tabContainer: {
     backgroundColor: '#e1e4eb',
@@ -193,11 +193,14 @@ const styles = StyleSheet.create({
     borderColor: APP_COLORS.background.container_triary,
     borderTopWidth: 2,
     borderWidth: 2,
-    paddingTop: 30,
+    //paddingVertical: 30,
     borderRadius: 24,
     width: '92%',
     height: 60,
     alignSelf: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
     marginBottom: 15,
   },
   badge: {
