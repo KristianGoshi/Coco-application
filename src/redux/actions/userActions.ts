@@ -117,12 +117,14 @@ export const setFavorites = (userFavorites: Array<IMenu>) => async (dispatch: Di
 export const removeFavorites = (emri: string) => async (dispatch: Dispatch) => {
   const storageFavorites = await AsyncStorage.getItem('userFavorites');
   let newFavorites;
-  const index = JSON.parse(storageFavorites).findIndex((o: any) => {
-    return o.emri === emri;
-  });
-  if (index > -1) {
-    newFavorites = JSON.parse(storageFavorites);
-    newFavorites.splice(index, 1);
+  if (storageFavorites) {
+    const index = JSON.parse(storageFavorites).findIndex((o: any) => {
+      return o.emri === emri;
+    });
+    if (index > -1) {
+      newFavorites = JSON.parse(storageFavorites);
+      newFavorites.splice(index, 1);
+    }
   }
   await AsyncStorage.setItem('userFavorites', JSON.stringify(newFavorites));
   dispatch({

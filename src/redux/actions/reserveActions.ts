@@ -49,12 +49,14 @@ export const setReservations =
 export const removeReservations = (emri: string) => async (dispatch: Dispatch) => {
   const storageReservations = await AsyncStorage.getItem('userReservations');
   let newReservations;
-  const index = JSON.parse(storageReservations).findIndex((o: any) => {
-    return o.emri === emri;
-  });
-  if (index > -1) {
-    newReservations = JSON.parse(storageReservations);
-    newReservations.splice(index, 1);
+  if (storageReservations) {
+    const index = JSON.parse(storageReservations).findIndex((o: any) => {
+      return o.emri === emri;
+    });
+    if (index > -1) {
+      newReservations = JSON.parse(storageReservations);
+      newReservations.splice(index, 1);
+    }
   }
   await AsyncStorage.setItem('userReservations', JSON.stringify(newReservations));
   dispatch({
