@@ -197,7 +197,7 @@ SelectedFood.displayName = 'SelectedFood';
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 30,
+    marginHorizontal: 18,
     marginTop: 20,
   },
   nameStyle: {

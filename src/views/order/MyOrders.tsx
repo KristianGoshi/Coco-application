@@ -118,7 +118,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
           </>
         )}
         {userOrder.length === 0 && !completed && (
-          <View style={{marginTop: 180, marginHorizontal: 30}}>
+          <View style={{marginTop: 180, marginHorizontal: 18}}>
             <Text style={styles.textStyle}>{t('order.none')}</Text>
             <View>
               <Icon

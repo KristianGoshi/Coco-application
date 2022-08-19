@@ -46,7 +46,7 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
               />
             </View>
           ) : (
-            <View style={{marginTop: 180, marginHorizontal: 30}}>
+            <View style={{marginTop: 180, marginHorizontal: 18}}>
               <Text
                 style={{
                   fontSize: 20,
@@ -72,7 +72,7 @@ Favorites.displayName = 'Favorites';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 30,
+    marginHorizontal: 18,
   },
   settingsIconStyle: {
     color: APP_COLORS.background.container_secondary,

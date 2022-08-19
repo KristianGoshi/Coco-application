@@ -126,7 +126,7 @@ Reservations.displayName = 'Reservations';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 30,
+    marginHorizontal: 18,
   },
   addButton: {
     borderWidth: 1,

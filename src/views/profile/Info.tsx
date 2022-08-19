@@ -73,7 +73,7 @@ Info.displayName = 'Change Language';
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 24,
+    marginHorizontal: 18,
     marginTop: 20,
   },
   iconStyle: {

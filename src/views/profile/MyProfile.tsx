@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 20,
+    marginHorizontal: 18,
   },
   buttonWrapper: {
     paddingBottom: 30,
