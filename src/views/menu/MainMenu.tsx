@@ -37,7 +37,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
     RegularFood[0].Pije,
     RegularFood[0].Rizoto,
     RegularFood[0].Sallat,
-    RegularFood[0].Sanduic,
+    RegularFood[0].Panine,
     RegularFood[0].Tave
   );
 
