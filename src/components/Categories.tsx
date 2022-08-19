@@ -27,8 +27,8 @@ const Categories: React.FC<CategoriesProps> = React.memo(
 
     return (
       <TouchableOpacity style={styles.container} onPress={() => onCategorie()}>
-        <Icon name={icon} size={20} style={{marginTop: 10, color: APP_COLORS.background.extra}} />
-        <View style={{marginTop: 15}}>
+        <Icon name={icon} size={28} style={{marginTop: 13, color: APP_COLORS.background.extra}} />
+        <View style={{marginTop: 20, marginLeft: -2}}>
           <Text style={styles.textStyle}>{name}</Text>
         </View>
       </TouchableOpacity>
@@ -41,9 +41,9 @@ Categories.displayName = 'Categories';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    borderRadius: 20,
-    height: 40,
-    width: 40,
+    borderRadius: 30,
+    height: 55,
+    width: 55,
     backgroundColor: APP_COLORS.background.container_secondary,
     marginRight: 20,
   },
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_secondary,
-    textAlign: 'center',
   },
 });
 
