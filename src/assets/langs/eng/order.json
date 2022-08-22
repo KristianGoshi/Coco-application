@@ -3,6 +3,7 @@
     "submit": "Complete Order",
     "none": "You have not placed any orders",
     "success": "The order was successfully completed",
+    "contact": "You will be contacted by the staff for the delivery",
     "specialRequest": "Do you have any special request?"
   }
 }

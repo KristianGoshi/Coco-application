@@ -69,16 +69,16 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{alignSelf: 'flex-start', width: '30%'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View>
             <Image
               source={require('../../assets/images/logo.png')}
-              style={{width: 100, height: 100}}
+              style={{width: 110, height: 110}}
             />
           </View>
-          <View style={{paddingTop: 30, width: '70%'}}>
+          <View style={{paddingTop: 30, maxWidth: '70%'}}>
             <Text style={styles.motoStyle}>
-              {'Tradicionalja me arome moderne'}
+              {'Tradicionalja me aromë moderne'}
             </Text>
           </View>
         </View>
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   motoStyle: {
-    fontSize: 20,
+    fontSize: 23,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_secondary,
     textAlign: 'center',

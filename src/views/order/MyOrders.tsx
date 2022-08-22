@@ -61,7 +61,10 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
                 renderItem={({item, index}) => (
                   <OrderView
                     emri={item.emri || 'Unknown'}
-                    foto={item.foto || require('../../assets/images/krepa/krepa_coko.jpeg')}
+                    foto={
+                      item.foto ||
+                      require('../../assets/images/krepa/krepa_coko.jpeg')
+                    }
                     sasia={item.sasia || 0}
                     cmimi={item.cmimi || 0}
                   />
@@ -130,8 +133,8 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
           </View>
         )}
         {completed && (
-          <>
-            <View style={[styles.successLogoWrapper, {marginTop: 150}]}>
+          <View style={{marginTop: 150, marginHorizontal: 18}}>
+            <View style={[styles.successLogoWrapper]}>
               <Icon
                 name="checkmark-circle-outline"
                 size={200}
@@ -140,8 +143,9 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
             </View>
             <View>
               <Text style={styles.textStyle}>{t('order.success')}</Text>
+              <Text style={styles.textStyle}>{t('order.contact')}</Text>
             </View>
-          </>
+          </View>
         )}
       </View>
     </>
@@ -160,6 +164,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
+    maxWidth: '80%',
+    alignSelf: 'center',
   },
   listView: {
     marginTop: 15,

@@ -12,6 +12,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => SplashScreen.hide(), 1000);
   }, []);
+  console.disableYellowBox = true;
 
   return (
     <SafeAreaProvider>

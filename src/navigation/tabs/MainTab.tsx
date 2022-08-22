@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     marginBottom: 15,
+    marginTop: 12
   },
   badge: {
     position: 'absolute',
