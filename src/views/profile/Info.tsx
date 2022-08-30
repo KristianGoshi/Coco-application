@@ -4,7 +4,8 @@ import {
   StyleSheet,
   ScrollView,
   Text,
-  Linking
+  Linking,
+  Platform
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
@@ -73,22 +74,24 @@ const Info: React.FC<InfoProps> = React.memo(
                 }
                 onPress={() => openLocation()}></TouchableText>
             </View>
-            <View style={styles.containerMap}>
-              <MapView
-                style={styles.map}
-                region={{
-                  latitude: 41.319064,
-                  longitude: 19.827597,
-                  latitudeDelta: 0.0015,
-                  longitudeDelta: 0.00121,
-                }}>
-                <Marker
-                  key={1}
-                  coordinate={{latitude: 41.319064, longitude: 19.827597}}
-                  title={'Coco'}
-                />
-              </MapView>
-            </View>
+            {Platform.OS !== 'android' && (
+              <View style={styles.containerMap}>
+                <MapView
+                  style={styles.map}
+                  region={{
+                    latitude: 41.319064,
+                    longitude: 19.827597,
+                    latitudeDelta: 0.0015,
+                    longitudeDelta: 0.00121,
+                  }}>
+                  <Marker
+                    key={1}
+                    coordinate={{latitude: 41.319064, longitude: 19.827597}}
+                    title={'Coco'}
+                  />
+                </MapView>
+              </View>
+            )}
           </View>
         </View>
       </ScrollView>
