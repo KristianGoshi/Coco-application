@@ -151,6 +151,8 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                         height={250}
                         categorie={'Ditore'}
                         pershkrimi={item.pershkrimi}
+                        // @ts-ignore
+                        icon={item.emri}
                       />
                     );
                   }}

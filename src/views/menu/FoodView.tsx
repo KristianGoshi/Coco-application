@@ -15,6 +15,7 @@ export interface FoodViewProps {
   categorie: keyof typeof FoodImage;
   pershkrimi?: string;
   favorite?: boolean;
+  icon?: keyof typeof DailyImage;
 }
 
 export const FoodImage = {
@@ -30,15 +31,26 @@ export const FoodImage = {
   Bosh: require('../../assets/images/logo.png')
 };
 
+export const DailyImage = {
+  'Perime ne avull': require('../../assets/images/Ushqimet/perime.jpg'),
+  'Perime furre': require('../../assets/images/Ushqimet/ziera.jpg'),
+  'Lazanja': require('../../assets/images/Ushqimet/lazanja.jpg'),
+  'Kaneloni': require('../../assets/images/Ushqimet/kaneloni.jpg'),
+  'Musaka': require('../../assets/images/Ushqimet/musaka.jpg'),
+  'Supe kerpudhe': require('../../assets/images/Ushqimet/sup.jpg'),
+  'Karkaleca deti': require('../../assets/images/Ushqimet/karkalec.jpg'),
+  'Rizoto 4 djathrat': require('../../assets/images/Ushqimet/rizoto.jpg'),
+};
+
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({name, regular, price, width, height, categorie, pershkrimi, favorite = false}) => {
+  ({name, regular, price, width, height, categorie, pershkrimi, favorite = false, icon}) => {
     const navigation: any = useNavigation();
 
     const onSubmit = () => {
       if (favorite) {
         navigation.navigate(EProfileStack.FAVORITE_FOOD, {
           title: name,
-          foto: FoodImage[categorie],
+          foto: icon ? DailyImage[icon] : FoodImage[categorie],
           price: price,
           regular: regular,
           categorie: categorie,
@@ -49,7 +61,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
       } else {
         navigation.navigate(EMenuStack.SELECTED_FOOD, {
           title: name,
-          foto: FoodImage[categorie],
+          foto: icon ? DailyImage[icon] : FoodImage[categorie],
           price: price,
           regular: regular,
           categorie: categorie,
@@ -63,7 +75,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
     return (
       <View style={[styles.container, {width: width, height: height}]}>
         <Image
-          source={FoodImage[categorie]}
+          source={icon ? DailyImage[icon] : FoodImage[categorie]}
           style={[styles.imageStyle, {height: height - 110}]}
         />
         <View style={styles.nameStyle}>
