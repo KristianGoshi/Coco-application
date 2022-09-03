@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FlatList, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {APP_COLORS} from '../../assets/styles/colors';
 import {useDispatch, useSelector} from 'react-redux';
@@ -25,6 +25,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
   const {t} = useTranslation('menu');
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
+  const windowWidth = Dimensions.get('window').width;
 
   const userName = useSelector(userProfileSelector).userName;
   const food = useSelector(userSearchSelector);
@@ -69,14 +70,14 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{flexDirection: 'row'}}>
           <View>
             <Image
               source={require('../../assets/images/logo.png')}
-              style={{width: 110, height: 110}}
+              style={{width: 120, height: 120}}
             />
           </View>
-          <View style={{paddingTop: 30, maxWidth: '70%'}}>
+          <View style={{paddingTop: 30, maxWidth: windowWidth - 140}}>
             <Text style={styles.motoStyle}>
               {'Tradicionalja me aromë moderne'}
             </Text>
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   motoStyle: {
-    fontSize: 23,
+    fontSize: 21,
     fontWeight: 'bold',
     color: APP_COLORS.background.container_secondary,
     textAlign: 'center',
