@@ -39,7 +39,6 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
               numColumns={2}
               renderItem={({item, index}) => (
                 <FoodView
-                  icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                   name={item.emri}
                   price={item.cmimi}
                   regular={true}

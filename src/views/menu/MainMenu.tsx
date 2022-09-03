@@ -37,8 +37,8 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
     RegularFood[0].Pije,
     RegularFood[0].Rizoto,
     RegularFood[0].Sallat,
-    RegularFood[0].Panine,
-    RegularFood[0].Tave
+    RegularFood[0].Sanduic,
+    RegularFood[0].Tavë
   );
 
   const onSearch = useCallback(
@@ -128,7 +128,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                     touchableText={t('main.seeAll')}
                     onPress={() =>
                       navigation.navigate(EMenuStack.SELECTED_CATEGORIE, {
-                        title: t('main.ditore'),
+                        title: 'Ditore',
                         daily: true
                       })
                     }
@@ -144,13 +144,12 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                   renderItem={({item, index}) => {
                     return (
                       <FoodView
-                        icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                         name={item.emri}
                         price={item.cmimi}
                         regular={false}
                         width={180}
                         height={250}
-                        categorie={t('main.ditore')}
+                        categorie={'Ditore'}
                         pershkrimi={item.pershkrimi}
                       />
                     );
@@ -169,12 +168,12 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => (
                   <FoodView
-                    icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                     name={item.emri}
                     price={item.cmimi}
                     regular={true}
                     width={'46%'}
                     height={230}
+                    categorie={'Ditore'}
                   />
                 )}
               />

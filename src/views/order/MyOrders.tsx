@@ -63,7 +63,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
                     emri={item.emri || 'Unknown'}
                     foto={
                       item.foto ||
-                      require('../../assets/images/krepa/krepa_coko.jpeg')
+                      require('../../assets/images/Ushqimet/krepa_coko.jpeg')
                     }
                     sasia={item.sasia || 0}
                     cmimi={item.cmimi || 0}

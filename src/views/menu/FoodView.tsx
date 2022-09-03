@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { useTranslation } from 'react-i18next';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import {APP_COLORS} from '../../assets/styles/colors';
 import { EMenuStack } from '../../navigation/stacks/MenuStack';
@@ -8,27 +7,38 @@ import { EProfileStack } from '../../navigation/stacks/ProfileStack';
 import Icon from 'react-native-vector-icons/Entypo';
 
 export interface FoodViewProps {
-  icon?: any;
   name?: string;
   price?: number;
   regular?: boolean;
   width: any;
   height: number;
-  categorie?: string;
+  categorie: keyof typeof FoodImage;
   pershkrimi?: string;
   favorite?: boolean;
 }
 
+export const FoodImage = {
+  Pica: require('../../assets/images/Ushqimet/Pica.jpg'),
+  Sallat: require('../../assets/images/Ushqimet/sallat.jpg'),
+  Tavë: require('../../assets/images/Ushqimet/tave.jpg'),
+  Krepa: require('../../assets/images/Ushqimet/krepa_coko.jpeg'),
+  Pije: require('../../assets/images/Ushqimet/pije.jpg'),
+  Pasta: require('../../assets/images/Ushqimet/pasta.jpg'),
+  Rizoto: require('../../assets/images/Ushqimet/rizoto.jpg'),
+  Sanduic: require('../../assets/images/Ushqimet/sanduic.jpg'),
+  Ditore: require('../../assets/images/Ushqimet/musaka.jpg'),
+  Bosh: require('../../assets/images/logo.png')
+};
+
 const FoodView: React.FC<FoodViewProps> = React.memo(
-  ({icon, name, regular, price, width, height, categorie, pershkrimi, favorite = false}) => {
-    const {t} = useTranslation('menu');
+  ({name, regular, price, width, height, categorie, pershkrimi, favorite = false}) => {
     const navigation: any = useNavigation();
 
     const onSubmit = () => {
       if (favorite) {
         navigation.navigate(EProfileStack.FAVORITE_FOOD, {
           title: name,
-          foto: icon,
+          foto: FoodImage[categorie],
           price: price,
           regular: regular,
           categorie: categorie,
@@ -39,7 +49,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
       } else {
         navigation.navigate(EMenuStack.SELECTED_FOOD, {
           title: name,
-          foto: icon,
+          foto: FoodImage[categorie],
           price: price,
           regular: regular,
           categorie: categorie,
@@ -53,7 +63,7 @@ const FoodView: React.FC<FoodViewProps> = React.memo(
     return (
       <View style={[styles.container, {width: width, height: height}]}>
         <Image
-          source={icon}
+          source={FoodImage[categorie]}
           style={[styles.imageStyle, {height: height - 110}]}
         />
         <View style={styles.nameStyle}>

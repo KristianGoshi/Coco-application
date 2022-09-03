@@ -32,13 +32,12 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
                 numColumns={2}
                 renderItem={({item, index}) => (
                   <FoodView
-                    icon={require('../../assets/images/krepa/krepa_coko.jpeg')}
                     name={item.emri}
                     price={item.cmimi}
                     regular={true}
                     width={userFavorites.length == 1 ? 170 : '46%'}
                     height={230}
-                    categorie={item.categorie}
+                    categorie={item.categorie ? item.categorie : 'Bosh'}
                     pershkrimi={item.pershkrimi}
                     favorite
                   />
