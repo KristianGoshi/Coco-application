@@ -19,7 +19,7 @@
   },
   "editprofile": {
     "usernameError": "Username must contain at least 3 characters",
-    "phoneError": "Phone must be at least 8 digits long and contain only numbers",
+    "phoneError": "Phone must be 10 digits long and contain only numbers",
     "emailError": "Email is not in the correct format",
     "username": "Username",
     "email": "Email",

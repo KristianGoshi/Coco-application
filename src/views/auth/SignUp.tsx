@@ -64,8 +64,7 @@ const SignUp: React.FC<SignUpProps> = React.memo(({navigation}) => {
     } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
       setApiError(t('signup.emailError'));
       return;
-    } else if (!/^\+[1-9]{1}[0-9]{3,14}$/.test(phone)) {
-      //rregullo regexin per nr e telefonit
+    } else if (!/^\d{10}$/.test(phone)) {
       setApiError(t('signup.phoneError'));
       return;
     } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {

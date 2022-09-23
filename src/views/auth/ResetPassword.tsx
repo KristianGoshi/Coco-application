@@ -46,8 +46,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) =>
     if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email) && email) {
       setApiError(t('resetPassword.emailError'));
       return;
-    } else if (!/^\+[1-9]{1}[0-9]{3,14}$/.test(phone) && phone) {
-      //rregullo regexin per nr e telefonit
+    } else if (!/^\d{10}$/.test(phone) && phone) {
       setApiError(t('resetPassword.phoneError'));
       return;
     }
@@ -55,12 +54,6 @@ const ResetPassword: React.FC<ResetPasswordProps> = React.memo(({navigation}) =>
   }, [email, phone]);
 
   const resetPassword = useCallback(async () => {
-    // await dispatch(
-    //   resetUserPassword({
-    //     email: email,
-    //     nrTel: phone,
-    //   }),
-    // );
     setSubmitted(true);
   }, [email, phone]);
 

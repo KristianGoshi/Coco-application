@@ -18,6 +18,7 @@ import StyledButton, { EButtonType } from '../../components/Button';
 import { completeOrder } from '../../redux/actions/orderActions';
 import { useFocusEffect } from '@react-navigation/native';
 import TextInput from '../../components/Input';
+import KeyboardAwareContainer from '../../components/Keyboard';
 
 export interface MyOrdersProps {}
 
@@ -45,14 +46,14 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
   }, []);
 
   return (
-    <>
+    <KeyboardAwareContainer>
       <View style={styles.container}>
         {userOrder.length !== 0 && !completed && (
           <>
             <ScrollView
               style={[
                 styles.listView,
-                {maxHeight: Dimensions.get('window').height - 150},
+                {height: Dimensions.get('window').height - 400},
               ]}>
               <FlatList
                 data={userOrder}
@@ -82,8 +83,8 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
             <View
               style={{
                 flexDirection: 'row',
-                paddingBottom: 25,
-                paddingTop: 5,
+                paddingBottom: 5,
+                marginTop: -5,
                 alignSelf: 'center',
               }}>
               <View style={{alignSelf: 'center'}}>
@@ -148,7 +149,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
           </View>
         )}
       </View>
-    </>
+    </KeyboardAwareContainer>
   );
 });
 

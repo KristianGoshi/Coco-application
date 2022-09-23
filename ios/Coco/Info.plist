@@ -44,6 +44,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>For finding where the restaurant is located</string>
+	<key>UIUserInterfaceStyle</key>
+  <string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

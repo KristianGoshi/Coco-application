@@ -27,6 +27,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
   const [submitted, setSubmitted] = useState(false);
 
   const changeText = (text: string, type: string) => {
+    setApiError('');
     if (type == 'username') {
       setUsername(text);
     } else if (type == 'email') {
@@ -55,8 +56,7 @@ const ChangeProfile: React.FC<ChangeProfileProps> = React.memo(() => {
     } else if (email && !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
       setApiError(t('editprofile.emailError'));
       return;
-    } else if (phone && !/^\+[1-9]{1}[0-9]{3,14}$/.test(phone)) {
-      //rregullo regexin per nr e telefonit
+    } else if (phone && !/^\d{10}$/.test(phone)) {
       setApiError(t('editprofile.phoneError'));
       return;
     }

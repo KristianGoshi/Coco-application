@@ -19,7 +19,7 @@
   },
   "editprofile": {
     "usernameError": "Emri i përdoruesit duhet të jetë të paktën 3 karaktere",
-    "phoneError": "Numri i telefonit duhet të përmbaje të paktën 8 shifra",
+    "phoneError": "Numri i telefonit duhet të përmbaje vetëm 10 shifra",
     "emailError": "Email nuk është në formatin e saktë",
     "username": "Username",
     "email": "Email",
