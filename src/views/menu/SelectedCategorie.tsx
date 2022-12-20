@@ -37,6 +37,7 @@ const SelectedCategorie: React.FC<SelectedCategorieProps> = React.memo(() => {
               }
               keyExtractor={(item, index) => item.emri}
               numColumns={2}
+              showsVerticalScrollIndicator={false}
               renderItem={({item, index}) => (
                 <FoodView
                   name={item.emri}

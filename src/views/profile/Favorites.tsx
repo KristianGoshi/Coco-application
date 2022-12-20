@@ -30,6 +30,7 @@ const Favorites: React.FC<FavoritesProps> = React.memo(
                 data={userFavorites}
                 keyExtractor={(item, index) => index.toString()}
                 numColumns={2}
+                showsVerticalScrollIndicator={false}
                 renderItem={({item, index}) => (
                   <FoodView
                     name={item.emri}

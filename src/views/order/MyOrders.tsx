@@ -58,6 +58,7 @@ const MyOrders: React.FC<MyOrdersProps> = React.memo(() => {
               <FlatList
                 data={userOrder}
                 scrollEnabled={false}
+                showsVerticalScrollIndicator={false}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => (
                   <OrderView

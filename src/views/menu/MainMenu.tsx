@@ -108,6 +108,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                   data={FoodCategories}
                   horizontal
                   keyExtractor={(item, index) => item.id.toString()}
+                  showsHorizontalScrollIndicator={false}
                   renderItem={({item, index}) => (
                     <Categories
                       icon={item.icon}
@@ -130,18 +131,24 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                     onPress={() =>
                       navigation.navigate(EMenuStack.SELECTED_CATEGORIE, {
                         title: 'Ditore',
-                        daily: true
+                        daily: true,
                       })
                     }
                     fontSize={14}
                   />
                 </View>
               </View>
-              <View style={{marginTop: 15, alignSelf: 'flex-start'}}>
+              <View
+                style={{
+                  marginTop: 15,
+                  alignSelf: 'flex-start',
+                  marginRight: -18,
+                }}>
                 <FlatList
                   data={DailyFood}
                   horizontal
                   keyExtractor={(item, index) => index.toString()}
+                  showsHorizontalScrollIndicator={false}
                   renderItem={({item, index}) => {
                     return (
                       <FoodView
@@ -169,6 +176,7 @@ const MainMenu: React.FC<MainMenuProps> = React.memo(({navigation}) => {
                 data={food}
                 numColumns={2}
                 keyExtractor={(item, index) => index.toString()}
+                showsVerticalScrollIndicator={false}
                 renderItem={({item, index}) => (
                   <FoodView
                     name={item.emri}
@@ -223,6 +231,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignSelf: 'flex-start',
     height: 80,
+    marginRight: -18
   },
   searchList: {
     marginTop: 30
